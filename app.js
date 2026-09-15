@@ -53,31 +53,50 @@ function threeNames(korean, fallbackZh="") {
   return {zh:known?.[0]||alias?.zh||translated?.zh||fallbackZh||`${clean}站`, ko:korean, en:known?.[1]||alias?.en||translated?.en||romanizeKorean(korean)};
 }
 
-async function translateBatch(names,target) {
-  const separator=" ⟐ ", text=names.join(separator);
+function normalizeChineseName(text="") {
+  const replacements=[
+    [/Seong\s*-?\s*su|Seongsu|Seongsoo/gi,"聖水"],
+    [/Hong\s*-?\s*dae|Hongdae/gi,"弘大"],
+    [/Gang\s*-?\s*nam|Gangnam/gi,"江南"],
+    [/Myeong\s*-?\s*dong|Myeongdong/gi,"明洞"],
+    [/(\d+)\s*-?\s*ga\b/gi,"$1街"],
+    [/(\d+)\s*-?\s*dong\b/gi,"$1洞"],
+    [/public parking lot|public parking/gi,"公共停車場"],
+    [/library/gi,"圖書館"]
+  ];
+  return replacements.reduce((value,[pattern,replacement])=>value.replace(pattern,replacement),text).replace(/\s+/g," ").trim();
+}
+
+async function translateOne(text,target) {
   const url=new URL("https://api.mymemory.translated.net/get");
   url.searchParams.set("q",text); url.searchParams.set("langpair",`ko|${target}`);
   const response=await fetch(url); if(!response.ok) throw new Error("翻譯暫時不可用");
   const data=await response.json();
-  return (data.responseData?.translatedText||"").split(/\s*⟐\s*/);
+  return (data.responseData?.translatedText||"").trim();
 }
 
 async function hydrateTranslations(results,query) {
-  try {
-    const names=results.map(p=>p.place_name);
-    const [zh,en]=await Promise.all([translateBatch(names,"zh-TW"),translateBatch(names,"en")]);
-    results.forEach((place,index)=>translatedNames.set(place.place_name,{zh:zh[index]||query,en:en[index]||romanizeKorean(place.place_name)}));
-    document.querySelectorAll(".candidate-item").forEach((button,index)=>{
-      const names3=threeNames(results[index].place_name,`${query}（候選 ${index+1}）`);
-      button.querySelector("strong").textContent=names3.zh;
-      button.querySelector("em").textContent=names3.en;
-    });
-    if(selected) {
-      const current=threeNames(selected.place_name,query);
-      document.querySelector("#place-name").textContent=current.zh;
-      document.querySelector("#place-en").textContent=current.en;
-    }
-  } catch (_) { /* 免費翻譯額度不可用時保留原文與羅馬拼音 */ }
+  const jobs=results.map(async (place,index)=>{
+    try {
+      const [zh,en]=await Promise.all([
+        translateOne(place.place_name,"zh-TW"),
+        translateOne(place.place_name,"en")
+      ]);
+      translatedNames.set(place.place_name,{zh:normalizeChineseName(zh)||query,en:en||romanizeKorean(place.place_name)});
+      const button=document.querySelector(`.candidate-item[data-index="${index}"]`);
+      if(button) {
+        const names3=threeNames(place.place_name,query);
+        button.querySelector("strong").textContent=names3.zh;
+        button.querySelector("em").textContent=names3.en;
+      }
+      if(selected?.place_name===place.place_name) {
+        const current=threeNames(place.place_name,query);
+        document.querySelector("#place-name").textContent=current.zh;
+        document.querySelector("#place-en").textContent=current.en;
+      }
+    } catch (_) { /* 單一店名失敗不影響其他候選結果 */ }
+  });
+  await Promise.allSettled(jobs);
 }
 
 function lookup(text) {
@@ -135,7 +154,7 @@ function naverRouteParams(origin, destination) {
   const params = new URLSearchParams({
     slat:origin.y, slng:origin.x, sname:origin.place_name,
     dlat:destination.y, dlng:destination.x, dname:destination.place_name,
-    appname:"seoul.easy.family"
+    appname:"https://a0912976077.github.io"
   });
   return params.toString();
 }
@@ -197,7 +216,7 @@ function renderResult(originRaw, destinationRaw, destination) {
 
 function renderCandidates(results, active, onSelect, query="") {
   const list = document.querySelector("#candidate-list");
-  list.innerHTML = results.map((place,index) => { const names=threeNames(place.place_name,`${query}（候選 ${index+1}）`); return `<button class="candidate-item ${place.id === active.id ? "active" : ""}" data-index="${index}">
+  list.innerHTML = results.map((place,index) => { const names=threeNames(place.place_name,"翻譯中…"); return `<button class="candidate-item ${place.id === active.id ? "active" : ""}" data-index="${index}">
     <strong>${names.zh}</strong><span>${names.ko}</span><em>${names.en}</em><small>${place.road_address_name || place.address_name || "地址未提供"}</small>
   </button>`; }).join("");
   list.querySelectorAll("button").forEach(button => button.onclick = () => onSelect(results[Number(button.dataset.index)]));
@@ -220,9 +239,13 @@ form.addEventListener("submit", async event => {
   const originRaw = originInput.value.trim(), destinationRaw = destinationInput.value.trim();
   if (!originRaw) return originInput.focus();
   if (!destinationRaw) return destinationInput.focus();
+  resultSection.hidden=true;
   try {
     showToast("正在搜尋韓國地點與真實路線…");
-    const [origins,destinations] = await Promise.all([findKakaoPlaces(originRaw),findKakaoPlaces(destinationRaw)]);
+    const [originResult,destinationResult] = await Promise.allSettled([findKakaoPlaces(originRaw),findKakaoPlaces(destinationRaw)]);
+    if(originResult.status==="rejected") throw new Error(`找不到出發地「${originRaw}」，請輸入更完整名稱`);
+    if(destinationResult.status==="rejected") throw new Error(`找不到目的地「${destinationRaw}」，請輸入韓文或更完整名稱`);
+    const origins=originResult.value, destinations=destinationResult.value;
     await loadJourney(origins[0],destinations[0],originRaw,destinationRaw,destinations);
     showToast("真實路線已載入");
   } catch (error) { showToast(error.message); }
