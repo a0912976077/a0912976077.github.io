@@ -23,9 +23,9 @@
 - 完整車站名稱、路線、線色與出口資料庫
 - 起點定位、即時營運資訊、收藏持久化及離線地圖
 
-## 正式 API 架構
+## 免費資料方案
 
-`worker/worker.js` 是 Cloudflare Worker 後端代理，提供 `/api/places` 與 `/api/routes`，並從 Secret `GOOGLE_MAPS_API_KEY` 讀取金鑰。部署後將 Worker URL 填入 `config.js` 的 `window.SEOUL_EASY_API`。切勿把金鑰直接寫進 GitHub 或瀏覽器 JavaScript。
+本家庭版不啟用 Google Maps Platform Billing，也不部署任何自動計費的 API。未來可使用 Kakao 第一個 App 的免費配額搜尋地點與大眾運輸路線，搭配韓國公共資料入口的免費地鐵資料；超過免費額度時停止即時查詢並回到離線資料，不啟用付費額度。
 
 ## GitHub Pages
 

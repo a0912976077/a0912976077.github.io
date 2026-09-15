@@ -1,6 +1,0 @@
-name = "seoul-easy-api"
-main = "worker.js"
-compatibility_date = "2026-09-15"
-
-[vars]
-ALLOWED_ORIGIN = "https://a0912976077.github.io"

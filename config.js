@@ -1,3 +1,2 @@
-// 部署後端 Worker 後，填入其公開網址，例如：
-// window.SEOUL_EASY_API = "https://seoul-easy-api.<你的帳號>.workers.dev";
+// 免費資料服務完成後，在此設定網址。現在留空會使用不產生費用的離線示範資料。
 window.SEOUL_EASY_API = "";
