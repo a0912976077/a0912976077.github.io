@@ -27,6 +27,30 @@ const kakaoKey = window.KAKAO_REST_KEY || "";
 let selected = null;
 let currentCoords = null;
 
+const stationNames = {
+  "서울역":["首爾站","Seoul Station"], "명동":["明洞","Myeong-dong"], "충무로":["忠武路","Chungmuro"],
+  "동대문":["東大門","Dongdaemun"], "동대문역사문화공원":["東大門歷史文化公園","Dongdaemun History & Culture Park"],
+  "종로3가":["鐘路三街","Jongno 3-ga"], "종로5가":["鐘路五街","Jongno 5-ga"], "경복궁":["景福宮","Gyeongbokgung"],
+  "홍대입구":["弘大入口","Hongik Univ."], "강남":["江南","Gangnam"], "성수":["聖水","Seongsu"],
+  "건대입구":["建大入口","Konkuk Univ."], "고속터미널":["高速巴士客運站","Express Bus Terminal"],
+  "이태원":["梨泰院","Itaewon"], "여의도":["汝矣島","Yeouido"], "잠실":["蠶室","Jamsil"],
+  "김포공항":["金浦機場","Gimpo Int'l Airport"], "인천공항1터미널":["仁川機場第一航廈","Incheon Airport T1"],
+  "인천공항2터미널":["仁川機場第二航廈","Incheon Airport T2"], "부산역":["釜山站","Busan Station"]
+};
+
+function romanizeKorean(text="") {
+  const initial=["g","kk","n","d","tt","r","m","b","pp","s","ss","","j","jj","ch","k","t","p","h"];
+  const vowel=["a","ae","ya","yae","eo","e","yeo","ye","o","wa","wae","oe","yo","u","wo","we","wi","yu","eu","ui","i"];
+  const final=["","k","k","ks","n","nj","nh","t","l","lk","lm","lb","ls","lt","lp","lh","m","p","ps","t","t","ng","t","t","k","t","p","h"];
+  return [...text].map(ch=>{const code=ch.charCodeAt(0)-0xac00;if(code<0||code>11171)return ch;return initial[Math.floor(code/588)]+vowel[Math.floor((code%588)/28)]+final[code%28];}).join("").replace(/\s+/g," ").trim();
+}
+
+function threeNames(korean, fallbackZh="") {
+  const clean=korean.replace(/역$/,""), known=stationNames[clean] || stationNames[korean];
+  const alias=placeAliases.find(p=>p.ko===korean || p.ko===clean);
+  return {zh:known?.[0]||alias?.zh||fallbackZh||`${clean}站`, ko:korean, en:known?.[1]||alias?.en||romanizeKorean(korean)};
+}
+
 function lookup(text) {
   const value = text.trim().toLowerCase();
   return placeAliases.find(p => [p.zh,p.ko,p.en].some(name => name.toLowerCase() === value));
@@ -81,13 +105,13 @@ function renderKakaoRoute(routeData, origin, destination) {
   document.querySelector("#route-steps").innerHTML = route.steps.map(step => {
     const p = step.properties || {};
     const stops = p.stops || [];
-    const first = stops[0]?.name || origin.place_name;
-    const last = stops[stops.length-1]?.name || destination.place_name;
+    const first = threeNames(stops[0]?.name || origin.place_name);
+    const last = threeNames(stops[stops.length-1]?.name || destination.place_name);
     const vehicle = p.vehicles?.[0]?.name || (p.type === "WALKING" ? "步行" : p.type);
     const color = p.type === "SUBWAY" ? "#00a84d" : p.type === "BUS" ? "#315bb5" : "#87948d";
     return `<div class="route-step" style="--step-color:${color}">
       <div class="track"><span class="station-dot">${p.type === "SUBWAY" ? "M" : p.type === "BUS" ? "B" : "走"}</span></div>
-      <div class="station-name"><strong>${first} → ${last}</strong><span>${p.guidance || "移動"}</span><small>${vehicle}</small><b class="line-pill">${vehicle}</b></div>
+      <div class="station-name"><strong>${first.zh} → ${last.zh}</strong><span>${first.ko} → ${last.ko}</span><small>${first.en} → ${last.en}</small><b class="line-pill">${vehicle}</b></div>
       <div class="ride-info">${minutes(p.time || 0)}${stops.length ? `<br>${stops.length-1} 站` : ""}</div>
     </div>`;
   }).join("");
@@ -109,17 +133,17 @@ function renderResult(originRaw, destinationRaw, destination) {
   resultSection.scrollIntoView({behavior:"smooth",block:"start"});
 }
 
-function renderCandidates(results, active, onSelect) {
+function renderCandidates(results, active, onSelect, query="") {
   const list = document.querySelector("#candidate-list");
-  list.innerHTML = results.map((place,index) => `<button class="candidate-item ${place.id === active.id ? "active" : ""}" data-index="${index}">
-    <strong>${place.place_name}</strong><small>${place.road_address_name || place.address_name || "地址未提供"}</small>
-  </button>`).join("");
+  list.innerHTML = results.map((place,index) => { const names=threeNames(place.place_name,`${query}（候選 ${index+1}）`); return `<button class="candidate-item ${place.id === active.id ? "active" : ""}" data-index="${index}">
+    <strong>${names.zh}</strong><span>${names.ko} · ${names.en}</span><small>${place.road_address_name || place.address_name || "地址未提供"}</small>
+  </button>`; }).join("");
   list.querySelectorAll("button").forEach(button => button.onclick = () => onSelect(results[Number(button.dataset.index)]));
 }
 
 async function loadJourney(origin, destination, originRaw, destinationRaw, allDestinations) {
   renderResult(originRaw,destinationRaw,destination);
-  renderCandidates(allDestinations,destination,chosen => loadJourney(origin,chosen,originRaw,chosen.place_name,allDestinations));
+  renderCandidates(allDestinations,destination,chosen => loadJourney(origin,chosen,originRaw,chosen.place_name,allDestinations),destinationRaw);
   document.querySelector("#route-steps").innerHTML = '<div class="api-notice"><strong>正在計算路線…</strong></div>';
   const route = await kakaoGet("/v2/routing/publictraffic", {
     start_x:origin.x,start_y:origin.y,end_x:destination.x,end_y:destination.y,
