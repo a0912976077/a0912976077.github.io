@@ -65,6 +65,7 @@ h1 em { color: var(--green); font-family: Georgia, serif; font-weight: 500; }
 .english { margin-top: 3px !important; color: var(--green); font: italic 16px Georgia, serif; }
 .address { margin-top: 12px !important; color: var(--muted); font-family: "Noto Sans KR", sans-serif; font-size: 13px; }
 .copy-btn { padding: 9px 12px; border: 1px solid var(--border); border-radius: 9px; background: transparent; cursor: pointer; }
+.copy-actions { display: grid; gap: 8px; }
 .route-heading { margin-top: 54px; }
 .route-summary { text-align: right; }
 .route-summary strong, .route-summary small { display: block; }
@@ -123,6 +124,7 @@ footer { display: flex; justify-content: space-between; padding: 28px 0 42px; co
   .place-card { grid-template-columns: 1fr auto; padding: 20px; }
   .place-index { display: none; }
   .copy-btn { font-size: 11px; }
+  .copy-actions { min-width: 104px; }
   .route-card { padding: 22px 18px; }
   .fare-options { grid-template-columns: 1fr; }
   .route-actions { grid-template-columns: 1fr 52px; }

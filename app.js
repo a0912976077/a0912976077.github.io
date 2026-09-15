@@ -183,9 +183,15 @@ function requestCurrentLocation() {
   }, {enableHighAccuracy:true,timeout:8000,maximumAge:60000});
 }
 document.querySelector("#use-location").onclick = requestCurrentLocation;
+document.querySelector("#copy-name").onclick = async () => {
+  if (!selected) return;
+  await navigator.clipboard.writeText(selected.place_name);
+  showToast("已複製韓文店名");
+};
 document.querySelector("#copy-address").onclick = async () => {
   if (!selected) return;
-  await navigator.clipboard.writeText(`${selected.place_name}\n${selected.road_address_name || selected.address_name || ""}`); showToast("已複製韓文名稱與地址");
+  await navigator.clipboard.writeText(selected.road_address_name || selected.address_name || "");
+  showToast("已複製韓文地址");
 };
 document.querySelector("#save-route").onclick = e => { e.currentTarget.textContent=e.currentTarget.textContent==="♥"?"♡":"♥"; };
 
