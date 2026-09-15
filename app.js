@@ -84,13 +84,32 @@ async function findKakaoPlaces(raw) {
   return data.documents;
 }
 
-function naverRouteUrl(origin, destination) {
+function naverRouteParams(origin, destination) {
   const params = new URLSearchParams({
     slat:origin.y, slng:origin.x, sname:origin.place_name,
     dlat:destination.y, dlng:destination.x, dname:destination.place_name,
     appname:"seoul.easy.family"
   });
-  return `nmap://route/public?${params}`;
+  return params.toString();
+}
+
+function setupNaverLink(origin, destination) {
+  const link=document.querySelector("#naver-link"), params=naverRouteParams(origin,destination);
+  const scheme=`nmap://route/public?${params}`;
+  const intent=`intent://route/public?${params}#Intent;scheme=nmap;action=android.intent.action.VIEW;category=android.intent.category.BROWSABLE;package=com.nhn.android.nmap;end`;
+  const web=`https://map.naver.com/p/search/${encodeURIComponent(destination.place_name)}`;
+  link.href="#";
+  link.onclick=event=>{
+    event.preventDefault();
+    const ua=navigator.userAgent;
+    if(/Android/i.test(ua)) { window.location.href=intent; return; }
+    if(/iPhone|iPad|iPod/i.test(ua)) {
+      window.location.href=scheme;
+      setTimeout(()=>{ if(document.visibilityState==="visible") window.location.href=web; },1400);
+      return;
+    }
+    window.open(web,"_blank","noopener,noreferrer");
+  };
 }
 
 function minutes(seconds) { return `${Math.max(1,Math.round(seconds/60))} 分`; }
@@ -116,7 +135,7 @@ function renderKakaoRoute(routeData, origin, destination) {
     </div>`;
   }).join("");
   document.querySelector("#kakao-link").href = routeData.properties.landingURL;
-  document.querySelector("#naver-link").href = naverRouteUrl(origin,destination);
+  setupNaverLink(origin,destination);
   const fare = props.fare?.value || props.fare?.min;
   if (fare) document.querySelector(".fare-title strong").textContent = `此路線預估 ₩${fare}`;
 }
