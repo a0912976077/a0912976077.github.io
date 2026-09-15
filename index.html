@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#f7f4ee" />
+  <title>首爾好行 Seoul Easy</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;600;700&family=Noto+Sans+TC:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <main class="app-shell">
+    <header class="topbar">
+      <a class="brand" href="#" aria-label="首頁">
+        <span class="brand-mark">首</span>
+        <span><strong>首爾好行</strong><small>SEOUL EASY</small></span>
+      </a>
+      <button class="icon-btn" type="button" aria-label="收藏">♡</button>
+    </header>
+
+    <section class="hero">
+      <p class="eyebrow">台灣旅客的韓國交通助手</p>
+      <h1>中文輸入，<br><em>安心抵達。</em></h1>
+      <p class="hero-copy">不用複製韓文，也不怕坐錯方向。搜尋你熟悉的繁體中文名稱，就能看懂每一次搭乘與轉乘。</p>
+
+      <form id="search-form" class="search-card">
+        <label for="search-input">想去哪裡？</label>
+        <div class="search-row">
+          <span class="search-icon">⌕</span>
+          <input id="search-input" autocomplete="off" placeholder="例如：景福宮、廣藏市場、弘大" />
+          <button type="button" id="clear-search" aria-label="清除">×</button>
+        </div>
+        <button class="primary-btn" type="submit">搜尋韓國地點 <span>→</span></button>
+      </form>
+
+      <div class="quick-search" aria-label="熱門搜尋">
+        <span>熱門：</span>
+        <button data-query="景福宮">景福宮</button>
+        <button data-query="廣藏市場">廣藏市場</button>
+        <button data-query="聖水洞">聖水洞</button>
+      </div>
+    </section>
+
+    <section id="result-section" class="result-section" hidden>
+      <div class="section-heading">
+        <div><span class="step-label">搜尋結果</span><h2 id="place-name">景福宮</h2></div>
+        <span class="match-badge">已核對</span>
+      </div>
+
+      <article class="place-card">
+        <div class="place-index">01</div>
+        <div class="place-main">
+          <p id="place-ko" class="korean">경복궁</p>
+          <p id="place-en" class="english">Gyeongbokgung Palace</p>
+          <p id="place-address" class="address">서울특별시 종로구 사직로 161</p>
+        </div>
+        <button id="copy-address" class="copy-btn" type="button">複製韓文</button>
+      </article>
+
+      <div class="route-heading">
+        <div><span class="step-label">推薦路線</span><h2>從首爾站出發</h2></div>
+        <div class="route-summary"><strong id="route-duration">約 24 分</strong><small id="route-transfer">轉乘 1 次</small></div>
+      </div>
+
+      <article class="route-card">
+        <div id="route-steps" class="route-steps"></div>
+        <div class="route-actions">
+          <a id="naver-link" class="naver-btn" href="#" target="_blank" rel="noreferrer">在 NAVER 地圖開啟 <span>↗</span></a>
+          <button id="save-route" class="save-btn" type="button" aria-label="收藏路線">♡</button>
+        </div>
+      </article>
+    </section>
+
+    <section class="feature-strip">
+      <article><span>中</span><h3>繁中搜尋</h3><p>用台灣習慣的名稱直接搜尋</p></article>
+      <article><span>가</span><h3>三語站名</h3><p>中文、韓文、英文一路比對</p></article>
+      <article><span>●</span><h3>路線顏色</h3><p>搭乘與轉乘一眼就看懂</p></article>
+    </section>
+
+    <footer><span>首爾好行 MVP · 家庭測試版</span><span>Made for Taiwan travelers</span></footer>
+  </main>
+  <div id="toast" class="toast" role="status"></div>
+  <script src="app.js"></script>
+</body>
+</html>
