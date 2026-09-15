@@ -25,6 +25,7 @@ const resultSection = document.querySelector("#result-section");
 const toast = document.querySelector("#toast");
 const kakaoKey = window.KAKAO_REST_KEY || "";
 let selected = null;
+let currentCoords = null;
 
 function lookup(text) {
   const value = text.trim().toLowerCase();
@@ -46,6 +47,9 @@ async function kakaoGet(path, params) {
 }
 
 async function findKakaoPlaces(raw) {
+  if (raw === "目前位置" && currentCoords) {
+    return [{ place_name:"目前位置", x:currentCoords.lng, y:currentCoords.lat, address_name:"GPS 目前位置" }];
+  }
   if (/^-?\d+(\.\d+)?\s*,\s*-?\d+(\.\d+)?$/.test(raw)) {
     const [y,x] = raw.split(",").map(Number); return [{ place_name:"目前位置", x, y, address_name:"GPS 座標" }];
   }
@@ -139,13 +143,22 @@ form.addEventListener("submit", async event => {
 
 document.querySelector("#clear-search").onclick = () => { destinationInput.value=""; destinationInput.focus(); };
 document.querySelector("#swap-route").onclick = () => { [originInput.value,destinationInput.value]=[destinationInput.value,originInput.value]; };
-document.querySelector("#use-location").onclick = () => {
+function requestCurrentLocation() {
   if (!navigator.geolocation) return showToast("瀏覽器不支援定位");
+  originInput.placeholder = "正在偵測目前位置…";
   showToast("正在取得目前位置…");
   navigator.geolocation.getCurrentPosition(({coords}) => {
-    originInput.value = `${coords.latitude},${coords.longitude}`; showToast("已取得目前位置");
-  }, () => showToast("請允許定位或手動輸入出發地"), {enableHighAccuracy:true,timeout:8000});
-};
+    currentCoords = {lat:coords.latitude,lng:coords.longitude};
+    originInput.value = "目前位置";
+    originInput.placeholder = "車站、飯店或目前位置";
+    showToast("已自動設定目前位置，可直接修改");
+  }, () => {
+    originInput.value = "";
+    originInput.placeholder = "請輸入出發車站、飯店或地址";
+    showToast("無法取得位置，請手動輸入出發地");
+  }, {enableHighAccuracy:true,timeout:8000,maximumAge:60000});
+}
+document.querySelector("#use-location").onclick = requestCurrentLocation;
 document.querySelector("#copy-address").onclick = async () => {
   if (!selected) return;
   await navigator.clipboard.writeText(`${selected.place_name}\n${selected.road_address_name || selected.address_name || ""}`); showToast("已複製韓文名稱與地址");
@@ -153,3 +166,5 @@ document.querySelector("#copy-address").onclick = async () => {
 document.querySelector("#save-route").onclick = e => { e.currentTarget.textContent=e.currentTarget.textContent==="♥"?"♡":"♥"; };
 
 document.querySelectorAll("[data-query]").forEach(button => button.onclick = () => { destinationInput.value=button.dataset.query; destinationInput.focus(); });
+
+requestCurrentLocation();
