@@ -54,9 +54,10 @@ h1 em { color: var(--green); font-family: Georgia, serif; font-weight: 500; }
 .candidate-list { display: flex; gap: 9px; margin-bottom: 14px; padding-bottom: 4px; overflow-x: auto; }
 .candidate-item { min-width: 230px; padding: 13px 15px; text-align: left; border: 1px solid var(--border); border-radius: 12px; color: var(--ink); background: var(--card); cursor: pointer; }
 .candidate-item.active { border: 2px solid var(--green); background: #edf5ee; }
-.candidate-item strong, .candidate-item span, .candidate-item small { display: block; }
+.candidate-item strong, .candidate-item span, .candidate-item em, .candidate-item small { display: block; }
 .candidate-item strong { font-family: "Noto Sans KR", sans-serif; font-size: 14px; }
-.candidate-item span { margin-top: 3px; color: var(--green); font: italic 12px Georgia, serif; }
+.candidate-item span { margin-top: 3px; font-family: "Noto Sans KR", sans-serif; font-size: 12px; }
+.candidate-item em { margin-top: 2px; color: var(--green); font: italic 12px Georgia, serif; }
 .candidate-item small { margin-top: 4px; color: var(--muted); font-size: 10px; line-height: 1.45; }
 .place-card { position: relative; display: grid; grid-template-columns: 70px 1fr auto; gap: 18px; align-items: center; padding: 28px; background: var(--card); border: 1px solid var(--border); border-radius: 18px; }
 .place-index { color: #c9cec9; font: 36px/1 Georgia, serif; }
