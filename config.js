@@ -1,1 +1,1 @@
-// 本版使用免 API Key 的 Google Maps 路線網址與 Naver Map 搜尋。
+// 尚未設定 Kakao Key前，使用內建繁中／韓文名稱並開啟 Naver Map。

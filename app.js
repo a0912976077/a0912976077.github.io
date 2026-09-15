@@ -35,9 +35,8 @@ function showToast(message) {
   clearTimeout(showToast.timer); showToast.timer = setTimeout(() => toast.classList.remove("show"), 2200);
 }
 
-function transitUrl(origin, destination) {
-  const params = new URLSearchParams({ api:"1", origin, destination, travelmode:"transit" });
-  return `https://www.google.com/maps/dir/?${params}`;
+function naverSearchUrl(destination) {
+  return `https://map.naver.com/p/search/${encodeURIComponent(destination)}`;
 }
 
 function renderResult(originRaw, destinationRaw, destination) {
@@ -48,8 +47,8 @@ function renderResult(originRaw, destinationRaw, destination) {
   document.querySelector("#place-address").textContent = "由 Google Maps／Naver Map 即時確認地址與營業狀態";
   document.querySelector("#route-title").textContent = `從${originRaw}出發`;
   document.querySelector("#route-duration").textContent = "即時查詢";
-  document.querySelector("#route-transfer").textContent = "真實大眾運輸路線";
-  document.querySelector("#route-steps").innerHTML = '<div class="api-notice"><strong>已建立即時路線</strong><p>按下方按鈕查看目前可搭乘的地鐵、公車、轉乘站、行車時間與步行路段。</p></div>';
+  document.querySelector("#route-transfer").textContent = "NAVER 現場導航";
+  document.querySelector("#route-steps").innerHTML = '<div class="api-notice"><strong>已轉換為韓國地點名稱</strong><p>按下方按鈕在 NAVER Map 核對目的地，接著點「路線」並選擇大眾運輸。尚未取得 Kakao Key 前，不會假裝已算出路線。</p></div>';
   document.querySelector("#naver-link").href = `https://map.naver.com/p/search/${encodeURIComponent(selected.ko)}`;
   document.querySelector("#naver-link").textContent = "在 NAVER 地圖核對地點 ↗";
   resultSection.hidden = false;
@@ -61,11 +60,10 @@ form.addEventListener("submit", event => {
   const originRaw = originInput.value.trim(), destinationRaw = destinationInput.value.trim();
   if (!originRaw) return originInput.focus();
   if (!destinationRaw) return destinationInput.focus();
-  const origin = lookup(originRaw), destination = lookup(destinationRaw);
-  const originQuery = origin ? `${origin.ko} ${origin.en}` : originRaw;
+  const destination = lookup(destinationRaw);
   const destinationQuery = destination ? `${destination.ko} ${destination.en}` : destinationRaw;
   renderResult(originRaw, destinationRaw, destination);
-  window.open(transitUrl(originQuery, destinationQuery), "_blank", "noopener,noreferrer");
+  window.open(naverSearchUrl(destinationQuery), "_blank", "noopener,noreferrer");
 });
 
 document.querySelector("#clear-search").onclick = () => { destinationInput.value=""; destinationInput.focus(); };
