@@ -26,11 +26,24 @@
       <p class="hero-copy">不用複製韓文，也不怕坐錯方向。搜尋你熟悉的繁體中文名稱，就能看懂每一次搭乘與轉乘。</p>
 
       <form id="search-form" class="search-card">
-        <label for="search-input">想去哪裡？</label>
-        <div class="search-row">
-          <span class="search-icon">⌕</span>
-          <input id="search-input" autocomplete="off" placeholder="例如：景福宮、廣藏市場、弘大" />
-          <button type="button" id="clear-search" aria-label="清除">×</button>
+        <div class="journey-fields">
+          <div class="field-block">
+            <label for="origin-input">從哪裡出發？</label>
+            <div class="search-row">
+              <span class="field-dot origin-dot"></span>
+              <input id="origin-input" autocomplete="off" value="首爾站" placeholder="車站、飯店或目前位置" />
+              <button type="button" id="use-location" aria-label="使用目前位置" title="使用目前位置">◎</button>
+            </div>
+          </div>
+          <button type="button" id="swap-route" class="swap-btn" aria-label="交換起點與終點">⇅</button>
+          <div class="field-block">
+            <label for="search-input">想去哪裡？</label>
+            <div class="search-row">
+              <span class="field-dot destination-dot"></span>
+              <input id="search-input" autocomplete="off" placeholder="例如：景福宮、廣藏市場、弘大" />
+              <button type="button" id="clear-search" aria-label="清除">×</button>
+            </div>
+          </div>
         </div>
         <button class="primary-btn" type="submit">搜尋韓國地點 <span>→</span></button>
       </form>
@@ -60,7 +73,7 @@
       </article>
 
       <div class="route-heading">
-        <div><span class="step-label">推薦路線</span><h2>從首爾站出發</h2></div>
+        <div><span class="step-label">推薦路線</span><h2 id="route-title">從首爾站出發</h2></div>
         <div class="route-summary"><strong id="route-duration">約 24 分</strong><small id="route-transfer">轉乘 1 次</small></div>
       </div>
 
@@ -82,6 +95,7 @@
     <footer><span>首爾好行 MVP · 家庭測試版</span><span>Made for Taiwan travelers</span></footer>
   </main>
   <div id="toast" class="toast" role="status"></div>
+  <script src="config.js"></script>
   <script src="app.js"></script>
 </body>
 </html>

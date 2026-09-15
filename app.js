@@ -55,8 +55,10 @@ const places = [
 
 const form = document.querySelector("#search-form");
 const input = document.querySelector("#search-input");
+const originInput = document.querySelector("#origin-input");
 const resultSection = document.querySelector("#result-section");
 const toast = document.querySelector("#toast");
+const apiBase = (window.SEOUL_EASY_API || "").replace(/\/$/, "");
 let selectedPlace = places[0];
 
 function showToast(message) {
@@ -69,6 +71,59 @@ function showToast(message) {
 function findPlace(query) {
   const normalized = query.trim().toLowerCase();
   return places.find(place => place.aliases.some(alias => alias.toLowerCase().includes(normalized) || normalized.includes(alias.toLowerCase())));
+}
+
+async function apiRequest(path, options) {
+  const response = await fetch(`${apiBase}${path}`, options);
+  const body = await response.json();
+  if (!response.ok) throw new Error(body.error || "API request failed");
+  return body;
+}
+
+async function searchLivePlace(query) {
+  const data = await apiRequest(`/api/places?q=${encodeURIComponent(query)}`);
+  return data.places?.[0];
+}
+
+function renderLiveRoute(route) {
+  document.querySelector("#route-duration").textContent = route.durationText || "即時路線";
+  document.querySelector("#route-transfer").textContent = `轉乘 ${Math.max(0, (route.steps?.length || 1) - 1)} 次`;
+  document.querySelector("#route-steps").innerHTML = (route.steps || []).map(step => `
+    <div class="route-step" style="--step-color:${step.color || "#596761"}">
+      <div class="track"><span class="station-dot">${step.lineShortName || "M"}</span></div>
+      <div class="station-name">
+        <strong>${step.departureStop?.zh || step.departureStop?.ko || "上車"} → ${step.arrivalStop?.zh || step.arrivalStop?.ko || "下車"}</strong>
+        <span>${step.departureStop?.ko || ""} → ${step.arrivalStop?.ko || ""}</span>
+        <small>${step.departureStop?.en || ""} → ${step.arrivalStop?.en || ""}</small>
+        <b class="line-pill">${step.lineName || step.lineShortName || "大眾運輸"}</b>
+      </div>
+      <div class="ride-info">${step.stopCount || ""} 站</div>
+    </div>
+  `).join("") || '<div class="api-notice"><strong>找不到地鐵路線</strong><p>請改用下方 NAVER 地圖確認當地即時交通。</p></div>';
+}
+
+async function renderLiveJourney(originQuery, destinationQuery) {
+  const [origin, destination] = await Promise.all([
+    /^目前位置\s/.test(originQuery)
+      ? Promise.resolve({ location: Object.fromEntries(originQuery.replace("目前位置 ", "").split(", ").map((value, i) => [i ? "lng" : "lat", Number(value)])) })
+      : searchLivePlace(originQuery),
+    searchLivePlace(destinationQuery)
+  ]);
+  if (!origin?.location || !destination?.location) throw new Error("找不到起點或目的地");
+  selectedPlace = destination;
+  document.querySelector("#place-name").textContent = destination.names.zh || destinationQuery;
+  document.querySelector("#place-ko").textContent = destination.names.ko || "";
+  document.querySelector("#place-en").textContent = destination.names.en || "";
+  document.querySelector("#place-address").textContent = destination.addressKo || destination.address || "";
+  document.querySelector("#route-title").textContent = `從${originQuery}出發`;
+  document.querySelector("#naver-link").href = `https://map.naver.com/p/search/${encodeURIComponent(destination.names.ko || destinationQuery)}`;
+  const route = await apiRequest("/api/routes", {
+    method: "POST", headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({ origin: origin.location, destination: destination.location })
+  });
+  renderLiveRoute(route);
+  resultSection.hidden = false;
+  resultSection.scrollIntoView({ behavior: "smooth", block: "start" });
 }
 
 function renderRoute(place) {
@@ -87,23 +142,44 @@ function renderRoute(place) {
 
 function renderPlace(place) {
   selectedPlace = place;
+  const origin = originInput.value.trim() || "目前位置";
+  const isSeoulStation = ["首爾站", "서울역", "seoul station"].includes(origin.toLowerCase());
   document.querySelector("#place-name").textContent = place.zh;
   document.querySelector("#place-ko").textContent = place.ko;
   document.querySelector("#place-en").textContent = place.en;
   document.querySelector("#place-address").textContent = place.address;
-  document.querySelector("#route-duration").textContent = place.duration;
-  document.querySelector("#route-transfer").textContent = place.transfer;
+  document.querySelector("#route-duration").textContent = isSeoulStation ? place.duration : "等待即時查詢";
+  document.querySelector("#route-transfer").textContent = isSeoulStation ? place.transfer : "需串接交通 API";
+  document.querySelector("#route-title").textContent = `從${origin}出發`;
   const encodedName = encodeURIComponent(place.ko);
   document.querySelector("#naver-link").href = `https://map.naver.com/p/search/${encodedName}`;
-  renderRoute(place);
+  if (isSeoulStation) {
+    renderRoute(place);
+  } else {
+    document.querySelector("#route-steps").innerHTML = '<div class="api-notice"><strong>起點已記錄</strong><p>目前的離線示範資料只涵蓋首爾站。接上正式交通 API 後，這裡會依你的出發站或目前位置產生真正路線，不會拿首爾站路線代替。</p></div>';
+  }
   resultSection.hidden = false;
   window.setTimeout(() => resultSection.scrollIntoView({ behavior: "smooth", block: "start" }), 30);
 }
 
-form.addEventListener("submit", event => {
+form.addEventListener("submit", async event => {
   event.preventDefault();
   if (!input.value.trim()) return input.focus();
   const match = findPlace(input.value);
+  const origin = originInput.value.trim();
+  if (!origin) {
+    showToast("請輸入出發站，或按 ◎ 使用目前位置");
+    return originInput.focus();
+  }
+  if (apiBase) {
+    try {
+      showToast("正在搜尋地點與交通路線…");
+      await renderLiveJourney(origin, input.value.trim());
+    } catch (error) {
+      showToast(`即時查詢失敗：${error.message}`);
+    }
+    return;
+  }
   if (!match) {
     showToast("MVP 尚未收錄，正式版將交由 Google 搜尋韓文名稱");
     return;
@@ -121,8 +197,26 @@ document.querySelector("#clear-search").addEventListener("click", () => {
   input.focus();
 });
 
+document.querySelector("#swap-route").addEventListener("click", () => {
+  const oldOrigin = originInput.value;
+  originInput.value = input.value;
+  input.value = oldOrigin;
+});
+
+document.querySelector("#use-location").addEventListener("click", () => {
+  if (!navigator.geolocation) return showToast("此瀏覽器不支援定位");
+  showToast("正在取得目前位置…");
+  navigator.geolocation.getCurrentPosition(position => {
+    const { latitude, longitude } = position.coords;
+    originInput.value = `目前位置 ${latitude.toFixed(5)}, ${longitude.toFixed(5)}`;
+    showToast("已取得目前位置");
+  }, () => showToast("無法取得位置，請允許定位或輸入出發站"), { enableHighAccuracy: true, timeout: 8000 });
+});
+
 document.querySelector("#copy-address").addEventListener("click", async () => {
-  await navigator.clipboard.writeText(`${selectedPlace.ko}\n${selectedPlace.address}`);
+  const ko = selectedPlace.ko || selectedPlace.names?.ko || "";
+  const address = selectedPlace.address || selectedPlace.addressKo || "";
+  await navigator.clipboard.writeText(`${ko}\n${address}`);
   showToast("已複製韓文名稱與地址");
 });
 
