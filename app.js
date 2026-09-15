@@ -23,6 +23,7 @@ const originInput = document.querySelector("#origin-input");
 const destinationInput = document.querySelector("#search-input");
 const resultSection = document.querySelector("#result-section");
 const toast = document.querySelector("#toast");
+const kakaoKey = window.KAKAO_REST_KEY || "";
 let selected = null;
 
 function lookup(text) {
@@ -35,35 +36,91 @@ function showToast(message) {
   clearTimeout(showToast.timer); showToast.timer = setTimeout(() => toast.classList.remove("show"), 2200);
 }
 
-function naverSearchUrl(destination) {
-  return `https://map.naver.com/p/search/${encodeURIComponent(destination)}`;
+async function kakaoGet(path, params) {
+  const url = new URL(`https://dapi.kakao.com${path}`);
+  Object.entries(params).forEach(([key,value]) => url.searchParams.set(key,value));
+  const response = await fetch(url, { headers: { Authorization: `KakaoAK ${kakaoKey}` } });
+  const data = await response.json();
+  if (!response.ok || data.status === "ERROR") throw new Error(data.message || "Kakao 查詢失敗");
+  return data;
+}
+
+async function findKakaoPlace(raw) {
+  if (/^-?\d+(\.\d+)?\s*,\s*-?\d+(\.\d+)?$/.test(raw)) {
+    const [y,x] = raw.split(",").map(Number); return { place_name:"目前位置", x, y, address_name:"GPS 座標" };
+  }
+  const alias = lookup(raw);
+  const query = alias ? `${alias.ko} ${alias.en}` : raw;
+  const data = await kakaoGet("/v2/local/search/keyword.json", { query, size:"15" });
+  if (!data.documents?.length) throw new Error(`找不到「${raw}」，請加入分店名或輸入韓文／英文`);
+  return data.documents[0];
+}
+
+function naverRouteUrl(origin, destination) {
+  const params = new URLSearchParams({
+    slat:origin.y, slng:origin.x, sname:origin.place_name,
+    dlat:destination.y, dlng:destination.x, dname:destination.place_name,
+    appname:"seoul.easy.family"
+  });
+  return `nmap://route/public?${params}`;
+}
+
+function minutes(seconds) { return `${Math.max(1,Math.round(seconds/60))} 分`; }
+
+function renderKakaoRoute(routeData, origin, destination) {
+  const routes = routeData.routes || [];
+  const route = routes.find(r => r.properties.type === "SUBWAY") || routes[0];
+  if (!route) throw new Error("目前沒有可用的大眾運輸路線");
+  const props = route.properties;
+  document.querySelector("#route-duration").textContent = minutes(props.totalTime);
+  document.querySelector("#route-transfer").textContent = `轉乘 ${props.transfers || 0} 次 · ₩${props.fare?.value || props.fare?.min || "--"}`;
+  document.querySelector("#route-steps").innerHTML = route.steps.map(step => {
+    const p = step.properties || {};
+    const stops = p.stops || [];
+    const first = stops[0]?.name || origin.place_name;
+    const last = stops[stops.length-1]?.name || destination.place_name;
+    const vehicle = p.vehicles?.[0]?.name || (p.type === "WALKING" ? "步行" : p.type);
+    const color = p.type === "SUBWAY" ? "#00a84d" : p.type === "BUS" ? "#315bb5" : "#87948d";
+    return `<div class="route-step" style="--step-color:${color}">
+      <div class="track"><span class="station-dot">${p.type === "SUBWAY" ? "M" : p.type === "BUS" ? "B" : "走"}</span></div>
+      <div class="station-name"><strong>${first} → ${last}</strong><span>${p.guidance || "移動"}</span><small>${vehicle}</small><b class="line-pill">${vehicle}</b></div>
+      <div class="ride-info">${minutes(p.time || 0)}${stops.length ? `<br>${stops.length-1} 站` : ""}</div>
+    </div>`;
+  }).join("");
+  document.querySelector("#kakao-link").href = routeData.properties.landingURL;
+  document.querySelector("#naver-link").href = naverRouteUrl(origin,destination);
+  const fare = props.fare?.value || props.fare?.min;
+  if (fare) document.querySelector(".fare-title strong").textContent = `此路線預估 ₩${fare}`;
 }
 
 function renderResult(originRaw, destinationRaw, destination) {
-  selected = destination || { zh: destinationRaw, ko: destinationRaw, en: "Google Maps 即時搜尋" };
-  document.querySelector("#place-name").textContent = selected.zh;
-  document.querySelector("#place-ko").textContent = selected.ko;
-  document.querySelector("#place-en").textContent = selected.en;
-  document.querySelector("#place-address").textContent = "由 Google Maps／Naver Map 即時確認地址與營業狀態";
+  selected = destination;
+  const alias = lookup(destinationRaw);
+  document.querySelector("#place-name").textContent = alias?.zh || destination.place_name;
+  document.querySelector("#place-ko").textContent = destination.place_name;
+  document.querySelector("#place-en").textContent = alias?.en || destination.category_name || "Kakao Map 地點";
+  document.querySelector("#place-address").textContent = destination.road_address_name || destination.address_name || "";
   document.querySelector("#route-title").textContent = `從${originRaw}出發`;
-  document.querySelector("#route-duration").textContent = "即時查詢";
-  document.querySelector("#route-transfer").textContent = "NAVER 現場導航";
-  document.querySelector("#route-steps").innerHTML = '<div class="api-notice"><strong>已轉換為韓國地點名稱</strong><p>按下方按鈕在 NAVER Map 核對目的地，接著點「路線」並選擇大眾運輸。尚未取得 Kakao Key 前，不會假裝已算出路線。</p></div>';
-  document.querySelector("#naver-link").href = `https://map.naver.com/p/search/${encodeURIComponent(selected.ko)}`;
-  document.querySelector("#naver-link").textContent = "在 NAVER 地圖核對地點 ↗";
   resultSection.hidden = false;
   resultSection.scrollIntoView({behavior:"smooth",block:"start"});
 }
 
-form.addEventListener("submit", event => {
+form.addEventListener("submit", async event => {
   event.preventDefault();
   const originRaw = originInput.value.trim(), destinationRaw = destinationInput.value.trim();
   if (!originRaw) return originInput.focus();
   if (!destinationRaw) return destinationInput.focus();
-  const destination = lookup(destinationRaw);
-  const destinationQuery = destination ? `${destination.ko} ${destination.en}` : destinationRaw;
-  renderResult(originRaw, destinationRaw, destination);
-  window.open(naverSearchUrl(destinationQuery), "_blank", "noopener,noreferrer");
+  try {
+    showToast("正在搜尋韓國地點與真實路線…");
+    const [origin,destination] = await Promise.all([findKakaoPlace(originRaw),findKakaoPlace(destinationRaw)]);
+    renderResult(originRaw,destinationRaw,destination);
+    const route = await kakaoGet("/v2/routing/publictraffic", {
+      start_x:origin.x,start_y:origin.y,end_x:destination.x,end_y:destination.y,
+      s_name:origin.place_name,e_name:destination.place_name
+    });
+    renderKakaoRoute(route,origin,destination);
+    showToast("真實路線已載入");
+  } catch (error) { showToast(error.message); }
 });
 
 document.querySelector("#clear-search").onclick = () => { destinationInput.value=""; destinationInput.focus(); };
@@ -77,7 +134,7 @@ document.querySelector("#use-location").onclick = () => {
 };
 document.querySelector("#copy-address").onclick = async () => {
   if (!selected) return;
-  await navigator.clipboard.writeText(selected.ko); showToast("已複製韓文地點名稱");
+  await navigator.clipboard.writeText(`${selected.place_name}\n${selected.road_address_name || selected.address_name || ""}`); showToast("已複製韓文名稱與地址");
 };
 document.querySelector("#save-route").onclick = e => { e.currentTarget.textContent=e.currentTarget.textContent==="♥"?"♡":"♥"; };
 
