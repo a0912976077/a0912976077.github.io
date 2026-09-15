@@ -108,9 +108,27 @@ async function findKakaoPlaces(raw) {
   }
   const alias = lookup(raw);
   const query = alias ? `${alias.ko} ${alias.en}` : raw;
-  const data = await kakaoGet("/v2/local/search/keyword.json", { query, size:"15" });
-  if (!data.documents?.length) throw new Error(`找不到「${raw}」，請加入分店名或輸入韓文／英文`);
+  let data = await kakaoGet("/v2/local/search/keyword.json", { query, size:"15" });
+  if (!data.documents?.length && /[\u3400-\u9fff]/.test(raw)) {
+    const translated = await translatePlaceToKorean(raw);
+    if (translated && translated !== raw) {
+      data = await kakaoGet("/v2/local/search/keyword.json", { query:`${translated} 대한민국`, size:"15" });
+    }
+  }
+  if (!data.documents?.length) throw new Error(`找不到「${raw}」，請輸入韓文店名或更完整的中文店名`);
   return data.documents;
+}
+
+async function translatePlaceToKorean(text) {
+  try {
+    const url=new URL("https://api.mymemory.translated.net/get");
+    url.searchParams.set("q",text);
+    url.searchParams.set("langpair","zh-TW|ko");
+    const response=await fetch(url);
+    if(!response.ok) return "";
+    const data=await response.json();
+    return (data.responseData?.translatedText || "").trim();
+  } catch (_) { return ""; }
 }
 
 function naverRouteParams(origin, destination) {
@@ -124,13 +142,17 @@ function naverRouteParams(origin, destination) {
 
 function setupNaverLink(origin, destination) {
   const link=document.querySelector("#naver-link");
+  const params=naverRouteParams(origin,destination);
+  const appUrl=`nmap://route/public?${params}`;
+  const androidUrl=`intent://route/public?${params}#Intent;scheme=nmap;action=android.intent.action.VIEW;category=android.intent.category.BROWSABLE;package=com.nhn.android.nmap;end`;
   const web=`https://map.naver.com/p/search/${encodeURIComponent(destination.place_name)}`;
-  link.href=web;
+  const isAndroid=/Android/i.test(navigator.userAgent);
+  link.href=isAndroid ? androidUrl : appUrl;
   link.target="_self";
-  link.onclick=event=>{
-    event.preventDefault();
-    window.location.assign(web);
-  };
+  link.onclick=null;
+  const webLink=document.querySelector("#naver-web-link");
+  webLink.href=web;
+  webLink.target="_self";
 }
 
 function minutes(seconds) { return `${Math.max(1,Math.round(seconds/60))} 分`; }
