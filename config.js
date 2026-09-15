@@ -1,2 +1,1 @@
-// 免費資料服務完成後，在此設定網址。現在留空會使用不產生費用的離線示範資料。
-window.SEOUL_EASY_API = "";
+// 本版使用免 API Key 的 Google Maps 路線網址與 Naver Map 搜尋。
