@@ -126,7 +126,11 @@ function setupNaverLink(origin, destination) {
   const link=document.querySelector("#naver-link");
   const web=`https://map.naver.com/p/search/${encodeURIComponent(destination.place_name)}`;
   link.href=web;
-  link.onclick=null;
+  link.target="_self";
+  link.onclick=event=>{
+    event.preventDefault();
+    window.location.assign(web);
+  };
 }
 
 function minutes(seconds) { return `${Math.max(1,Math.round(seconds/60))} 分`; }
