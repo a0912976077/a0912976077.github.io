@@ -1,4 +1,5 @@
 const placeAliases = [
+  ["水邊最高豬肉湯飯","수변최고돼지국밥","Subyeon Choego Dwaeji Gukbap"],
   ["景福宮","경복궁","Gyeongbokgung Palace"],["北村韓屋村","북촌한옥마을","Bukchon Hanok Village"],
   ["廣藏市場","광장시장","Gwangjang Market"],["明洞","명동","Myeong-dong"],["弘大","홍대입구","Hongdae"],
   ["弘大入口","홍대입구","Hongik Univ."],["聖水洞","성수동","Seongsu-dong"],["東大門","동대문","Dongdaemun"],
@@ -48,9 +49,11 @@ function romanizeKorean(text="") {
 
 function threeNames(korean, fallbackZh="") {
   const clean=korean.replace(/역$/,""), known=stationNames[clean] || stationNames[korean];
-  const alias=placeAliases.find(p=>p.ko===korean || p.ko===clean);
+  const alias=placeAliases.find(p=>p.ko===korean || p.ko===clean || korean.startsWith(p.ko));
   const translated=translatedNames.get(korean);
-  return {zh:known?.[0]||alias?.zh||translated?.zh||fallbackZh||`${clean}站`, ko:korean, en:known?.[1]||alias?.en||translated?.en||romanizeKorean(korean)};
+  const aliasSuffix=alias && korean.startsWith(alias.ko) ? korean.slice(alias.ko.length)
+    .replace(/본점/g,"總店").replace(/직영점/g,"直營店").replace(/점$/g,"分店").trim() : "";
+  return {zh:known?.[0]||(alias ? `${alias.zh}${aliasSuffix ? `－${aliasSuffix}` : ""}` : "")||translated?.zh||fallbackZh||`${clean}站`, ko:korean, en:known?.[1]||(alias ? `${alias.en}${aliasSuffix ? ` - ${romanizeKorean(korean.slice(alias.ko.length))}` : ""}` : "")||translated?.en||romanizeKorean(korean)};
 }
 
 function normalizeChineseName(text="") {
@@ -164,14 +167,21 @@ function setupNaverLink(origin, destination) {
   const params=naverRouteParams(origin,destination);
   const appUrl=`nmap://route/public?${params}`;
   const androidUrl=`intent://route/public?${params}#Intent;scheme=nmap;action=android.intent.action.VIEW;category=android.intent.category.BROWSABLE;package=com.nhn.android.nmap;end`;
-  const web=`https://map.naver.com/p/search/${encodeURIComponent(destination.place_name)}`;
+  const toMercator=place=>{
+    const lng=Number(place.x), lat=Math.max(-85.05112878,Math.min(85.05112878,Number(place.y)));
+    const x=lng*20037508.34/180;
+    const y=Math.log(Math.tan((90+lat)*Math.PI/360))/(Math.PI/180)*20037508.34/180;
+    return `${x},${y},${encodeURIComponent(place.place_name)},,PLACE_POI`;
+  };
+  const web=`https://map.naver.com/p/directions/${toMercator(origin)}/${toMercator(destination)}/-/transit`;
   const isAndroid=/Android/i.test(navigator.userAgent);
-  link.href=isAndroid ? androidUrl : appUrl;
+  link.href=web;
   link.target="_self";
   link.onclick=null;
   const webLink=document.querySelector("#naver-web-link");
-  webLink.href=web;
+  webLink.href=isAndroid ? androidUrl : appUrl;
   webLink.target="_self";
+  webLink.textContent="若網頁未帶入，改用 NAVER App 開啟路線";
 }
 
 function minutes(seconds) { return `${Math.max(1,Math.round(seconds/60))} 分`; }
