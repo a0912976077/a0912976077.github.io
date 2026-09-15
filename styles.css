@@ -51,6 +51,12 @@ h1 em { color: var(--green); font-family: Georgia, serif; font-weight: 500; }
 .section-heading, .route-heading { display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: 18px; }
 .section-heading h2, .route-heading h2 { margin: 5px 0 0; font-size: 28px; }
 .match-badge { padding: 7px 12px; color: var(--green); background: #e2f2e7; border-radius: 999px; font-size: 11px; font-weight: 700; }
+.candidate-list { display: flex; gap: 9px; margin-bottom: 14px; padding-bottom: 4px; overflow-x: auto; }
+.candidate-item { min-width: 230px; padding: 13px 15px; text-align: left; border: 1px solid var(--border); border-radius: 12px; color: var(--ink); background: var(--card); cursor: pointer; }
+.candidate-item.active { border: 2px solid var(--green); background: #edf5ee; }
+.candidate-item strong, .candidate-item small { display: block; }
+.candidate-item strong { font-family: "Noto Sans KR", sans-serif; font-size: 14px; }
+.candidate-item small { margin-top: 4px; color: var(--muted); font-size: 10px; line-height: 1.45; }
 .place-card { position: relative; display: grid; grid-template-columns: 70px 1fr auto; gap: 18px; align-items: center; padding: 28px; background: var(--card); border: 1px solid var(--border); border-radius: 18px; }
 .place-index { color: #c9cec9; font: 36px/1 Georgia, serif; }
 .place-main p { margin: 0; }

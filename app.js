@@ -45,15 +45,15 @@ async function kakaoGet(path, params) {
   return data;
 }
 
-async function findKakaoPlace(raw) {
+async function findKakaoPlaces(raw) {
   if (/^-?\d+(\.\d+)?\s*,\s*-?\d+(\.\d+)?$/.test(raw)) {
-    const [y,x] = raw.split(",").map(Number); return { place_name:"目前位置", x, y, address_name:"GPS 座標" };
+    const [y,x] = raw.split(",").map(Number); return [{ place_name:"目前位置", x, y, address_name:"GPS 座標" }];
   }
   const alias = lookup(raw);
   const query = alias ? `${alias.ko} ${alias.en}` : raw;
   const data = await kakaoGet("/v2/local/search/keyword.json", { query, size:"15" });
   if (!data.documents?.length) throw new Error(`找不到「${raw}」，請加入分店名或輸入韓文／英文`);
-  return data.documents[0];
+  return data.documents;
 }
 
 function naverRouteUrl(origin, destination) {
@@ -105,6 +105,25 @@ function renderResult(originRaw, destinationRaw, destination) {
   resultSection.scrollIntoView({behavior:"smooth",block:"start"});
 }
 
+function renderCandidates(results, active, onSelect) {
+  const list = document.querySelector("#candidate-list");
+  list.innerHTML = results.map((place,index) => `<button class="candidate-item ${place.id === active.id ? "active" : ""}" data-index="${index}">
+    <strong>${place.place_name}</strong><small>${place.road_address_name || place.address_name || "地址未提供"}</small>
+  </button>`).join("");
+  list.querySelectorAll("button").forEach(button => button.onclick = () => onSelect(results[Number(button.dataset.index)]));
+}
+
+async function loadJourney(origin, destination, originRaw, destinationRaw, allDestinations) {
+  renderResult(originRaw,destinationRaw,destination);
+  renderCandidates(allDestinations,destination,chosen => loadJourney(origin,chosen,originRaw,chosen.place_name,allDestinations));
+  document.querySelector("#route-steps").innerHTML = '<div class="api-notice"><strong>正在計算路線…</strong></div>';
+  const route = await kakaoGet("/v2/routing/publictraffic", {
+    start_x:origin.x,start_y:origin.y,end_x:destination.x,end_y:destination.y,
+    s_name:origin.place_name,e_name:destination.place_name
+  });
+  renderKakaoRoute(route,origin,destination);
+}
+
 form.addEventListener("submit", async event => {
   event.preventDefault();
   const originRaw = originInput.value.trim(), destinationRaw = destinationInput.value.trim();
@@ -112,13 +131,8 @@ form.addEventListener("submit", async event => {
   if (!destinationRaw) return destinationInput.focus();
   try {
     showToast("正在搜尋韓國地點與真實路線…");
-    const [origin,destination] = await Promise.all([findKakaoPlace(originRaw),findKakaoPlace(destinationRaw)]);
-    renderResult(originRaw,destinationRaw,destination);
-    const route = await kakaoGet("/v2/routing/publictraffic", {
-      start_x:origin.x,start_y:origin.y,end_x:destination.x,end_y:destination.y,
-      s_name:origin.place_name,e_name:destination.place_name
-    });
-    renderKakaoRoute(route,origin,destination);
+    const [origins,destinations] = await Promise.all([findKakaoPlaces(originRaw),findKakaoPlaces(destinationRaw)]);
+    await loadJourney(origins[0],destinations[0],originRaw,destinationRaw,destinations);
     showToast("真實路線已載入");
   } catch (error) { showToast(error.message); }
 });
