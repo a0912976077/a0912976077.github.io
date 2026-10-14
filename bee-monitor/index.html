@@ -1,46 +1,737 @@
-<!doctype html>
-<html lang="zh-Hant">
+<!DOCTYPE html>
+<html lang="zh-TW">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="蜜蜂監測系統最近 20 張照片的唯讀歷史快照。">
-  <title>蜜蜂監測歷史紀錄</title>
-  <link rel="stylesheet" href="styles.css">
-  <script defer src="app.js"></script>
+  <!--
+    ────────────────────────────────────────────────────────────────────────────
+    Bee Monitor 儀表板（前端重構｜UI強化單檔版）
+    目的：
+    1) 視覺層級清楚：左側固定側邊欄、上方統一工具列、右下角浮動狀態提示
+    2) 可讀性提升：卡片分群、標題一致、色彩層次、留白調整
+    3) 易用性提升：自動/手動更新與暫停、表格分頁/過濾、圖片預覽、Toast 通知
+    4) 穩定性提升：所有 fetch 加入錯誤處理、載入骨架、未儲存變更提示、表單即時驗證
+    5) 無需更動後端路由：沿用 /api/status /api/latest /api/messages /api/alerts /api/metrics /api/config
+    6) 深色/明亮/自動 主題；選擇會保存在 localStorage
+    ────────────────────────────────────────────────────────────────────────────
+  -->
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>🐝 Bee Monitor 儀表板｜歷史快照</title>
+  <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+  <meta name="apple-mobile-web-app-title" content="Bee Lab">
+
+  <!-- UI 樣式框架（Bootstrap 5） -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- 圖表（Chart.js） -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+  <style>
+    /* ─────────────── 全域與主題 ─────────────── */
+
+    :root{
+      /* 主要色彩：藍（互動）、綠（成功）、橙（警示）、紅（危急） */
+      --bm-primary:#0d6efd;
+      --bm-success:#198754;
+      --bm-warning:#fd7e14;
+      --bm-danger:#dc3545;
+      --bm-bg:#f6f7fb;           /* 主背景（明） */
+      --bm-card:#ffffff;         /* 卡片背景（明） */
+      --bm-text:#1f2937;         /* 文字（明） */
+      --bm-muted:#6c757d;        /* 次要文字（明） */
+      --bm-border:#e5e7eb;       /* 邊界（明） */
+      --bm-chip:#eef2ff;         /* 小徽籤底（明） */
+    }
+
+    /* 深色模式主題變數覆寫 */
+    .theme-dark{
+      --bm-bg:#0f172a;
+      --bm-card:#111827;
+      --bm-text:#e5e7eb;
+      --bm-muted:#9ca3af;
+      --bm-border:#1f2937;
+      --bm-chip:#1f2937;
+    }
+
+    html,body{
+      height:100%;
+      background:var(--bm-bg);
+      color:var(--bm-text);
+    }
+
+    /* ─────────────── 版型：固定側邊欄 + 內容區 ─────────────── */
+
+    .bm-layout{
+      display:flex; min-height:100vh; width:100%;
+    }
+    .bm-sidebar{
+      width:280px; flex:0 0 280px; background:var(--bm-card); border-right:1px solid var(--bm-border);
+      position:sticky; top:0; height:100vh; padding:16px; overflow:auto;
+    }
+    .bm-brand{
+      display:flex; align-items:center; gap:10px; margin-bottom:12px;
+    }
+    .bm-brand .title{
+      font-weight:700; letter-spacing:0.3px;
+    }
+    .bm-status{
+      border:1px solid var(--bm-border); background:var(--bm-chip); border-radius:10px; padding:12px;
+    }
+    .bm-nav{
+      margin-top:14px;
+    }
+    .bm-nav .nav-link{
+      border-radius:10px; padding:10px 12px; color:var(--bm-text);
+      display:flex; justify-content:space-between; align-items:center;
+    }
+    .bm-nav .nav-link.active{
+      background:rgba(13,110,253,0.12);
+      border:1px solid rgba(13,110,253,0.25);
+      font-weight:600;
+    }
+    .bm-content{
+      flex:1; padding:16px 18px 32px 18px;
+    }
+
+    /* ─────────────── 內容區：工具列 ─────────────── */
+
+    .bm-toolbar{
+      display:flex; gap:12px; flex-wrap:wrap; align-items:center; justify-content:space-between; margin-bottom:14px;
+    }
+    .bm-toolbar .left, .bm-toolbar .right{ display:flex; gap:10px; align-items:center; flex-wrap:wrap; }
+    .chip{
+      border-radius:999px; padding:6px 10px; font-size:12px; background:var(--bm-chip); border:1px solid var(--bm-border);
+    }
+
+    /* ─────────────── 卡片與共通元件 ─────────────── */
+
+    .bm-card{
+      background:var(--bm-card); border:1px solid var(--bm-border); border-radius:14px; padding:14px;
+      box-shadow:0 2px 6px rgba(0,0,0,0.05); height:100%;
+    }
+    .bm-card .card-title{ font-weight:700; margin-bottom:8px; }
+    .bm-grid{ display:grid; gap:14px; }
+    @media(min-width:992px){ .bm-grid-2{ grid-template-columns:1.2fr .8fr; } }
+    @media(min-width:1200px){ .bm-grid-3{ grid-template-columns:1fr 1fr 1fr; } }
+
+    .skeleton{
+      background:linear-gradient(90deg, rgba(0,0,0,0.06), rgba(0,0,0,0.12), rgba(0,0,0,0.06));
+      background-size:200% 100%; animation:shine 1.2s linear infinite; border-radius:8px; min-height:120px;
+    }
+    @keyframes shine{ 0%{background-position:200% 0} 100%{background-position:-200% 0} }
+
+    .img-fit{
+      width:100%; height:360px; object-fit:contain; border-radius:10px; border:1px solid var(--bm-border); background:#00000014;
+    }
+
+    .table thead th{ position:sticky; top:0; background:var(--bm-card); z-index:1; }
+    .table-hover tbody tr:hover{ background:rgba(13,110,253,0.06); }
+
+    .badge-dot{ display:inline-flex; align-items:center; gap:6px; }
+    .badge-dot .dot{ width:8px; height:8px; border-radius:50%; display:inline-block; }
+    .dot-green{ background:var(--bm-success); }
+    .dot-red{ background:var(--bm-danger); }
+
+    .sticky-actions{
+      position:sticky; top:12px;
+    }
+
+    /* 浮動右下角小面板：快速提示/刷新狀態 */
+    .bm-fab{
+      position:fixed; right:18px; bottom:18px; background:var(--bm-card); border:1px solid var(--bm-border);
+      padding:10px 12px; border-radius:12px; box-shadow:0 4px 24px rgba(0,0,0,0.18); z-index:1080; display:flex; gap:8px; align-items:center;
+    }
+
+    /* 深色模式下修正 Bootstrap 表格字色 */
+    .theme-dark .table{ color:var(--bm-text); }
+    .theme-dark .table-striped>tbody>tr:nth-of-type(odd)>*{ --bs-table-accent-bg: rgba(255,255,255,0.03); }
+    .bm-content, .bm-card, .bm-grid > *{ min-width:0; }
+    .bm-card, .bm-status, .bm-nav .nav-link, .table td{ overflow-wrap:anywhere; }
+    .capture-heading{ display:flex; align-items:flex-start; justify-content:space-between; gap:12px; margin-bottom:12px; }
+    .capture-heading .card-title{ margin-bottom:2px; }
+    .capture-kind{ flex:none; border-radius:999px; padding:5px 9px; background:#eaf4ff; color:#17558a; font-size:12px; font-weight:700; }
+    .capture-image{ display:block; width:100%; max-height:420px; object-fit:contain; border-radius:10px; background:#00000014; }
+    .live-tools{ display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:8px; margin-top:10px; }
+    .live-status{ font-size:12px; color:var(--bm-muted); }
+    .capture-facts{ display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:8px; margin-top:12px; }
+    .capture-fact{ background:var(--bm-bg); border:1px solid var(--bm-border); border-radius:10px; padding:8px 10px; min-width:0; }
+    .capture-fact span{ display:block; color:var(--bm-muted); font-size:12px; }
+    .capture-fact strong{ display:block; font-size:13px; overflow-wrap:anywhere; }
+    .capture-status{ margin-top:10px; padding:9px 11px; border-radius:10px; background:#eaf7ee; color:#155b35; font-size:13px; line-height:1.5; }
+    .capture-status.is-stale{ background:#fff2df; color:#7b4700; }
+    .weather-card{ background:linear-gradient(150deg,#f5faff 0%,var(--bm-card) 55%); }
+    .weather-location{ color:var(--bm-muted); font-size:13px; }
+    .weather-summary{ display:flex; align-items:flex-end; gap:14px; flex-wrap:wrap; padding:8px 0 14px; }
+    .weather-temperature{ font-size:clamp(42px,5vw,60px); font-weight:750; line-height:1; letter-spacing:-.04em; }
+    .weather-temperature small{ font-size:.36em; font-weight:600; letter-spacing:0; }
+    .weather-feels{ color:var(--bm-muted); font-size:14px; padding-bottom:4px; }
+    .weather-metrics{ display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:8px; }
+    .weather-metric{ border:1px solid var(--bm-border); background:var(--bm-card); border-radius:10px; padding:9px 10px; min-width:0; }
+    .weather-metric > span{ display:block; font-size:12px; color:var(--bm-muted); }
+    .weather-metric strong{ display:block; font-size:16px; line-height:1.4; }
+    .weather-metric small{ font-size:11px; font-weight:400; }
+    .weather-times{ margin-top:12px; display:grid; gap:3px; font-size:12px; color:var(--bm-muted); }
+    .weather-status{ margin:10px 0 0; font-size:12px; color:var(--bm-muted); }
+    .weather-source-line{ border-top:1px solid var(--bm-border); padding-top:10px; margin-top:12px; font-size:12px; color:var(--bm-muted); line-height:1.5; }
+    .weather-source-line a{ overflow-wrap:anywhere; }
+    .health-heading{ display:flex; justify-content:space-between; align-items:flex-start; gap:12px; flex-wrap:wrap; }
+    .health-grid{ display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:10px; margin-top:12px; }
+    .health-fact{ min-width:0; border:1px solid var(--bm-border); background:var(--bm-bg); border-radius:10px; padding:11px; }
+    .health-fact span{ display:block; color:var(--bm-muted); font-size:12px; }
+    .health-fact strong{ display:block; font-size:16px; overflow-wrap:anywhere; }
+    .health-fact small{ color:var(--bm-muted); }
+    .health-processes{ display:flex; flex-wrap:wrap; gap:6px; margin-top:12px; }
+    .health-process{ border-radius:999px; padding:5px 9px; background:var(--bm-bg); border:1px solid var(--bm-border); font-size:12px; }
+    .health-process.bad{ color:var(--bm-danger); border-color:var(--bm-danger); }
+    .health-events{ margin-top:12px; }
+    .health-events details{ border-top:1px solid var(--bm-border); padding:8px 0; }
+    .health-events summary{ cursor:pointer; font-weight:650; }
+    .health-events ul{ margin:8px 0 0; padding-left:20px; }
+    .health-events li{ margin:5px 0; font-size:13px; }
+    .health-events time{ color:var(--bm-muted); margin-right:8px; }
+    .theme-dark .capture-kind{ background:#183658; color:#b9dcff; }
+    .theme-dark .capture-status{ background:#173c2c; color:#b3e9c6; }
+    .theme-dark .capture-status.is-stale{ background:#4a3215; color:#ffe0a6; }
+    .theme-dark .weather-card{ background:linear-gradient(150deg,#152540 0%,var(--bm-card) 55%); }
+    .bm-mobile-tools{ display:none; }
+    #mobile-menu-toggle{ display:none; }
+    @media(max-width:767px){
+      .bm-layout{ flex-direction:column; }
+      .bm-sidebar{ position:static; width:100%; height:auto; flex:none; padding:12px; border-right:0; border-bottom:1px solid var(--bm-border); }
+      .bm-status .d-flex{ flex-wrap:wrap; gap:8px; }
+      .bm-status{ padding:8px; margin-bottom:0!important; }
+      .bm-status .small{ display:none; }
+      .bm-brand{ margin-bottom:8px; }
+      #mobile-menu-toggle{ display:inline-flex; margin-left:auto; min-height:44px; align-items:center; }
+      .bm-nav{ display:grid; grid-template-columns:repeat(5,minmax(0,1fr)); gap:2px; position:fixed; left:0; right:0; bottom:0; margin:0; padding:5px max(5px,env(safe-area-inset-right)) calc(5px + env(safe-area-inset-bottom)) max(5px,env(safe-area-inset-left)); background:var(--bm-card); border-top:1px solid var(--bm-border); box-shadow:0 -4px 18px #00000012; z-index:1070; }
+      .bm-nav .nav-link{ flex-direction:column; justify-content:center; gap:1px; padding:6px 2px; min-height:52px; font-size:12px; line-height:1.2; }
+      .bm-nav .badge{ font-size:10px; padding:3px 5px; margin:0!important; }
+      .sticky-actions{ display:none; }
+      .bm-sidebar.mobile-open .sticky-actions{ display:block; }
+      .bm-nav .nav-link{ text-align:center; white-space:normal; }
+      .sticky-actions{ position:static; }
+      .sticky-actions .d-grid{ display:grid!important; grid-template-columns:repeat(2,minmax(0,1fr)); }
+      .sticky-actions .btn{ white-space:normal; min-height:44px; }
+      .bm-content{ width:100%; padding:12px 12px calc(78px + env(safe-area-inset-bottom)); }
+      .bm-toolbar{ display:grid; width:100%; grid-template-columns:minmax(0,1fr); }
+      .bm-mobile-tools{ display:grid; grid-template-columns:minmax(0,1fr) auto; gap:8px; width:100%; }
+      .bm-mobile-tools .btn{ min-height:42px; }
+      .bm-toolbar .left, .bm-toolbar .right{ display:none; width:100%; grid-template-columns:minmax(0,1fr); }
+      .bm-toolbar.mobile-tools-open .left, .bm-toolbar.mobile-tools-open .right{ display:grid; }
+      .bm-toolbar .input-group{ min-width:0; flex-wrap:wrap; }
+      .bm-toolbar .input-group > .form-control, .bm-toolbar .input-group > .form-select{ min-width:0; flex:1 1 50%; }
+      .bm-grid, .bm-grid-2, .bm-grid-3{ grid-template-columns:minmax(0,1fr)!important; }
+      .img-fit{ height:auto; max-height:52vh; }
+      #view-dashboard .bm-card .d-flex.justify-content-between{ flex-wrap:wrap; gap:8px; }
+      .bm-fab{ display:none; }
+      .toast-container{ bottom:calc(64px + env(safe-area-inset-bottom))!important; }
+      .capture-facts{ grid-template-columns:minmax(0,1fr); }
+      .health-grid{ grid-template-columns:minmax(0,1fr); }
+      .weather-temperature{ font-size:52px; }
+      .weather-metric{ padding:8px 6px; }
+      .weather-metric strong{ font-size:14px; }
+      .table-responsive{ max-height:none!important; overflow:visible; }
+      .table thead{ display:none; }
+      .table, .table tbody, .table tr, .table td{ display:block; width:100%; }
+      .table tr{ border:1px solid var(--bm-border); border-radius:10px; padding:8px; margin-bottom:10px; }
+      .table td{ display:flex; gap:10px; border:0; padding:5px!important; }
+      .table td::before{ min-width:3.5em; font-weight:700; color:var(--bm-muted); }
+      #tbl-live td:nth-child(1)::before, #tbl-alerts td:nth-child(1)::before{ content:'時間'; }
+      #tbl-live td:nth-child(2)::before, #tbl-alerts td:nth-child(4)::before{ content:'圖片'; }
+      #tbl-live td:nth-child(3)::before, #tbl-alerts td:nth-child(5)::before{ content:'檔案'; }
+      #tbl-alerts td:nth-child(2)::before{ content:'等級'; }
+      #tbl-alerts td:nth-child(3)::before{ content:'訊息'; }
+    }
+    .archive-banner{border-radius:12px;line-height:1.6}
+    .bm-layout,.bm-sidebar,.bm-content{min-width:0;max-width:100%}
+    .bm-status .chip{max-width:100%;overflow-wrap:anywhere}
+    .archive-banner{overflow-wrap:anywhere}
+    .archive-static-note{font-size:12px;color:var(--bm-muted)}
+    .archive-photo-thumb{width:54px;height:42px;object-fit:cover;border-radius:5px}
+    .archive-empty{padding:16px;color:var(--bm-muted)}
+    @media(max-width:767px){.archive-banner{font-size:13px;margin-bottom:12px}.bm-nav{width:100%;min-width:0}.bm-nav .nav-link{min-width:0;overflow-wrap:anywhere}.bm-content{overflow-x:hidden}}
+  </style>
+<script defer src="archive-dashboard.js"></script>
 </head>
 <body>
-  <header class="site-header">
-    <div class="wrap header-row"><a class="brand" href="#top"><span class="brand-mark">⬡</span> 蜜蜂監測</a>
-      <nav aria-label="主選單"><a href="#photos">照片</a><a href="#about">說明</a></nav>
+<div id="app" class="bm-layout">
+  <!-- ────────────────────────────────────────────────────────────────────
+       左側側邊欄：品牌、狀態、導覽
+       ──────────────────────────────────────────────────────────────────── -->
+  <aside class="bm-sidebar">
+    <div class="bm-brand">
+      <div style="font-size:22px">🐝</div>
+      <div class="title">Bee Monitor</div>
+      <button id="mobile-menu-toggle" class="btn btn-outline-primary btn-sm" type="button" aria-expanded="false" aria-controls="mobile-actions">操作</button>
     </div>
-  </header>
-  <main id="top">
-    <section class="hero wrap" aria-labelledby="hero-title">
-      <p class="eyebrow">唯讀歷史網站 · GitHub Pages</p>
-      <h1 id="hero-title">蜜蜂監測歷史紀錄</h1>
-      <p class="lead">查看 Windows 監測端已保存的最新 20 張照片。此頁不依賴 Jetson 或家中電腦持續開機；新的照片會在下次同步後顯示。</p>
-      <div class="status-grid">
-        <div class="status-item"><span>最近照片</span><strong id="latest-capture">讀取中</strong></div>
-        <div class="status-item"><span>網站同步</span><strong id="sync-time">讀取中</strong></div>
-        <div class="status-item"><span>網站照片</span><strong id="photo-count">20 張上限</strong></div>
+    <div class="bm-status mb-3">
+      <div class="d-flex justify-content-between align-items-center mb-2">
+        <div class="badge-dot">
+          <span id="js-online-dot" class="dot dot-red"></span>
+          <span id="js-online-text">Jetson 離線</span>
+        </div>
+        <span id="js-last-heartbeat" class="chip">最後心跳：—</span>
       </div>
-      <p class="notice">這是已保存資料的快照，沒有即時影像或遠端拍照功能。Jetson 離線時，畫面不會產生新照片。</p>
+      <div class="small text-muted">此頁約每 30 分鐘從 Windows 同步；顯示最後快照。</div>
+    </div>
+
+    <nav class="bm-nav nav nav-pills flex-column" id="bm-nav">
+      <a class="nav-link active" data-target="#view-dashboard" href="#">即時 <span id="badge-live" class="badge text-bg-primary ms-1">0</span></a>
+      <a class="nav-link" data-target="#view-alerts" href="#">警報 <span id="badge-alerts" class="badge text-bg-danger ms-1">0</span></a>
+      <a class="nav-link" data-target="#view-config" href="#">設定</a>
+      <a class="nav-link" data-target="#view-advanced" href="#">進階</a>
+      <a class="nav-link" data-target="#view-metrics" href="#">系統監控</a>
+    </nav>
+
+    <!-- 側邊固定操作：常用動作 -->
+    <div class="sticky-actions mt-3" id="mobile-actions">
+      <div class="bm-card">
+        <div class="card-title">常用操作</div>
+        <div class="d-grid gap-2">
+          <button id="btn-manual-snap" class="btn btn-primary btn-sm">手動拍照</button>
+          <button id="btn-sync-config" class="btn btn-outline-secondary btn-sm">重送設定</button>
+          <button id="btn-ping-jetson" class="btn btn-outline-info btn-sm">Ping 裝置</button>
+          <button id="btn-test-discord" class="btn btn-outline-warning btn-sm">測試 Discord</button>
+          <button id="btn-clear-history" class="btn btn-outline-danger btn-sm">清除即時歷史</button>
+        </div>
+        <div class="form-text mt-2">所有按鈕皆回報 Toast 狀態。</div>
+      </div>
+    </div>
+  </aside>
+
+  <!-- ────────────────────────────────────────────────────────────────────
+       右側主內容：工具列 + 視圖（五頁）
+       ──────────────────────────────────────────────────────────────────── -->
+  <main class="bm-content">
+    <div class="alert alert-info archive-banner" role="status">這是原 Bee Monitor 的歷史快照。照片、訊息、警報及指標顯示上次同步內容；操作按鈕會開啟原站。<a id="archive-open-original" class="alert-link ms-2" target="_blank" rel="noopener noreferrer">開啟原站</a><span id="archive-sync-time" class="ms-2"></span></div>
+    <!-- 工具列：主題、更新頻率、暫停、自動刷新、搜尋等 -->
+    <div class="bm-toolbar">
+      <div class="bm-mobile-tools">
+        <button id="mobile-tools-toggle" type="button" class="btn btn-outline-secondary" aria-expanded="false" aria-controls="toolbar-left toolbar-right">顯示與搜尋選項</button>
+        <button id="btn-mobile-refresh" type="button" class="btn btn-primary">刷新</button>
+      </div>
+      <div class="left" id="toolbar-left">
+        <div class="input-group input-group-sm">
+          <span class="input-group-text">主題</span>
+          <select id="sel-theme" class="form-select">
+            <option value="auto">自動（跟隨系統）</option>
+            <option value="light">明亮模式</option>
+            <option value="dark">深色模式</option>
+          </select>
+        </div>
+        <div class="input-group input-group-sm">
+          <span class="input-group-text">更新頻率</span>
+          <select id="sel-interval" class="form-select">
+            <option value="5000">5 秒</option>
+            <option value="10000" selected>10 秒</option>
+            <option value="30000">30 秒</option>
+          </select>
+          <button id="btn-toggle-poll" class="btn btn-sm btn-outline-secondary">暫停自動更新</button>
+        </div>
+        <div id="js-poll-chip" class="chip">自動更新：開啟</div>
+      </div>
+      <div class="right" id="toolbar-right">
+        <div class="input-group input-group-sm">
+          <span class="input-group-text">全域搜尋</span>
+          <input id="keyword" type="search" class="form-control" placeholder="輸入關鍵字過濾（即時/警報）">
+          <button id="btn-clear-keyword" class="btn btn-outline-secondary">清除</button>
+        </div>
+        <button id="btn-refresh-all" class="btn btn-sm btn-outline-primary">立即全部刷新</button>
+      </div>
+    </div>
+
+    <!-- 視圖：即時 -->
+    <section id="view-dashboard">
+      <div id="camera-alignment-warning" class="alert alert-warning d-none" role="alert">鏡頭尚未對準蜜蜂活動區；目前辨識數值不可信，死亡蜜蜂對外告警已暫停。原圖仍持續保存。</div>
+      <div class="bm-grid bm-grid-2 mb-3">
+        <div class="bm-card">
+          <div class="capture-heading">
+            <div>
+              <div class="card-title">Jetson 最新拍攝畫面</div>
+              <div id="capture-subtitle" class="small text-muted">定時原圖持續保存；可按下方按鈕查看即時畫面</div>
+            </div>
+            <span class="capture-kind">原圖</span>
+          </div>
+          <img id="live-image" class="capture-image d-none" alt="Jetson 即時影像">
+          <img id="capture-image" class="capture-image d-none" alt="Jetson 最近拍攝照片">
+          <div id="capture-empty" class="alert alert-secondary mb-2">尚未收到照片。</div>
+          <div class="live-tools">
+            <span id="live-status" class="live-status" role="status">按「開啟即時畫面」才會連線；原圖仍定時保存。</span>
+            <div class="d-flex gap-2 flex-wrap">
+              <button id="btn-capture-now" type="button" class="btn btn-sm btn-primary">立即拍一張</button>
+              <button id="btn-live-toggle" type="button" class="btn btn-sm btn-outline-secondary" disabled>Jetson 離線，無法直播</button>
+              <button id="btn-capture-preview" type="button" class="btn btn-sm btn-outline-primary" disabled>放大原圖</button>
+            </div>
+          </div>
+          <div id="manual-capture-status" class="small text-muted mt-2" role="status">移動鏡頭後可拍一張，確認新畫面。</div>
+          <div id="capture-facts" class="capture-facts d-none">
+            <div class="capture-fact"><span>Jetson 拍攝時間</span><strong id="capture-shot-time">—</strong></div>
+            <div class="capture-fact"><span>Windows 收件時間</span><strong id="capture-received-time">—</strong></div>
+          </div>
+          <div id="capture-status" class="capture-status" role="status">讀取中…</div>
+          <div class="small text-muted mt-2">每張成功送達的照片都會先保存原圖，再進行死亡蜜蜂辨識。</div>
+        </div>
+        <div class="bm-card weather-card">
+          <div class="card-title mb-0">枋山戶外天氣</div>
+          <div class="weather-location">屏東縣枋山鄉周邊</div>
+          <div id="weather-values" class="d-none">
+            <div class="weather-summary">
+              <div class="weather-temperature"><span id="weather-temp">—</span><small> °C</small></div>
+              <div class="weather-feels">體感 <strong id="weather-feels">—</strong> °C</div>
+            </div>
+            <div class="weather-metrics">
+              <div class="weather-metric"><span>相對濕度</span><strong><span id="weather-humidity">—</span><small> ％</small></strong></div>
+              <div class="weather-metric"><span>風速</span><strong><span id="weather-wind">—</span><small> km/h</small></strong></div>
+              <div class="weather-metric"><span>降雨</span><strong><span id="weather-rain">—</span><small> mm</small></strong></div>
+            </div>
+            <div class="weather-times">
+              <div>資料時間：<span id="weather-time">—</span></div>
+              <div>網站取得：<span id="weather-updated">—</span></div>
+            </div>
+          </div>
+          <div id="weather-status" class="weather-status" role="status">讀取中…</div>
+          <div class="weather-source-line">
+            <div id="weather-kind">資料性質讀取中</div>
+            <div>來源：<a id="weather-source" href="https://open-meteo.com/" target="_blank" rel="noopener noreferrer">Open-Meteo</a></div>
+          </div>
+        </div>
+      </div>
+      <div class="bm-card mb-3" id="jetson-health">
+        <div class="health-heading">
+          <div>
+            <div class="card-title mb-1">Jetson 運作狀況</div>
+            <div class="small text-muted">資料來自 Jetson 已驗證心跳；離線時仍可查看網站和已保存照片。</div>
+          </div>
+          <span id="health-summary" class="chip">讀取中…</span>
+        </div>
+        <div class="small text-muted mt-2">最後更新：<span id="health-updated">無資料</span>　相機：<span id="health-camera">無資料</span></div>
+        <div class="health-grid">
+          <div class="health-fact"><span>記憶體</span><strong id="health-memory">無資料</strong><small id="health-memory-detail">等待 Jetson 回報</small></div>
+          <div class="health-fact"><span>照片儲存空間</span><strong id="health-disk">無資料</strong><small id="health-disk-detail">等待 Jetson 回報</small></div>
+          <div class="health-fact"><span>系統運行時間</span><strong id="health-uptime">無資料</strong><small id="health-boot-time">開機時間：無資料</small></div>
+        </div>
+        <div class="small text-muted mt-3">目前受管程序</div>
+        <div id="health-processes" class="health-processes"><span class="small text-muted">無資料</span></div>
+        <div class="health-events">
+          <div class="small text-muted">最近事件紀錄（狀態變化僅保留本次網站啟動後的資料）</div>
+          <div id="health-events-list" class="small text-muted">目前沒有事件紀錄</div>
+        </div>
+      </div>
+      <div class="bm-grid bm-grid-2">
+        <div class="bm-card">
+          <div class="card-title">最新辨識結果</div>
+          <div id="box-latest" class="mb-2">
+            <div id="ph-latest" class="skeleton"></div>
+            <img id="img-latest" class="img-fit d-none" alt="最新圖片">
+          </div>
+          <div class="d-flex align-items-center justify-content-between">
+            <div>時間戳：<span id="ts-latest">—</span></div>
+            <div class="d-flex gap-2">
+              <button id="btn-open-preview" class="btn btn-sm btn-outline-secondary">放大預覽</button>
+              <button id="btn-reload-latest" class="btn btn-sm btn-outline-primary">重新載入</button>
+            </div>
+          </div>
+        </div>
+        <div class="bm-card">
+          <div class="card-title">辨識歷史</div>
+          <div class="row g-2 mb-2">
+            <div class="col-8">
+              <input id="filter-live" type="search" class="form-control form-control-sm" placeholder="過濾檔名/時間">
+            </div>
+            <div class="col-4">
+              <select id="sel-live-page" class="form-select form-select-sm"></select>
+            </div>
+          </div>
+          <div class="table-responsive" style="max-height:420px">
+            <table class="table table-sm table-hover align-middle">
+              <thead>
+                <tr><th style="width:180px">時間</th><th style="width:80px">圖片</th><th>檔案</th></tr>
+              </thead>
+              <tbody id="tbl-live"></tbody>
+            </table>
+          </div>
+          <div class="text-end">
+            <small class="text-muted">每頁 20 筆　|　共 <span id="cnt-live">0</span> 筆</small>
+          </div>
+        </div>
+      </div>
     </section>
 
-    <section id="photos" class="section wrap" aria-labelledby="photos-title">
-      <div class="section-heading"><div><p class="eyebrow">最近紀錄</p><h2 id="photos-title">最新 20 張照片</h2></div>
-        <p>顯示 Windows 已保存的最近 20 張原始照片。鏡頭位置及辨識結果仍待現地核對。</p>
+    <!-- 視圖：警報 -->
+    <section id="view-alerts" class="d-none">
+      <div class="bm-card mb-3">
+        <div class="card-title">警報篩選</div>
+        <div class="row g-2">
+          <div class="col-md-3">
+            <select id="sel-alert-level" class="form-select form-select-sm">
+              <option value="">全部等級</option>
+              <option value="LOW">低</option>
+              <option value="MEDIUM">中</option>
+              <option value="HIGH">高</option>
+            </select>
+          </div>
+          <div class="col-md-6">
+            <input id="filter-alert" type="search" class="form-control form-control-sm" placeholder="輸入訊息/檔名/時間過濾">
+          </div>
+          <div class="col-md-3">
+            <select id="sel-alert-page" class="form-select form-select-sm"></select>
+          </div>
+        </div>
       </div>
-      <div id="gallery" class="gallery" aria-live="polite"><p>正在載入照片清單…</p></div>
+      <div class="bm-card">
+        <div class="table-responsive" style="max-height:540px">
+          <table class="table table-sm table-hover align-middle">
+            <thead><tr>
+              <th style="width:180px">時間</th>
+              <th style="width:80px">等級</th>
+              <th>訊息</th>
+              <th style="width:80px">圖片</th>
+              <th>檔案</th>
+            </tr></thead>
+            <tbody id="tbl-alerts"></tbody>
+          </table>
+        </div>
+        <div class="text-end">
+          <small class="text-muted">每頁 20 筆　|　共 <span id="cnt-alerts">0</span> 筆</small>
+        </div>
+      </div>
     </section>
 
-    <section id="about" class="section wrap" aria-labelledby="about-title">
-      <p class="eyebrow">資料說明</p><h2 id="about-title">網站如何更新</h2>
-      <div class="about-grid"><p>監測程式仍在 Windows 端保存完整照片；本網站只放最近 20 張照片。重新匯出並部署後，較舊的網站照片會從下一版清單移除，本機原始檔不受影響。研究報告只保存在使用者電腦。</p>
-        <p>GitHub Pages 是公開的靜態網站，不能執行原本的 Flask、MQTT、登入、即時影像或遠端控制。需要這些功能時，請使用另行運行的監測後端。</p></div>
+    <!-- 視圖：設定（基本） -->
+    <section id="view-config" class="d-none">
+      <div class="bm-grid bm-grid-3">
+        <div class="bm-card">
+          <div class="card-title">拍照與時間段</div>
+          <form id="form-basic" class="vstack gap-2">
+            <!-- 時間段啟用 -->
+            <div>
+              <label class="form-label">時間段啟用</label>
+              <select name="auto_enabled" class="form-select" required>
+                <option value="true">啟用</option>
+                <option value="false">停用</option>
+              </select>
+            </div>
+            <!-- 自動拍照間隔 -->
+            <div>
+              <label class="form-label">自動拍照間隔（秒）</label>
+              <input name="snap_interval" type="number" min="1" class="form-control" required>
+              <div class="form-text">建議 ≥ 5 秒，避免頻繁 I/O。</div>
+            </div>
+            <!-- JPEG 品質 -->
+            <div>
+              <label class="form-label">儲存品質（JPEG 1~100）</label>
+              <input name="jpeg_quality" type="number" min="1" max="100" class="form-control" required>
+            </div>
+            <!-- 勾選保存 -->
+            <div class="form-check">
+              <input id="chk-save-original" name="save_original" type="checkbox" class="form-check-input">
+              <label for="chk-save-original" class="form-check-label">辨識紀錄另存原圖（拍攝原圖仍會保存）</label>
+            </div>
+            <div class="form-check">
+              <input id="chk-save-detected" name="save_detected" type="checkbox" class="form-check-input">
+              <label for="chk-save-detected" class="form-check-label">保存標註圖片</label>
+            </div>
+          </form>
+        </div>
+
+        <div class="bm-card">
+          <div class="card-title d-flex justify-content-between align-items-center">
+            <span>排程時間段</span>
+            <button id="btn-add-schedule" class="btn btn-sm btn-outline-secondary">新增時間段</button>
+          </div>
+          <div id="box-schedule" class="vstack gap-2">
+            <!-- 動態加入時間段 input-group -->
+          </div>
+        </div>
+
+        <div class="bm-card">
+          <div class="card-title">儲存操作</div>
+          <div class="alert alert-warning d-none" id="alert-basic-dirty">偵測到未儲存的變更，請記得點擊「保存基本設定」。</div>
+          <div class="d-grid gap-2">
+            <button id="btn-save-basic" class="btn btn-primary">保存基本設定</button>
+            <button id="btn-reload-basic" class="btn btn-outline-secondary">放棄變更並重新載入</button>
+          </div>
+        </div>
+      </div>
+      <div class="bm-card mt-3">
+        <div class="card-title">枋山天氣來源</div>
+        <div class="row g-2 align-items-end">
+          <div class="col-md-4">
+            <label for="weather-source-select" class="form-label">顯示來源</label>
+            <select id="weather-source-select" class="form-select">
+              <option value="open_meteo">Open-Meteo 枋山地區估計值</option>
+              <option value="cwa">中央氣象署 C0R700 枋山測站實測（免授權碼）</option>
+            </select>
+          </div>
+          <div class="col-md-8">
+            <label for="cwa-api-key" class="form-label">中央氣象署 API 授權碼（選填）</label>
+            <input id="cwa-api-key" type="password" class="form-control" autocomplete="new-password" placeholder="留空不更換既有授權碼">
+          </div>
+        </div>
+        <div id="cwa-key-status" class="small text-muted mt-2">讀取授權碼狀態中…</div>
+        <div class="d-flex flex-wrap gap-2 mt-3">
+          <button id="btn-save-weather" type="button" class="btn btn-primary">保存天氣設定</button>
+          <button id="btn-remove-cwa-key" type="button" class="btn btn-outline-danger">移除 CWA 授權碼</button>
+        </div>
+        <div class="form-text mt-2">預設顯示中央氣象署枋山測站逐時實測，不需要授權碼。有設定 API 授權碼時會優先使用 API；測站資料超過 3 小時或暫時無法取得，才標示原因並顯示 Open-Meteo 地區模式備援值。授權碼僅存主站本機，不回填明碼。</div>
+      </div>
+    </section>
+
+    <!-- 視圖：進階 -->
+    <section id="view-advanced" class="d-none">
+      <div class="bm-card mb-3">
+        <div class="card-title">進階設定</div>
+        <form id="form-adv" class="vstack gap-2">
+          <!-- MQTT -->
+          <div class="row g-2">
+            <div class="col-md-6">
+              <label class="form-label">MQTT Broker</label>
+              <input name="mqtt_broker" type="text" class="form-control" required>
+            </div>
+            <div class="col-md-3">
+              <label class="form-label">MQTT Port</label>
+              <input name="mqtt_port" type="number" min="1" class="form-control" required>
+            </div>
+            <div class="col-md-3">
+              <label class="form-label">心跳間隔（秒）</label>
+              <input name="heartbeat_sec" type="number" min="1" class="form-control" required>
+            </div>
+          </div>
+
+          <div>
+            <label class="form-label">Discord Webhook URL</label>
+            <input name="discord_webhook" type="text" class="form-control" placeholder="可留空">
+          </div>
+
+          <!-- YOLO -->
+          <div class="row g-2">
+            <div class="col-md-3">
+              <label class="form-label">YOLO Conf 閥值</label>
+              <input name="conf_thres" type="number" step="0.01" min="0" max="1" class="form-control" required>
+            </div>
+            <div class="col-md-3">
+              <label class="form-label">YOLO IoU 閥值</label>
+              <input name="iou_thres" type="number" step="0.01" min="0" max="1" class="form-control" required>
+            </div>
+            <div class="col-md-6">
+              <label class="form-label">YOLO 權重檔案路徑</label>
+              <input name="yolo_weights" type="text" class="form-control" required>
+            </div>
+          </div>
+          <div class="row g-2">
+            <div class="col-md-3">
+              <label class="form-label">YOLO 輸入尺寸</label>
+              <input name="img_size" type="number" min="1" class="form-control" required>
+            </div>
+            <div class="col-md-3">
+              <label class="form-label">裝置（CPU/GPU）</label>
+              <input name="device" type="text" class="form-control" placeholder="cpu 或 cuda:0">
+            </div>
+            <div class="col-md-3">
+              <label class="form-label">中等警報閾值</label>
+              <input name="alert_dead_count_medium" type="number" min="0" class="form-control" required>
+            </div>
+            <div class="col-md-3">
+              <label class="form-label">高等警報閾值</label>
+              <input name="alert_dead_count_high" type="number" min="0" class="form-control" required>
+            </div>
+          </div>
+          <div>
+            <label class="form-label">YOLO 死亡標籤名稱（逗號分隔）</label>
+            <input name="dead_labels" type="text" class="form-control" required placeholder="例如：dead_bee,bee_dead">
+          </div>
+
+          <!-- 相機 -->
+          <div class="row g-2">
+            <div class="col-md-3">
+              <label class="form-label">相機寬度</label>
+              <input name="camera_width" type="number" min="1" class="form-control" required>
+            </div>
+            <div class="col-md-3">
+              <label class="form-label">相機高度</label>
+              <input name="camera_height" type="number" min="1" class="form-control" required>
+            </div>
+            <div class="col-md-3">
+              <label class="form-label">相機 FPS</label>
+              <input name="camera_fps" type="number" min="1" class="form-control" required>
+            </div>
+            <div class="col-md-3">
+              <label class="form-label">相機來源</label>
+              <input name="camera_source" type="text" class="form-control" required>
+            </div>
+          </div>
+        </form>
+      </div>
+      <div class="bm-card">
+        <div class="d-flex justify-content-between align-items-center">
+          <div class="d-flex align-items-center gap-2">
+            <div class="card-title m-0">儲存操作</div>
+            <span id="adv-dirty-flag" class="badge text-bg-warning d-none">未儲存變更</span>
+          </div>
+          <div class="d-flex gap-2">
+            <button id="btn-save-adv" class="btn btn-primary">保存進階設定</button>
+            <button id="btn-reload-adv" class="btn btn-outline-secondary">放棄變更並重新載入</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 視圖：系統監控 -->
+    <section id="view-metrics" class="d-none">
+      <div class="bm-card mb-2">
+        <div class="d-flex justify-content-between align-items-center">
+          <div class="card-title m-0">系統指標</div>
+          <div class="d-flex gap-2 align-items-center">
+            <select id="sel-metrics-range" class="form-select form-select-sm">
+              <option value="60">最近 1 分鐘</option>
+              <option value="300" selected>最近 5 分鐘</option>
+              <option value="1200">最近 20 分鐘</option>
+              <option value="3600">最近 1 小時</option>
+            </select>
+            <button id="btn-reload-metrics" class="btn btn-sm btn-outline-primary">重新載入</button>
+          </div>
+        </div>
+      </div>
+      <div class="bm-card">
+        <canvas id="chart-metrics" height="140"></canvas>
+      </div>
     </section>
   </main>
-  <footer><div class="wrap">蜜蜂監測歷史紀錄 <span>·</span> 唯讀公開快照</div></footer>
-  <dialog id="viewer" aria-label="照片檢視"><button id="close-viewer" type="button" aria-label="關閉照片">×</button><img id="viewer-image" alt="放大照片"><p id="viewer-caption"></p></dialog>
+</div>
+
+<!-- 圖片預覽 Modal（鍵盤 ESC 關閉、左右方向鍵預留擴充用） -->
+<div class="modal fade" id="modalPreview" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog modal-xl modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">圖片預覽</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="關閉"></button>
+      </div>
+      <div class="modal-body">
+        <img id="preview-img" class="img-fluid" alt="預覽圖">
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Toast 容器 -->
+<div class="toast-container position-fixed bottom-0 end-0 p-3">
+  <div id="toast" class="toast" role="alert" aria-live="polite" aria-atomic="true">
+    <div id="toast-head" class="toast-header">
+      <strong class="me-auto">通知</strong>
+      <small class="text-muted">剛剛</small>
+      <button type="button" class="btn-close" data-bs-dismiss="toast"></button>
+    </div>
+    <div id="toast-body" class="toast-body"></div>
+  </div>
+</div>
+
+<!-- 右下角浮動狀態面板 -->
+<div class="bm-fab">
+  <span class="badge-dot"><span id="fab-dot" class="dot dot-red"></span> <span id="fab-text">離線</span></span>
+  <span class="chip" id="fab-heartbeat">—</span>
+</div>
+
+<!-- 必要 JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>

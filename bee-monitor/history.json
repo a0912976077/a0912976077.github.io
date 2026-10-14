@@ -1,0 +1,2918 @@
+{
+  "generated_at": "2026-10-14T23:06:42+08:00",
+  "original_site_url": "http://140.127.26.34:5000/",
+  "camera_alignment_pending_at_sync": true,
+  "messages": [
+    {
+      "timestamp": "20260923_205412_422430",
+      "topic": "bee/npust/1140627/getsnapshot",
+      "decoded": "影像紀錄",
+      "filename": "20260923_205412_422430_a9e5e13be96d_det.jpg",
+      "is_image": true,
+      "photo": ""
+    },
+    {
+      "timestamp": "20260923_205513_831530",
+      "topic": "bee/npust/1140627/getsnapshot",
+      "decoded": "影像紀錄",
+      "filename": "20260923_205513_831530_3ad1998833fb_det.jpg",
+      "is_image": true,
+      "photo": ""
+    },
+    {
+      "timestamp": "20260923_205613_238930",
+      "topic": "bee/npust/1140627/getsnapshot",
+      "decoded": "影像紀錄",
+      "filename": "20260923_205613_238930_0c24169cf4a5_det.jpg",
+      "is_image": true,
+      "photo": ""
+    },
+    {
+      "timestamp": "20260923_205712_611429",
+      "topic": "bee/npust/1140627/getsnapshot",
+      "decoded": "影像紀錄",
+      "filename": "20260923_205712_611429_b1c71ed5183a_det.jpg",
+      "is_image": true,
+      "photo": ""
+    },
+    {
+      "timestamp": "20260923_205814_010375",
+      "topic": "bee/npust/1140627/getsnapshot",
+      "decoded": "影像紀錄",
+      "filename": "20260923_205814_010375_2c0d735af553_det.jpg",
+      "is_image": true,
+      "photo": ""
+    },
+    {
+      "timestamp": "20260923_205913_458381",
+      "topic": "bee/npust/1140627/getsnapshot",
+      "decoded": "影像紀錄",
+      "filename": "20260923_205913_458381_e7088959e74a_det.jpg",
+      "is_image": true,
+      "photo": ""
+    },
+    {
+      "timestamp": "20260923_215713_463415",
+      "topic": "bee/npust/1140627/getsnapshot",
+      "decoded": "影像紀錄",
+      "filename": "20260923_215713_463415_565db758defb_det.jpg",
+      "is_image": true,
+      "photo": ""
+    },
+    {
+      "timestamp": "20260923_220545_782345",
+      "topic": "bee/npust/1140627/getsnapshot",
+      "decoded": "影像紀錄",
+      "filename": "20260923_220545_782345_50c0c53b906f_det.jpg",
+      "is_image": true,
+      "photo": ""
+    },
+    {
+      "timestamp": "20260923_222757_820823",
+      "topic": "bee/npust/1140627/getsnapshot",
+      "decoded": "影像紀錄",
+      "filename": "20260923_222757_820823_f8901f8893d9_det.jpg",
+      "is_image": true,
+      "photo": ""
+    },
+    {
+      "timestamp": "20260923_223026_118439",
+      "topic": "bee/npust/1140627/getsnapshot",
+      "decoded": "影像紀錄",
+      "filename": "20260923_223026_118439_6f701b6331b3_det.jpg",
+      "is_image": true,
+      "photo": ""
+    },
+    {
+      "timestamp": "20260923_223424_636275",
+      "topic": "bee/npust/1140627/getsnapshot",
+      "decoded": "影像紀錄",
+      "filename": "20260923_223424_636275_6240d90f29e0_det.jpg",
+      "is_image": true,
+      "photo": ""
+    },
+    {
+      "timestamp": "20261007_002020_133642",
+      "topic": "bee/npust/1140627/getsnapshot",
+      "decoded": "影像紀錄",
+      "filename": "20261007_002020_133642_6f7c08248dcb_det.jpg",
+      "is_image": true,
+      "photo": ""
+    },
+    {
+      "timestamp": "20261014_214004_735433",
+      "topic": "bee/npust/1140627/getsnapshot",
+      "decoded": "影像紀錄",
+      "filename": "20261014_214004_735433_35a81a56dd12_det.jpg",
+      "is_image": true,
+      "photo": ""
+    },
+    {
+      "timestamp": "20261014_214009_189024",
+      "topic": "bee/npust/1140627/getsnapshot",
+      "decoded": "影像紀錄",
+      "filename": "20261014_214009_189024_64fbed988f5a_det.jpg",
+      "is_image": true,
+      "photo": ""
+    },
+    {
+      "timestamp": "20261014_214104_641803",
+      "topic": "bee/npust/1140627/getsnapshot",
+      "decoded": "影像紀錄",
+      "filename": "20261014_214104_641803_f783c75ab03d_det.jpg",
+      "is_image": true,
+      "photo": ""
+    },
+    {
+      "timestamp": "20261014_214205_832096",
+      "topic": "bee/npust/1140627/getsnapshot",
+      "decoded": "影像紀錄",
+      "filename": "20261014_214205_832096_49968aa45b5e_det.jpg",
+      "is_image": true,
+      "photo": ""
+    },
+    {
+      "timestamp": "20261014_214305_084000",
+      "topic": "bee/npust/1140627/getsnapshot",
+      "decoded": "影像紀錄",
+      "filename": "20261014_214305_084000_b9f312647568_det.jpg",
+      "is_image": true,
+      "photo": ""
+    },
+    {
+      "timestamp": "20261014_214406_302874",
+      "topic": "bee/npust/1140627/getsnapshot",
+      "decoded": "影像紀錄",
+      "filename": "20261014_214406_302874_76bd1a803131_det.jpg",
+      "is_image": true,
+      "photo": ""
+    },
+    {
+      "timestamp": "20261014_214505_571942",
+      "topic": "bee/npust/1140627/getsnapshot",
+      "decoded": "影像紀錄",
+      "filename": "20261014_214505_571942_f9f05b67686b_det.jpg",
+      "is_image": true,
+      "photo": ""
+    },
+    {
+      "timestamp": "20261014_214606_767264",
+      "topic": "bee/npust/1140627/getsnapshot",
+      "decoded": "影像紀錄",
+      "filename": "20261014_214606_767264_f876691c27c6_det.jpg",
+      "is_image": true,
+      "photo": ""
+    },
+    {
+      "timestamp": "20261014_214706_034249",
+      "topic": "bee/npust/1140627/getsnapshot",
+      "decoded": "影像紀錄",
+      "filename": "20261014_214706_034249_edd20b41fe35_det.jpg",
+      "is_image": true,
+      "photo": ""
+    },
+    {
+      "timestamp": "20261014_214807_281567",
+      "topic": "bee/npust/1140627/getsnapshot",
+      "decoded": "影像紀錄",
+      "filename": "20261014_214807_281567_b3f33c84ddda_det.jpg",
+      "is_image": true,
+      "photo": ""
+    },
+    {
+      "timestamp": "20261014_214906_458727",
+      "topic": "bee/npust/1140627/getsnapshot",
+      "decoded": "影像紀錄",
+      "filename": "20261014_214906_458727_d7f944fe745d_det.jpg",
+      "is_image": true,
+      "photo": ""
+    },
+    {
+      "timestamp": "20261014_215007_834952",
+      "topic": "bee/npust/1140627/getsnapshot",
+      "decoded": "影像紀錄",
+      "filename": "20261014_215007_834952_38a5027e01b7_det.jpg",
+      "is_image": true,
+      "photo": ""
+    },
+    {
+      "timestamp": "20261014_215107_027146",
+      "topic": "bee/npust/1140627/getsnapshot",
+      "decoded": "影像紀錄",
+      "filename": "20261014_215107_027146_5d93c3ab2d6d_det.jpg",
+      "is_image": true,
+      "photo": ""
+    },
+    {
+      "timestamp": "20261014_215208_238605",
+      "topic": "bee/npust/1140627/getsnapshot",
+      "decoded": "影像紀錄",
+      "filename": "20261014_215208_238605_92c819f8da7b_det.jpg",
+      "is_image": true,
+      "photo": ""
+    },
+    {
+      "timestamp": "20261014_215307_407945",
+      "topic": "bee/npust/1140627/getsnapshot",
+      "decoded": "影像紀錄",
+      "filename": "20261014_215307_407945_c76322e30f68_det.jpg",
+      "is_image": true,
+      "photo": ""
+    },
+    {
+      "timestamp": "20261014_215408_608679",
+      "topic": "bee/npust/1140627/getsnapshot",
+      "decoded": "影像紀錄",
+      "filename": "20261014_215408_608679_f519f7c260df_det.jpg",
+      "is_image": true,
+      "photo": ""
+    },
+    {
+      "timestamp": "20261014_215507_790483",
+      "topic": "bee/npust/1140627/getsnapshot",
+      "decoded": "影像紀錄",
+      "filename": "20261014_215507_790483_d88c76080fcd_det.jpg",
+      "is_image": true,
+      "photo": ""
+    },
+    {
+      "timestamp": "20261014_215607_129001",
+      "topic": "bee/npust/1140627/getsnapshot",
+      "decoded": "影像紀錄",
+      "filename": "20261014_215607_129001_345d49782baa_det.jpg",
+      "is_image": true,
+      "photo": ""
+    },
+    {
+      "timestamp": "20261014_215708_357316",
+      "topic": "bee/npust/1140627/getsnapshot",
+      "decoded": "影像紀錄",
+      "filename": "20261014_215708_357316_d0b9aa77f0ca_det.jpg",
+      "is_image": true,
+      "photo": ""
+    },
+    {
+      "timestamp": "20261014_215807_649315",
+      "topic": "bee/npust/1140627/getsnapshot",
+      "decoded": "影像紀錄",
+      "filename": "20261014_215807_649315_ab52e9d692b0_det.jpg",
+      "is_image": true,
+      "photo": ""
+    },
+    {
+      "timestamp": "20261014_215908_834163",
+      "topic": "bee/npust/1140627/getsnapshot",
+      "decoded": "影像紀錄",
+      "filename": "20261014_215908_834163_ca13d731f083_det.jpg",
+      "is_image": true,
+      "photo": ""
+    },
+    {
+      "timestamp": "20261014_220008_062238",
+      "topic": "bee/npust/1140627/getsnapshot",
+      "decoded": "影像紀錄",
+      "filename": "20261014_220008_062238_549218409470_det.jpg",
+      "is_image": true,
+      "photo": ""
+    },
+    {
+      "timestamp": "20261014_220109_269307",
+      "topic": "bee/npust/1140627/getsnapshot",
+      "decoded": "影像紀錄",
+      "filename": "20261014_220109_269307_093139c17035_det.jpg",
+      "is_image": true,
+      "photo": ""
+    },
+    {
+      "timestamp": "20261014_220208_468483",
+      "topic": "bee/npust/1140627/getsnapshot",
+      "decoded": "影像紀錄",
+      "filename": "20261014_220208_468483_4b52134312c2_det.jpg",
+      "is_image": true,
+      "photo": ""
+    },
+    {
+      "timestamp": "20261014_220309_670337",
+      "topic": "bee/npust/1140627/getsnapshot",
+      "decoded": "影像紀錄",
+      "filename": "20261014_220309_670337_6b13f3f1ca6f_det.jpg",
+      "is_image": true,
+      "photo": ""
+    },
+    {
+      "timestamp": "20261014_220408_869561",
+      "topic": "bee/npust/1140627/getsnapshot",
+      "decoded": "影像紀錄",
+      "filename": "20261014_220408_869561_bbe19d0754f9_det.jpg",
+      "is_image": true,
+      "photo": ""
+    },
+    {
+      "timestamp": "20261014_220510_044814",
+      "topic": "bee/npust/1140627/getsnapshot",
+      "decoded": "影像紀錄",
+      "filename": "20261014_220510_044814_04073fc17ec7_det.jpg",
+      "is_image": true,
+      "photo": ""
+    },
+    {
+      "timestamp": "20261014_220609_298915",
+      "topic": "bee/npust/1140627/getsnapshot",
+      "decoded": "影像紀錄",
+      "filename": "20261014_220609_298915_75eec532649b_det.jpg",
+      "is_image": true,
+      "photo": ""
+    },
+    {
+      "timestamp": "20261014_220710_529719",
+      "topic": "bee/npust/1140627/getsnapshot",
+      "decoded": "影像紀錄",
+      "filename": "20261014_220710_529719_da8657a38f97_det.jpg",
+      "is_image": true,
+      "photo": ""
+    },
+    {
+      "timestamp": "20261014_220809_850712",
+      "topic": "bee/npust/1140627/getsnapshot",
+      "decoded": "影像紀錄",
+      "filename": "20261014_220809_850712_60e2e78364ba_det.jpg",
+      "is_image": true,
+      "photo": ""
+    },
+    {
+      "timestamp": "20261014_220909_017998",
+      "topic": "bee/npust/1140627/getsnapshot",
+      "decoded": "影像紀錄",
+      "filename": "20261014_220909_017998_a77d299fe46a_det.jpg",
+      "is_image": true,
+      "photo": ""
+    },
+    {
+      "timestamp": "20261014_221010_232121",
+      "topic": "bee/npust/1140627/getsnapshot",
+      "decoded": "影像紀錄",
+      "filename": "20261014_221010_232121_55359ec0c111_det.jpg",
+      "is_image": true,
+      "photo": ""
+    },
+    {
+      "timestamp": "20261014_221109_493261",
+      "topic": "bee/npust/1140627/getsnapshot",
+      "decoded": "影像紀錄",
+      "filename": "20261014_221109_493261_1c03767903ab_det.jpg",
+      "is_image": true,
+      "photo": ""
+    },
+    {
+      "timestamp": "20261014_221210_673048",
+      "topic": "bee/npust/1140627/getsnapshot",
+      "decoded": "影像紀錄",
+      "filename": "20261014_221210_673048_5351d170efc6_det.jpg",
+      "is_image": true,
+      "photo": ""
+    },
+    {
+      "timestamp": "20261014_221309_870718",
+      "topic": "bee/npust/1140627/getsnapshot",
+      "decoded": "影像紀錄",
+      "filename": "20261014_221309_870718_5e11e5a433ee_det.jpg",
+      "is_image": true,
+      "photo": ""
+    },
+    {
+      "timestamp": "20261014_221411_096343",
+      "topic": "bee/npust/1140627/getsnapshot",
+      "decoded": "影像紀錄",
+      "filename": "20261014_221411_096343_6915f4e5c1be_det.jpg",
+      "is_image": true,
+      "photo": ""
+    },
+    {
+      "timestamp": "20261014_221510_305050",
+      "topic": "bee/npust/1140627/getsnapshot",
+      "decoded": "影像紀錄",
+      "filename": "20261014_221510_305050_704325abf19f_det.jpg",
+      "is_image": true,
+      "photo": ""
+    },
+    {
+      "timestamp": "20261014_221611_554891",
+      "topic": "bee/npust/1140627/getsnapshot",
+      "decoded": "影像紀錄",
+      "filename": "20261014_221611_554891_9c15b4ab9449_det.jpg",
+      "is_image": true,
+      "photo": ""
+    },
+    {
+      "timestamp": "20261014_221710_754037",
+      "topic": "bee/npust/1140627/getsnapshot",
+      "decoded": "影像紀錄",
+      "filename": "20261014_221710_754037_26d59107c49f_det.jpg",
+      "is_image": true,
+      "photo": ""
+    },
+    {
+      "timestamp": "20261014_221811_968631",
+      "topic": "bee/npust/1140627/getsnapshot",
+      "decoded": "影像紀錄",
+      "filename": "20261014_221811_968631_e72388808cb2_det.jpg",
+      "is_image": true,
+      "photo": ""
+    },
+    {
+      "timestamp": "20261014_221911_151515",
+      "topic": "bee/npust/1140627/getsnapshot",
+      "decoded": "影像紀錄",
+      "filename": "20261014_221911_151515_d2108af64d51_det.jpg",
+      "is_image": true,
+      "photo": ""
+    },
+    {
+      "timestamp": "20261014_222012_345460",
+      "topic": "bee/npust/1140627/getsnapshot",
+      "decoded": "影像紀錄",
+      "filename": "20261014_222012_345460_52b2ba06d76b_det.jpg",
+      "is_image": true,
+      "photo": ""
+    },
+    {
+      "timestamp": "20261014_222111_661082",
+      "topic": "bee/npust/1140627/getsnapshot",
+      "decoded": "影像紀錄",
+      "filename": "20261014_222111_661082_fc7984fdd9eb_det.jpg",
+      "is_image": true,
+      "photo": ""
+    },
+    {
+      "timestamp": "20261014_222212_927089",
+      "topic": "bee/npust/1140627/getsnapshot",
+      "decoded": "影像紀錄",
+      "filename": "20261014_222212_927089_2b62441ef0cf_det.jpg",
+      "is_image": true,
+      "photo": ""
+    },
+    {
+      "timestamp": "20261014_222312_256901",
+      "topic": "bee/npust/1140627/getsnapshot",
+      "decoded": "影像紀錄",
+      "filename": "20261014_222312_256901_2b6adf5d4bf3_det.jpg",
+      "is_image": true,
+      "photo": ""
+    },
+    {
+      "timestamp": "20261014_222411_426598",
+      "topic": "bee/npust/1140627/getsnapshot",
+      "decoded": "影像紀錄",
+      "filename": "20261014_222411_426598_9432f5af65fb_det.jpg",
+      "is_image": true,
+      "photo": ""
+    },
+    {
+      "timestamp": "20261014_222512_641097",
+      "topic": "bee/npust/1140627/getsnapshot",
+      "decoded": "影像紀錄",
+      "filename": "20261014_222512_641097_bc82c4509038_det.jpg",
+      "is_image": true,
+      "photo": ""
+    },
+    {
+      "timestamp": "20261014_222611_817174",
+      "topic": "bee/npust/1140627/getsnapshot",
+      "decoded": "影像紀錄",
+      "filename": "20261014_222611_817174_4769bb200255_det.jpg",
+      "is_image": true,
+      "photo": ""
+    },
+    {
+      "timestamp": "20261014_222713_065419",
+      "topic": "bee/npust/1140627/getsnapshot",
+      "decoded": "影像紀錄",
+      "filename": "20261014_222713_065419_ce7fae488cb6_det.jpg",
+      "is_image": true,
+      "photo": ""
+    },
+    {
+      "timestamp": "20261014_222812_253048",
+      "topic": "bee/npust/1140627/getsnapshot",
+      "decoded": "影像紀錄",
+      "filename": "20261014_222812_253048_ffebf1e96f0d_det.jpg",
+      "is_image": true,
+      "photo": ""
+    },
+    {
+      "timestamp": "20261014_222913_721107",
+      "topic": "bee/npust/1140627/getsnapshot",
+      "decoded": "影像紀錄",
+      "filename": "20261014_222913_721107_d06d351568b6_det.jpg",
+      "is_image": true,
+      "photo": ""
+    },
+    {
+      "timestamp": "20261014_223012_900519",
+      "topic": "bee/npust/1140627/getsnapshot",
+      "decoded": "影像紀錄",
+      "filename": "20261014_223012_900519_31f8e834a47e_det.jpg",
+      "is_image": true,
+      "photo": ""
+    },
+    {
+      "timestamp": "20261014_223114_187685",
+      "topic": "bee/npust/1140627/getsnapshot",
+      "decoded": "影像紀錄",
+      "filename": "20261014_223114_187685_739f85645de6_det.jpg",
+      "is_image": true,
+      "photo": ""
+    },
+    {
+      "timestamp": "20261014_223213_438896",
+      "topic": "bee/npust/1140627/getsnapshot",
+      "decoded": "影像紀錄",
+      "filename": "20261014_223213_438896_44cdf1ccdc9b_det.jpg",
+      "is_image": true,
+      "photo": ""
+    },
+    {
+      "timestamp": "20261014_223314_628539",
+      "topic": "bee/npust/1140627/getsnapshot",
+      "decoded": "影像紀錄",
+      "filename": "20261014_223314_628539_92f16ee3a7e8_det.jpg",
+      "is_image": true,
+      "photo": ""
+    },
+    {
+      "timestamp": "20261014_223413_752091",
+      "topic": "bee/npust/1140627/getsnapshot",
+      "decoded": "影像紀錄",
+      "filename": "20261014_223413_752091_e31d1fa0f823_det.jpg",
+      "is_image": true,
+      "photo": ""
+    },
+    {
+      "timestamp": "20261014_223514_918787",
+      "topic": "bee/npust/1140627/getsnapshot",
+      "decoded": "影像紀錄",
+      "filename": "20261014_223514_918787_79f0cb3dd85c_det.jpg",
+      "is_image": true,
+      "photo": ""
+    },
+    {
+      "timestamp": "20261014_223614_140154",
+      "topic": "bee/npust/1140627/getsnapshot",
+      "decoded": "影像紀錄",
+      "filename": "20261014_223614_140154_4a69a20586f7_det.jpg",
+      "is_image": true,
+      "photo": ""
+    },
+    {
+      "timestamp": "20261014_223713_296610",
+      "topic": "bee/npust/1140627/getsnapshot",
+      "decoded": "影像紀錄",
+      "filename": "20261014_223713_296610_ac8e94a9a918_det.jpg",
+      "is_image": true,
+      "photo": ""
+    },
+    {
+      "timestamp": "20261014_223814_540671",
+      "topic": "bee/npust/1140627/getsnapshot",
+      "decoded": "影像紀錄",
+      "filename": "20261014_223814_540671_b9046a7540d3_det.jpg",
+      "is_image": true,
+      "photo": ""
+    },
+    {
+      "timestamp": "20261014_223913_723227",
+      "topic": "bee/npust/1140627/getsnapshot",
+      "decoded": "影像紀錄",
+      "filename": "20261014_223913_723227_ee6a2fc66940_det.jpg",
+      "is_image": true,
+      "photo": ""
+    },
+    {
+      "timestamp": "20261014_224014_977351",
+      "topic": "bee/npust/1140627/getsnapshot",
+      "decoded": "影像紀錄",
+      "filename": "20261014_224014_977351_74044b0be2da_det.jpg",
+      "is_image": true,
+      "photo": ""
+    },
+    {
+      "timestamp": "20261014_224114_172177",
+      "topic": "bee/npust/1140627/getsnapshot",
+      "decoded": "影像紀錄",
+      "filename": "20261014_224114_172177_c261aac492c9_det.jpg",
+      "is_image": true,
+      "photo": ""
+    },
+    {
+      "timestamp": "20261014_224215_422125",
+      "topic": "bee/npust/1140627/getsnapshot",
+      "decoded": "影像紀錄",
+      "filename": "20261014_224215_422125_6fd8772978e2_det.jpg",
+      "is_image": true,
+      "photo": ""
+    },
+    {
+      "timestamp": "20261014_224314_651213",
+      "topic": "bee/npust/1140627/getsnapshot",
+      "decoded": "影像紀錄",
+      "filename": "20261014_224314_651213_0880a4178654_det.jpg",
+      "is_image": true,
+      "photo": ""
+    },
+    {
+      "timestamp": "20261014_224415_845216",
+      "topic": "bee/npust/1140627/getsnapshot",
+      "decoded": "影像紀錄",
+      "filename": "20261014_224415_845216_149ead7362d7_det.jpg",
+      "is_image": true,
+      "photo": ""
+    },
+    {
+      "timestamp": "20261014_224515_049547",
+      "topic": "bee/npust/1140627/getsnapshot",
+      "decoded": "影像紀錄",
+      "filename": "20261014_224515_049547_ba46973d0615_det.jpg",
+      "is_image": true,
+      "photo": ""
+    },
+    {
+      "timestamp": "20261014_224616_296477",
+      "topic": "bee/npust/1140627/getsnapshot",
+      "decoded": "影像紀錄",
+      "filename": "20261014_224616_296477_064144da849f_det.jpg",
+      "is_image": true,
+      "photo": ""
+    },
+    {
+      "timestamp": "20261014_224715_544364",
+      "topic": "bee/npust/1140627/getsnapshot",
+      "decoded": "影像紀錄",
+      "filename": "20261014_224715_544364_507bb3b2fd5b_det.jpg",
+      "is_image": true,
+      "photo": "photos/capture_20_raw.jpg"
+    },
+    {
+      "timestamp": "20261014_224816_690955",
+      "topic": "bee/npust/1140627/getsnapshot",
+      "decoded": "影像紀錄",
+      "filename": "20261014_224816_690955_3283c1c2fc09_det.jpg",
+      "is_image": true,
+      "photo": "photos/capture_19_raw.jpg"
+    },
+    {
+      "timestamp": "20261014_224915_882595",
+      "topic": "bee/npust/1140627/getsnapshot",
+      "decoded": "影像紀錄",
+      "filename": "20261014_224915_882595_f0e1030e8637_det.jpg",
+      "is_image": true,
+      "photo": "photos/capture_18_raw.jpg"
+    },
+    {
+      "timestamp": "20261014_225017_048882",
+      "topic": "bee/npust/1140627/getsnapshot",
+      "decoded": "影像紀錄",
+      "filename": "20261014_225017_048882_a505359c725f_det.jpg",
+      "is_image": true,
+      "photo": "photos/capture_17_raw.jpg"
+    },
+    {
+      "timestamp": "20261014_225116_235036",
+      "topic": "bee/npust/1140627/getsnapshot",
+      "decoded": "影像紀錄",
+      "filename": "20261014_225116_235036_76425226b39f_det.jpg",
+      "is_image": true,
+      "photo": "photos/capture_16_raw.jpg"
+    },
+    {
+      "timestamp": "20261014_225217_485398",
+      "topic": "bee/npust/1140627/getsnapshot",
+      "decoded": "影像紀錄",
+      "filename": "20261014_225217_485398_b00fac36ed1d_det.jpg",
+      "is_image": true,
+      "photo": "photos/capture_15_raw.jpg"
+    },
+    {
+      "timestamp": "20261014_225316_618499",
+      "topic": "bee/npust/1140627/getsnapshot",
+      "decoded": "影像紀錄",
+      "filename": "20261014_225316_618499_10c42f2fb31e_det.jpg",
+      "is_image": true,
+      "photo": "photos/capture_14_raw.jpg"
+    },
+    {
+      "timestamp": "20261014_225417_805862",
+      "topic": "bee/npust/1140627/getsnapshot",
+      "decoded": "影像紀錄",
+      "filename": "20261014_225417_805862_dc6a2456cd18_det.jpg",
+      "is_image": true,
+      "photo": "photos/capture_13_raw.jpg"
+    },
+    {
+      "timestamp": "20261014_225517_022886",
+      "topic": "bee/npust/1140627/getsnapshot",
+      "decoded": "影像紀錄",
+      "filename": "20261014_225517_022886_4e5666b08063_det.jpg",
+      "is_image": true,
+      "photo": "photos/capture_12_raw.jpg"
+    },
+    {
+      "timestamp": "20261014_225618_205002",
+      "topic": "bee/npust/1140627/getsnapshot",
+      "decoded": "影像紀錄",
+      "filename": "20261014_225618_205002_1fbddb3ce2a3_det.jpg",
+      "is_image": true,
+      "photo": "photos/capture_11_raw.jpg"
+    },
+    {
+      "timestamp": "20261014_225717_438933",
+      "topic": "bee/npust/1140627/getsnapshot",
+      "decoded": "影像紀錄",
+      "filename": "20261014_225717_438933_7e98c6a71925_det.jpg",
+      "is_image": true,
+      "photo": "photos/capture_10_raw.jpg"
+    },
+    {
+      "timestamp": "20261014_225818_653708",
+      "topic": "bee/npust/1140627/getsnapshot",
+      "decoded": "影像紀錄",
+      "filename": "20261014_225818_653708_5e857bdeea98_det.jpg",
+      "is_image": true,
+      "photo": "photos/capture_09_raw.jpg"
+    },
+    {
+      "timestamp": "20261014_225917_850480",
+      "topic": "bee/npust/1140627/getsnapshot",
+      "decoded": "影像紀錄",
+      "filename": "20261014_225917_850480_062efc6f6fbd_det.jpg",
+      "is_image": true,
+      "photo": "photos/capture_08_raw.jpg"
+    },
+    {
+      "timestamp": "20261014_230017_133807",
+      "topic": "bee/npust/1140627/getsnapshot",
+      "decoded": "影像紀錄",
+      "filename": "20261014_230017_133807_08305d8f1917_det.jpg",
+      "is_image": true,
+      "photo": "photos/capture_07_raw.jpg"
+    },
+    {
+      "timestamp": "20261014_230118_354235",
+      "topic": "bee/npust/1140627/getsnapshot",
+      "decoded": "影像紀錄",
+      "filename": "20261014_230118_354235_3115b1109905_det.jpg",
+      "is_image": true,
+      "photo": "photos/capture_06_raw.jpg"
+    },
+    {
+      "timestamp": "20261014_230217_550464",
+      "topic": "bee/npust/1140627/getsnapshot",
+      "decoded": "影像紀錄",
+      "filename": "20261014_230217_550464_b2263f191145_det.jpg",
+      "is_image": true,
+      "photo": "photos/capture_05_raw.jpg"
+    },
+    {
+      "timestamp": "20261014_230318_708490",
+      "topic": "bee/npust/1140627/getsnapshot",
+      "decoded": "影像紀錄",
+      "filename": "20261014_230318_708490_6e7bee356386_det.jpg",
+      "is_image": true,
+      "photo": "photos/capture_04_raw.jpg"
+    },
+    {
+      "timestamp": "20261014_230417_877065",
+      "topic": "bee/npust/1140627/getsnapshot",
+      "decoded": "影像紀錄",
+      "filename": "20261014_230417_877065_e8660ee09f04_det.jpg",
+      "is_image": true,
+      "photo": "photos/capture_03_raw.jpg"
+    },
+    {
+      "timestamp": "20261014_230519_045788",
+      "topic": "bee/npust/1140627/getsnapshot",
+      "decoded": "影像紀錄",
+      "filename": "20261014_230519_045788_4c5b5fb767a9_det.jpg",
+      "is_image": true,
+      "photo": "photos/capture_02_raw.jpg"
+    },
+    {
+      "timestamp": "20261014_230618_201272",
+      "topic": "bee/npust/1140627/getsnapshot",
+      "decoded": "影像紀錄",
+      "filename": "20261014_230618_201272_14aef9dba09d_det.jpg",
+      "is_image": true,
+      "photo": "photos/capture_01_raw.jpg"
+    }
+  ],
+  "alerts": [
+    {
+      "timestamp": "2026-09-23 20:42:11",
+      "level": "MEDIUM",
+      "message": "偵測到 1 隻死亡蜜蜂",
+      "filename": "20260923_204211_052449_6c8aa6d03f0f_det.jpg",
+      "photo": ""
+    },
+    {
+      "timestamp": "2026-09-23 20:45:11",
+      "level": "MEDIUM",
+      "message": "偵測到 1 隻死亡蜜蜂",
+      "filename": "20260923_204511_808386_dad23ed3325e_det.jpg",
+      "photo": ""
+    },
+    {
+      "timestamp": "2026-09-23 20:46:11",
+      "level": "MEDIUM",
+      "message": "偵測到 1 隻死亡蜜蜂",
+      "filename": "20260923_204611_247655_eb27a46b5ddf_det.jpg",
+      "photo": ""
+    },
+    {
+      "timestamp": "2026-09-23 20:48:12",
+      "level": "MEDIUM",
+      "message": "偵測到 1 隻死亡蜜蜂",
+      "filename": "20260923_204812_010438_927c8e935f4d_det.jpg",
+      "photo": ""
+    },
+    {
+      "timestamp": "2026-09-23 20:52:11",
+      "level": "MEDIUM",
+      "message": "偵測到 1 隻死亡蜜蜂",
+      "filename": "20260923_205211_624281_7d185a7869c6_det.jpg",
+      "photo": ""
+    },
+    {
+      "timestamp": "2026-09-23 20:53:13",
+      "level": "MEDIUM",
+      "message": "偵測到 1 隻死亡蜜蜂",
+      "filename": "20260923_205313_023383_66543f34cb8e_det.jpg",
+      "photo": ""
+    },
+    {
+      "timestamp": "2026-09-23 20:55:13",
+      "level": "MEDIUM",
+      "message": "偵測到 1 隻死亡蜜蜂",
+      "filename": "20260923_205513_831530_3ad1998833fb_det.jpg",
+      "photo": ""
+    },
+    {
+      "timestamp": "2026-09-23 20:58:14",
+      "level": "MEDIUM",
+      "message": "偵測到 1 隻死亡蜜蜂",
+      "filename": "20260923_205814_010375_2c0d735af553_det.jpg",
+      "photo": ""
+    },
+    {
+      "timestamp": "2026-09-23 20:59:13",
+      "level": "MEDIUM",
+      "message": "偵測到 1 隻死亡蜜蜂",
+      "filename": "20260923_205913_458381_e7088959e74a_det.jpg",
+      "photo": ""
+    },
+    {
+      "timestamp": "2026-09-23 21:57:13",
+      "level": "MEDIUM",
+      "message": "偵測到 2 隻死亡蜜蜂",
+      "filename": "20260923_215713_463415_565db758defb_det.jpg",
+      "photo": ""
+    },
+    {
+      "timestamp": "2026-09-23 22:27:58",
+      "level": "MEDIUM",
+      "message": "偵測到 1 隻死亡蜜蜂",
+      "filename": "20260923_222757_820823_f8901f8893d9_det.jpg",
+      "photo": ""
+    },
+    {
+      "timestamp": "2026-09-23 22:30:26",
+      "level": "MEDIUM",
+      "message": "偵測到 1 隻死亡蜜蜂",
+      "filename": "20260923_223026_118439_6f701b6331b3_det.jpg",
+      "photo": ""
+    },
+    {
+      "timestamp": "2026-10-07 00:20:20",
+      "level": "HIGH",
+      "message": "偵測到 3 隻死亡蜜蜂",
+      "filename": "20261007_002020_133642_6f7c08248dcb_det.jpg",
+      "photo": ""
+    },
+    {
+      "timestamp": "2026-10-14 21:40:09",
+      "level": "MEDIUM",
+      "message": "偵測到 2 隻死亡蜜蜂",
+      "filename": "20261014_214009_189024_64fbed988f5a_det.jpg",
+      "photo": ""
+    },
+    {
+      "timestamp": "2026-10-14 21:41:04",
+      "level": "MEDIUM",
+      "message": "偵測到 2 隻死亡蜜蜂",
+      "filename": "20261014_214104_641803_f783c75ab03d_det.jpg",
+      "photo": ""
+    },
+    {
+      "timestamp": "2026-10-14 21:42:05",
+      "level": "MEDIUM",
+      "message": "偵測到 2 隻死亡蜜蜂",
+      "filename": "20261014_214205_832096_49968aa45b5e_det.jpg",
+      "photo": ""
+    },
+    {
+      "timestamp": "2026-10-14 21:43:05",
+      "level": "HIGH",
+      "message": "偵測到 3 隻死亡蜜蜂",
+      "filename": "20261014_214305_084000_b9f312647568_det.jpg",
+      "photo": ""
+    },
+    {
+      "timestamp": "2026-10-14 21:44:06",
+      "level": "MEDIUM",
+      "message": "偵測到 2 隻死亡蜜蜂",
+      "filename": "20261014_214406_302874_76bd1a803131_det.jpg",
+      "photo": ""
+    },
+    {
+      "timestamp": "2026-10-14 21:45:05",
+      "level": "MEDIUM",
+      "message": "偵測到 2 隻死亡蜜蜂",
+      "filename": "20261014_214505_571942_f9f05b67686b_det.jpg",
+      "photo": ""
+    },
+    {
+      "timestamp": "2026-10-14 21:46:06",
+      "level": "MEDIUM",
+      "message": "偵測到 2 隻死亡蜜蜂",
+      "filename": "20261014_214606_767264_f876691c27c6_det.jpg",
+      "photo": ""
+    },
+    {
+      "timestamp": "2026-10-14 21:47:06",
+      "level": "MEDIUM",
+      "message": "偵測到 2 隻死亡蜜蜂",
+      "filename": "20261014_214706_034249_edd20b41fe35_det.jpg",
+      "photo": ""
+    },
+    {
+      "timestamp": "2026-10-14 21:48:07",
+      "level": "HIGH",
+      "message": "偵測到 3 隻死亡蜜蜂",
+      "filename": "20261014_214807_281567_b3f33c84ddda_det.jpg",
+      "photo": ""
+    },
+    {
+      "timestamp": "2026-10-14 21:49:06",
+      "level": "MEDIUM",
+      "message": "偵測到 2 隻死亡蜜蜂",
+      "filename": "20261014_214906_458727_d7f944fe745d_det.jpg",
+      "photo": ""
+    },
+    {
+      "timestamp": "2026-10-14 21:50:07",
+      "level": "MEDIUM",
+      "message": "偵測到 2 隻死亡蜜蜂",
+      "filename": "20261014_215007_834952_38a5027e01b7_det.jpg",
+      "photo": ""
+    },
+    {
+      "timestamp": "2026-10-14 21:51:07",
+      "level": "HIGH",
+      "message": "偵測到 3 隻死亡蜜蜂",
+      "filename": "20261014_215107_027146_5d93c3ab2d6d_det.jpg",
+      "photo": ""
+    },
+    {
+      "timestamp": "2026-10-14 21:52:08",
+      "level": "MEDIUM",
+      "message": "偵測到 2 隻死亡蜜蜂",
+      "filename": "20261014_215208_238605_92c819f8da7b_det.jpg",
+      "photo": ""
+    },
+    {
+      "timestamp": "2026-10-14 21:53:07",
+      "level": "MEDIUM",
+      "message": "偵測到 2 隻死亡蜜蜂",
+      "filename": "20261014_215307_407945_c76322e30f68_det.jpg",
+      "photo": ""
+    },
+    {
+      "timestamp": "2026-10-14 21:54:08",
+      "level": "MEDIUM",
+      "message": "偵測到 2 隻死亡蜜蜂",
+      "filename": "20261014_215408_608679_f519f7c260df_det.jpg",
+      "photo": ""
+    },
+    {
+      "timestamp": "2026-10-14 21:55:07",
+      "level": "MEDIUM",
+      "message": "偵測到 2 隻死亡蜜蜂",
+      "filename": "20261014_215507_790483_d88c76080fcd_det.jpg",
+      "photo": ""
+    },
+    {
+      "timestamp": "2026-10-14 21:56:07",
+      "level": "MEDIUM",
+      "message": "偵測到 2 隻死亡蜜蜂",
+      "filename": "20261014_215607_129001_345d49782baa_det.jpg",
+      "photo": ""
+    },
+    {
+      "timestamp": "2026-10-14 21:57:08",
+      "level": "MEDIUM",
+      "message": "偵測到 2 隻死亡蜜蜂",
+      "filename": "20261014_215708_357316_d0b9aa77f0ca_det.jpg",
+      "photo": ""
+    },
+    {
+      "timestamp": "2026-10-14 21:58:07",
+      "level": "MEDIUM",
+      "message": "偵測到 2 隻死亡蜜蜂",
+      "filename": "20261014_215807_649315_ab52e9d692b0_det.jpg",
+      "photo": ""
+    },
+    {
+      "timestamp": "2026-10-14 21:59:08",
+      "level": "MEDIUM",
+      "message": "偵測到 2 隻死亡蜜蜂",
+      "filename": "20261014_215908_834163_ca13d731f083_det.jpg",
+      "photo": ""
+    },
+    {
+      "timestamp": "2026-10-14 22:00:08",
+      "level": "MEDIUM",
+      "message": "偵測到 2 隻死亡蜜蜂",
+      "filename": "20261014_220008_062238_549218409470_det.jpg",
+      "photo": ""
+    },
+    {
+      "timestamp": "2026-10-14 22:01:09",
+      "level": "HIGH",
+      "message": "偵測到 3 隻死亡蜜蜂",
+      "filename": "20261014_220109_269307_093139c17035_det.jpg",
+      "photo": ""
+    },
+    {
+      "timestamp": "2026-10-14 22:02:08",
+      "level": "MEDIUM",
+      "message": "偵測到 2 隻死亡蜜蜂",
+      "filename": "20261014_220208_468483_4b52134312c2_det.jpg",
+      "photo": ""
+    },
+    {
+      "timestamp": "2026-10-14 22:03:09",
+      "level": "MEDIUM",
+      "message": "偵測到 2 隻死亡蜜蜂",
+      "filename": "20261014_220309_670337_6b13f3f1ca6f_det.jpg",
+      "photo": ""
+    },
+    {
+      "timestamp": "2026-10-14 22:04:08",
+      "level": "MEDIUM",
+      "message": "偵測到 2 隻死亡蜜蜂",
+      "filename": "20261014_220408_869561_bbe19d0754f9_det.jpg",
+      "photo": ""
+    },
+    {
+      "timestamp": "2026-10-14 22:05:10",
+      "level": "MEDIUM",
+      "message": "偵測到 2 隻死亡蜜蜂",
+      "filename": "20261014_220510_044814_04073fc17ec7_det.jpg",
+      "photo": ""
+    },
+    {
+      "timestamp": "2026-10-14 22:06:09",
+      "level": "MEDIUM",
+      "message": "偵測到 2 隻死亡蜜蜂",
+      "filename": "20261014_220609_298915_75eec532649b_det.jpg",
+      "photo": ""
+    },
+    {
+      "timestamp": "2026-10-14 22:07:10",
+      "level": "MEDIUM",
+      "message": "偵測到 2 隻死亡蜜蜂",
+      "filename": "20261014_220710_529719_da8657a38f97_det.jpg",
+      "photo": ""
+    },
+    {
+      "timestamp": "2026-10-14 22:08:09",
+      "level": "MEDIUM",
+      "message": "偵測到 2 隻死亡蜜蜂",
+      "filename": "20261014_220809_850712_60e2e78364ba_det.jpg",
+      "photo": ""
+    },
+    {
+      "timestamp": "2026-10-14 22:09:09",
+      "level": "MEDIUM",
+      "message": "偵測到 2 隻死亡蜜蜂",
+      "filename": "20261014_220909_017998_a77d299fe46a_det.jpg",
+      "photo": ""
+    },
+    {
+      "timestamp": "2026-10-14 22:10:10",
+      "level": "MEDIUM",
+      "message": "偵測到 2 隻死亡蜜蜂",
+      "filename": "20261014_221010_232121_55359ec0c111_det.jpg",
+      "photo": ""
+    },
+    {
+      "timestamp": "2026-10-14 22:11:09",
+      "level": "MEDIUM",
+      "message": "偵測到 2 隻死亡蜜蜂",
+      "filename": "20261014_221109_493261_1c03767903ab_det.jpg",
+      "photo": ""
+    },
+    {
+      "timestamp": "2026-10-14 22:12:10",
+      "level": "MEDIUM",
+      "message": "偵測到 2 隻死亡蜜蜂",
+      "filename": "20261014_221210_673048_5351d170efc6_det.jpg",
+      "photo": ""
+    },
+    {
+      "timestamp": "2026-10-14 22:13:09",
+      "level": "MEDIUM",
+      "message": "偵測到 2 隻死亡蜜蜂",
+      "filename": "20261014_221309_870718_5e11e5a433ee_det.jpg",
+      "photo": ""
+    },
+    {
+      "timestamp": "2026-10-14 22:14:11",
+      "level": "MEDIUM",
+      "message": "偵測到 2 隻死亡蜜蜂",
+      "filename": "20261014_221411_096343_6915f4e5c1be_det.jpg",
+      "photo": ""
+    },
+    {
+      "timestamp": "2026-10-14 22:15:10",
+      "level": "MEDIUM",
+      "message": "偵測到 2 隻死亡蜜蜂",
+      "filename": "20261014_221510_305050_704325abf19f_det.jpg",
+      "photo": ""
+    },
+    {
+      "timestamp": "2026-10-14 22:16:11",
+      "level": "MEDIUM",
+      "message": "偵測到 2 隻死亡蜜蜂",
+      "filename": "20261014_221611_554891_9c15b4ab9449_det.jpg",
+      "photo": ""
+    },
+    {
+      "timestamp": "2026-10-14 22:17:10",
+      "level": "MEDIUM",
+      "message": "偵測到 2 隻死亡蜜蜂",
+      "filename": "20261014_221710_754037_26d59107c49f_det.jpg",
+      "photo": ""
+    },
+    {
+      "timestamp": "2026-10-14 22:18:12",
+      "level": "MEDIUM",
+      "message": "偵測到 2 隻死亡蜜蜂",
+      "filename": "20261014_221811_968631_e72388808cb2_det.jpg",
+      "photo": ""
+    },
+    {
+      "timestamp": "2026-10-14 22:19:11",
+      "level": "MEDIUM",
+      "message": "偵測到 2 隻死亡蜜蜂",
+      "filename": "20261014_221911_151515_d2108af64d51_det.jpg",
+      "photo": ""
+    },
+    {
+      "timestamp": "2026-10-14 22:20:12",
+      "level": "HIGH",
+      "message": "偵測到 3 隻死亡蜜蜂",
+      "filename": "20261014_222012_345460_52b2ba06d76b_det.jpg",
+      "photo": ""
+    },
+    {
+      "timestamp": "2026-10-14 22:21:11",
+      "level": "MEDIUM",
+      "message": "偵測到 2 隻死亡蜜蜂",
+      "filename": "20261014_222111_661082_fc7984fdd9eb_det.jpg",
+      "photo": ""
+    },
+    {
+      "timestamp": "2026-10-14 22:22:13",
+      "level": "MEDIUM",
+      "message": "偵測到 2 隻死亡蜜蜂",
+      "filename": "20261014_222212_927089_2b62441ef0cf_det.jpg",
+      "photo": ""
+    },
+    {
+      "timestamp": "2026-10-14 22:23:12",
+      "level": "MEDIUM",
+      "message": "偵測到 2 隻死亡蜜蜂",
+      "filename": "20261014_222312_256901_2b6adf5d4bf3_det.jpg",
+      "photo": ""
+    },
+    {
+      "timestamp": "2026-10-14 22:24:11",
+      "level": "MEDIUM",
+      "message": "偵測到 2 隻死亡蜜蜂",
+      "filename": "20261014_222411_426598_9432f5af65fb_det.jpg",
+      "photo": ""
+    },
+    {
+      "timestamp": "2026-10-14 22:25:12",
+      "level": "HIGH",
+      "message": "偵測到 3 隻死亡蜜蜂",
+      "filename": "20261014_222512_641097_bc82c4509038_det.jpg",
+      "photo": ""
+    },
+    {
+      "timestamp": "2026-10-14 22:26:11",
+      "level": "MEDIUM",
+      "message": "偵測到 2 隻死亡蜜蜂",
+      "filename": "20261014_222611_817174_4769bb200255_det.jpg",
+      "photo": ""
+    },
+    {
+      "timestamp": "2026-10-14 22:27:13",
+      "level": "MEDIUM",
+      "message": "偵測到 2 隻死亡蜜蜂",
+      "filename": "20261014_222713_065419_ce7fae488cb6_det.jpg",
+      "photo": ""
+    },
+    {
+      "timestamp": "2026-10-14 22:28:12",
+      "level": "MEDIUM",
+      "message": "偵測到 2 隻死亡蜜蜂",
+      "filename": "20261014_222812_253048_ffebf1e96f0d_det.jpg",
+      "photo": ""
+    },
+    {
+      "timestamp": "2026-10-14 22:29:13",
+      "level": "MEDIUM",
+      "message": "偵測到 2 隻死亡蜜蜂",
+      "filename": "20261014_222913_721107_d06d351568b6_det.jpg",
+      "photo": ""
+    },
+    {
+      "timestamp": "2026-10-14 22:30:12",
+      "level": "MEDIUM",
+      "message": "偵測到 2 隻死亡蜜蜂",
+      "filename": "20261014_223012_900519_31f8e834a47e_det.jpg",
+      "photo": ""
+    },
+    {
+      "timestamp": "2026-10-14 22:31:14",
+      "level": "MEDIUM",
+      "message": "偵測到 2 隻死亡蜜蜂",
+      "filename": "20261014_223114_187685_739f85645de6_det.jpg",
+      "photo": ""
+    },
+    {
+      "timestamp": "2026-10-14 22:32:13",
+      "level": "MEDIUM",
+      "message": "偵測到 2 隻死亡蜜蜂",
+      "filename": "20261014_223213_438896_44cdf1ccdc9b_det.jpg",
+      "photo": ""
+    },
+    {
+      "timestamp": "2026-10-14 22:33:14",
+      "level": "MEDIUM",
+      "message": "偵測到 2 隻死亡蜜蜂",
+      "filename": "20261014_223314_628539_92f16ee3a7e8_det.jpg",
+      "photo": ""
+    },
+    {
+      "timestamp": "2026-10-14 22:34:13",
+      "level": "MEDIUM",
+      "message": "偵測到 2 隻死亡蜜蜂",
+      "filename": "20261014_223413_752091_e31d1fa0f823_det.jpg",
+      "photo": ""
+    },
+    {
+      "timestamp": "2026-10-14 22:35:14",
+      "level": "MEDIUM",
+      "message": "偵測到 2 隻死亡蜜蜂",
+      "filename": "20261014_223514_918787_79f0cb3dd85c_det.jpg",
+      "photo": ""
+    },
+    {
+      "timestamp": "2026-10-14 22:36:14",
+      "level": "MEDIUM",
+      "message": "偵測到 2 隻死亡蜜蜂",
+      "filename": "20261014_223614_140154_4a69a20586f7_det.jpg",
+      "photo": ""
+    },
+    {
+      "timestamp": "2026-10-14 22:37:13",
+      "level": "MEDIUM",
+      "message": "偵測到 2 隻死亡蜜蜂",
+      "filename": "20261014_223713_296610_ac8e94a9a918_det.jpg",
+      "photo": ""
+    },
+    {
+      "timestamp": "2026-10-14 22:38:14",
+      "level": "MEDIUM",
+      "message": "偵測到 2 隻死亡蜜蜂",
+      "filename": "20261014_223814_540671_b9046a7540d3_det.jpg",
+      "photo": ""
+    },
+    {
+      "timestamp": "2026-10-14 22:39:13",
+      "level": "MEDIUM",
+      "message": "偵測到 2 隻死亡蜜蜂",
+      "filename": "20261014_223913_723227_ee6a2fc66940_det.jpg",
+      "photo": ""
+    },
+    {
+      "timestamp": "2026-10-14 22:40:15",
+      "level": "MEDIUM",
+      "message": "偵測到 2 隻死亡蜜蜂",
+      "filename": "20261014_224014_977351_74044b0be2da_det.jpg",
+      "photo": ""
+    },
+    {
+      "timestamp": "2026-10-14 22:41:14",
+      "level": "MEDIUM",
+      "message": "偵測到 2 隻死亡蜜蜂",
+      "filename": "20261014_224114_172177_c261aac492c9_det.jpg",
+      "photo": ""
+    },
+    {
+      "timestamp": "2026-10-14 22:42:15",
+      "level": "MEDIUM",
+      "message": "偵測到 2 隻死亡蜜蜂",
+      "filename": "20261014_224215_422125_6fd8772978e2_det.jpg",
+      "photo": ""
+    },
+    {
+      "timestamp": "2026-10-14 22:43:14",
+      "level": "MEDIUM",
+      "message": "偵測到 2 隻死亡蜜蜂",
+      "filename": "20261014_224314_651213_0880a4178654_det.jpg",
+      "photo": ""
+    },
+    {
+      "timestamp": "2026-10-14 22:44:15",
+      "level": "HIGH",
+      "message": "偵測到 3 隻死亡蜜蜂",
+      "filename": "20261014_224415_845216_149ead7362d7_det.jpg",
+      "photo": ""
+    },
+    {
+      "timestamp": "2026-10-14 22:45:15",
+      "level": "HIGH",
+      "message": "偵測到 3 隻死亡蜜蜂",
+      "filename": "20261014_224515_049547_ba46973d0615_det.jpg",
+      "photo": ""
+    },
+    {
+      "timestamp": "2026-10-14 22:46:16",
+      "level": "HIGH",
+      "message": "偵測到 3 隻死亡蜜蜂",
+      "filename": "20261014_224616_296477_064144da849f_det.jpg",
+      "photo": ""
+    },
+    {
+      "timestamp": "2026-10-14 22:47:15",
+      "level": "HIGH",
+      "message": "偵測到 3 隻死亡蜜蜂",
+      "filename": "20261014_224715_544364_507bb3b2fd5b_det.jpg",
+      "photo": "photos/capture_20_raw.jpg"
+    },
+    {
+      "timestamp": "2026-10-14 22:48:16",
+      "level": "MEDIUM",
+      "message": "偵測到 2 隻死亡蜜蜂",
+      "filename": "20261014_224816_690955_3283c1c2fc09_det.jpg",
+      "photo": "photos/capture_19_raw.jpg"
+    },
+    {
+      "timestamp": "2026-10-14 22:49:15",
+      "level": "MEDIUM",
+      "message": "偵測到 2 隻死亡蜜蜂",
+      "filename": "20261014_224915_882595_f0e1030e8637_det.jpg",
+      "photo": "photos/capture_18_raw.jpg"
+    },
+    {
+      "timestamp": "2026-10-14 22:50:17",
+      "level": "HIGH",
+      "message": "偵測到 3 隻死亡蜜蜂",
+      "filename": "20261014_225017_048882_a505359c725f_det.jpg",
+      "photo": "photos/capture_17_raw.jpg"
+    },
+    {
+      "timestamp": "2026-10-14 22:51:16",
+      "level": "MEDIUM",
+      "message": "偵測到 2 隻死亡蜜蜂",
+      "filename": "20261014_225116_235036_76425226b39f_det.jpg",
+      "photo": "photos/capture_16_raw.jpg"
+    },
+    {
+      "timestamp": "2026-10-14 22:52:17",
+      "level": "MEDIUM",
+      "message": "偵測到 2 隻死亡蜜蜂",
+      "filename": "20261014_225217_485398_b00fac36ed1d_det.jpg",
+      "photo": "photos/capture_15_raw.jpg"
+    },
+    {
+      "timestamp": "2026-10-14 22:53:16",
+      "level": "MEDIUM",
+      "message": "偵測到 2 隻死亡蜜蜂",
+      "filename": "20261014_225316_618499_10c42f2fb31e_det.jpg",
+      "photo": "photos/capture_14_raw.jpg"
+    },
+    {
+      "timestamp": "2026-10-14 22:54:17",
+      "level": "MEDIUM",
+      "message": "偵測到 2 隻死亡蜜蜂",
+      "filename": "20261014_225417_805862_dc6a2456cd18_det.jpg",
+      "photo": "photos/capture_13_raw.jpg"
+    },
+    {
+      "timestamp": "2026-10-14 22:55:17",
+      "level": "MEDIUM",
+      "message": "偵測到 2 隻死亡蜜蜂",
+      "filename": "20261014_225517_022886_4e5666b08063_det.jpg",
+      "photo": "photos/capture_12_raw.jpg"
+    },
+    {
+      "timestamp": "2026-10-14 22:56:18",
+      "level": "MEDIUM",
+      "message": "偵測到 2 隻死亡蜜蜂",
+      "filename": "20261014_225618_205002_1fbddb3ce2a3_det.jpg",
+      "photo": "photos/capture_11_raw.jpg"
+    },
+    {
+      "timestamp": "2026-10-14 22:57:17",
+      "level": "MEDIUM",
+      "message": "偵測到 2 隻死亡蜜蜂",
+      "filename": "20261014_225717_438933_7e98c6a71925_det.jpg",
+      "photo": "photos/capture_10_raw.jpg"
+    },
+    {
+      "timestamp": "2026-10-14 22:58:18",
+      "level": "MEDIUM",
+      "message": "偵測到 2 隻死亡蜜蜂",
+      "filename": "20261014_225818_653708_5e857bdeea98_det.jpg",
+      "photo": "photos/capture_09_raw.jpg"
+    },
+    {
+      "timestamp": "2026-10-14 22:59:17",
+      "level": "MEDIUM",
+      "message": "偵測到 2 隻死亡蜜蜂",
+      "filename": "20261014_225917_850480_062efc6f6fbd_det.jpg",
+      "photo": "photos/capture_08_raw.jpg"
+    },
+    {
+      "timestamp": "2026-10-14 23:00:17",
+      "level": "MEDIUM",
+      "message": "偵測到 2 隻死亡蜜蜂",
+      "filename": "20261014_230017_133807_08305d8f1917_det.jpg",
+      "photo": "photos/capture_07_raw.jpg"
+    },
+    {
+      "timestamp": "2026-10-14 23:01:18",
+      "level": "MEDIUM",
+      "message": "偵測到 2 隻死亡蜜蜂",
+      "filename": "20261014_230118_354235_3115b1109905_det.jpg",
+      "photo": "photos/capture_06_raw.jpg"
+    },
+    {
+      "timestamp": "2026-10-14 23:02:17",
+      "level": "MEDIUM",
+      "message": "偵測到 2 隻死亡蜜蜂",
+      "filename": "20261014_230217_550464_b2263f191145_det.jpg",
+      "photo": "photos/capture_05_raw.jpg"
+    },
+    {
+      "timestamp": "2026-10-14 23:03:18",
+      "level": "MEDIUM",
+      "message": "偵測到 2 隻死亡蜜蜂",
+      "filename": "20261014_230318_708490_6e7bee356386_det.jpg",
+      "photo": "photos/capture_04_raw.jpg"
+    },
+    {
+      "timestamp": "2026-10-14 23:04:17",
+      "level": "MEDIUM",
+      "message": "偵測到 2 隻死亡蜜蜂",
+      "filename": "20261014_230417_877065_e8660ee09f04_det.jpg",
+      "photo": "photos/capture_03_raw.jpg"
+    },
+    {
+      "timestamp": "2026-10-14 23:05:19",
+      "level": "MEDIUM",
+      "message": "偵測到 2 隻死亡蜜蜂",
+      "filename": "20261014_230519_045788_4c5b5fb767a9_det.jpg",
+      "photo": "photos/capture_02_raw.jpg"
+    },
+    {
+      "timestamp": "2026-10-14 23:06:18",
+      "level": "HIGH",
+      "message": "偵測到 3 隻死亡蜜蜂",
+      "filename": "20261014_230618_201272_14aef9dba09d_det.jpg",
+      "photo": "photos/capture_01_raw.jpg"
+    }
+  ],
+  "metrics": [
+    {
+      "t": "2026-10-14T22:15:02",
+      "cpu": 27.3,
+      "ram": 24.4,
+      "temp": 37.0,
+      "in_schedule": true
+    },
+    {
+      "t": "2026-10-14T22:15:17",
+      "cpu": 1.5,
+      "ram": 23.4,
+      "temp": 36.5,
+      "in_schedule": true
+    },
+    {
+      "t": "2026-10-14T22:15:33",
+      "cpu": 1.5,
+      "ram": 23.5,
+      "temp": 36.5,
+      "in_schedule": true
+    },
+    {
+      "t": "2026-10-14T22:15:48",
+      "cpu": 0.5,
+      "ram": 23.4,
+      "temp": 36.5,
+      "in_schedule": true
+    },
+    {
+      "t": "2026-10-14T22:16:04",
+      "cpu": 8.0,
+      "ram": 23.4,
+      "temp": 36.5,
+      "in_schedule": true
+    },
+    {
+      "t": "2026-10-14T22:16:19",
+      "cpu": 1.0,
+      "ram": 23.4,
+      "temp": 36.5,
+      "in_schedule": true
+    },
+    {
+      "t": "2026-10-14T22:16:35",
+      "cpu": 0.5,
+      "ram": 23.4,
+      "temp": 36.0,
+      "in_schedule": true
+    },
+    {
+      "t": "2026-10-14T22:16:50",
+      "cpu": 1.5,
+      "ram": 23.5,
+      "temp": 36.5,
+      "in_schedule": true
+    },
+    {
+      "t": "2026-10-14T22:17:06",
+      "cpu": 2.0,
+      "ram": 23.4,
+      "temp": 36.0,
+      "in_schedule": true
+    },
+    {
+      "t": "2026-10-14T22:17:21",
+      "cpu": 3.5,
+      "ram": 23.4,
+      "temp": 36.0,
+      "in_schedule": true
+    },
+    {
+      "t": "2026-10-14T22:17:38",
+      "cpu": 1.0,
+      "ram": 23.4,
+      "temp": 36.0,
+      "in_schedule": true
+    },
+    {
+      "t": "2026-10-14T22:17:53",
+      "cpu": 0.5,
+      "ram": 23.4,
+      "temp": 36.5,
+      "in_schedule": true
+    },
+    {
+      "t": "2026-10-14T22:18:09",
+      "cpu": 1.0,
+      "ram": 23.4,
+      "temp": 36.0,
+      "in_schedule": true
+    },
+    {
+      "t": "2026-10-14T22:18:24",
+      "cpu": 1.0,
+      "ram": 23.4,
+      "temp": 36.0,
+      "in_schedule": true
+    },
+    {
+      "t": "2026-10-14T22:18:40",
+      "cpu": 1.0,
+      "ram": 23.4,
+      "temp": 36.0,
+      "in_schedule": true
+    },
+    {
+      "t": "2026-10-14T22:18:55",
+      "cpu": 2.0,
+      "ram": 23.5,
+      "temp": 36.0,
+      "in_schedule": true
+    },
+    {
+      "t": "2026-10-14T22:19:11",
+      "cpu": 1.0,
+      "ram": 23.4,
+      "temp": 36.0,
+      "in_schedule": true
+    },
+    {
+      "t": "2026-10-14T22:19:26",
+      "cpu": 3.0,
+      "ram": 23.4,
+      "temp": 36.5,
+      "in_schedule": true
+    },
+    {
+      "t": "2026-10-14T22:19:42",
+      "cpu": 1.0,
+      "ram": 23.4,
+      "temp": 36.5,
+      "in_schedule": true
+    },
+    {
+      "t": "2026-10-14T22:19:57",
+      "cpu": 2.0,
+      "ram": 23.4,
+      "temp": 36.0,
+      "in_schedule": true
+    },
+    {
+      "t": "2026-10-14T22:20:13",
+      "cpu": 2.5,
+      "ram": 23.5,
+      "temp": 36.0,
+      "in_schedule": true
+    },
+    {
+      "t": "2026-10-14T22:20:28",
+      "cpu": 1.5,
+      "ram": 23.4,
+      "temp": 36.0,
+      "in_schedule": true
+    },
+    {
+      "t": "2026-10-14T22:20:44",
+      "cpu": 0.5,
+      "ram": 23.5,
+      "temp": 36.5,
+      "in_schedule": true
+    },
+    {
+      "t": "2026-10-14T22:20:59",
+      "cpu": 2.5,
+      "ram": 23.5,
+      "temp": 36.0,
+      "in_schedule": true
+    },
+    {
+      "t": "2026-10-14T22:21:15",
+      "cpu": 2.0,
+      "ram": 23.5,
+      "temp": 36.0,
+      "in_schedule": true
+    },
+    {
+      "t": "2026-10-14T22:21:30",
+      "cpu": 1.0,
+      "ram": 23.4,
+      "temp": 36.0,
+      "in_schedule": true
+    },
+    {
+      "t": "2026-10-14T22:21:46",
+      "cpu": 0.5,
+      "ram": 23.5,
+      "temp": 36.5,
+      "in_schedule": true
+    },
+    {
+      "t": "2026-10-14T22:22:01",
+      "cpu": 27.4,
+      "ram": 24.2,
+      "temp": 37.0,
+      "in_schedule": true
+    },
+    {
+      "t": "2026-10-14T22:22:17",
+      "cpu": 0.5,
+      "ram": 23.4,
+      "temp": 36.5,
+      "in_schedule": true
+    },
+    {
+      "t": "2026-10-14T22:22:32",
+      "cpu": 0.5,
+      "ram": 23.5,
+      "temp": 36.5,
+      "in_schedule": true
+    },
+    {
+      "t": "2026-10-14T22:22:49",
+      "cpu": 0.5,
+      "ram": 23.4,
+      "temp": 37.0,
+      "in_schedule": true
+    },
+    {
+      "t": "2026-10-14T22:23:04",
+      "cpu": 2.5,
+      "ram": 23.4,
+      "temp": 36.5,
+      "in_schedule": true
+    },
+    {
+      "t": "2026-10-14T22:23:20",
+      "cpu": 1.0,
+      "ram": 23.4,
+      "temp": 36.5,
+      "in_schedule": true
+    },
+    {
+      "t": "2026-10-14T22:23:35",
+      "cpu": 0.5,
+      "ram": 23.4,
+      "temp": 36.5,
+      "in_schedule": true
+    },
+    {
+      "t": "2026-10-14T22:23:51",
+      "cpu": 1.5,
+      "ram": 23.4,
+      "temp": 37.0,
+      "in_schedule": true
+    },
+    {
+      "t": "2026-10-14T22:24:06",
+      "cpu": 1.0,
+      "ram": 23.4,
+      "temp": 37.0,
+      "in_schedule": true
+    },
+    {
+      "t": "2026-10-14T22:24:22",
+      "cpu": 1.0,
+      "ram": 23.5,
+      "temp": 36.5,
+      "in_schedule": true
+    },
+    {
+      "t": "2026-10-14T22:24:37",
+      "cpu": 1.5,
+      "ram": 23.4,
+      "temp": 37.0,
+      "in_schedule": true
+    },
+    {
+      "t": "2026-10-14T22:24:53",
+      "cpu": 3.0,
+      "ram": 23.5,
+      "temp": 37.0,
+      "in_schedule": true
+    },
+    {
+      "t": "2026-10-14T22:25:08",
+      "cpu": 1.5,
+      "ram": 23.5,
+      "temp": 37.0,
+      "in_schedule": true
+    },
+    {
+      "t": "2026-10-14T22:25:24",
+      "cpu": 1.5,
+      "ram": 23.4,
+      "temp": 37.0,
+      "in_schedule": true
+    },
+    {
+      "t": "2026-10-14T22:25:39",
+      "cpu": 1.0,
+      "ram": 23.4,
+      "temp": 36.5,
+      "in_schedule": true
+    },
+    {
+      "t": "2026-10-14T22:25:55",
+      "cpu": 0.5,
+      "ram": 23.4,
+      "temp": 37.0,
+      "in_schedule": true
+    },
+    {
+      "t": "2026-10-14T22:26:10",
+      "cpu": 0.5,
+      "ram": 23.4,
+      "temp": 37.0,
+      "in_schedule": true
+    },
+    {
+      "t": "2026-10-14T22:26:26",
+      "cpu": 2.0,
+      "ram": 23.4,
+      "temp": 36.5,
+      "in_schedule": true
+    },
+    {
+      "t": "2026-10-14T22:26:41",
+      "cpu": 0.5,
+      "ram": 23.4,
+      "temp": 37.0,
+      "in_schedule": true
+    },
+    {
+      "t": "2026-10-14T22:26:57",
+      "cpu": 1.5,
+      "ram": 23.4,
+      "temp": 36.5,
+      "in_schedule": true
+    },
+    {
+      "t": "2026-10-14T22:27:12",
+      "cpu": 1.0,
+      "ram": 23.4,
+      "temp": 37.5,
+      "in_schedule": true
+    },
+    {
+      "t": "2026-10-14T22:27:28",
+      "cpu": 1.0,
+      "ram": 23.4,
+      "temp": 37.0,
+      "in_schedule": true
+    },
+    {
+      "t": "2026-10-14T22:27:43",
+      "cpu": 1.0,
+      "ram": 23.4,
+      "temp": 37.0,
+      "in_schedule": true
+    },
+    {
+      "t": "2026-10-14T22:28:00",
+      "cpu": 1.0,
+      "ram": 23.4,
+      "temp": 37.0,
+      "in_schedule": true
+    },
+    {
+      "t": "2026-10-14T22:28:15",
+      "cpu": 2.0,
+      "ram": 23.5,
+      "temp": 37.0,
+      "in_schedule": true
+    },
+    {
+      "t": "2026-10-14T22:28:31",
+      "cpu": 1.0,
+      "ram": 23.4,
+      "temp": 37.0,
+      "in_schedule": true
+    },
+    {
+      "t": "2026-10-14T22:28:46",
+      "cpu": 1.0,
+      "ram": 23.4,
+      "temp": 37.0,
+      "in_schedule": true
+    },
+    {
+      "t": "2026-10-14T22:29:02",
+      "cpu": 26.6,
+      "ram": 24.3,
+      "temp": 37.5,
+      "in_schedule": true
+    },
+    {
+      "t": "2026-10-14T22:29:17",
+      "cpu": 2.0,
+      "ram": 23.4,
+      "temp": 37.0,
+      "in_schedule": true
+    },
+    {
+      "t": "2026-10-14T22:29:33",
+      "cpu": 0.5,
+      "ram": 23.4,
+      "temp": 37.0,
+      "in_schedule": true
+    },
+    {
+      "t": "2026-10-14T22:29:48",
+      "cpu": 1.5,
+      "ram": 23.4,
+      "temp": 37.0,
+      "in_schedule": true
+    },
+    {
+      "t": "2026-10-14T22:30:04",
+      "cpu": 1.0,
+      "ram": 23.5,
+      "temp": 37.5,
+      "in_schedule": true
+    },
+    {
+      "t": "2026-10-14T22:30:19",
+      "cpu": 2.0,
+      "ram": 23.4,
+      "temp": 37.0,
+      "in_schedule": true
+    },
+    {
+      "t": "2026-10-14T22:30:35",
+      "cpu": 2.5,
+      "ram": 23.5,
+      "temp": 37.5,
+      "in_schedule": true
+    },
+    {
+      "t": "2026-10-14T22:30:50",
+      "cpu": 1.0,
+      "ram": 23.5,
+      "temp": 37.5,
+      "in_schedule": true
+    },
+    {
+      "t": "2026-10-14T22:31:06",
+      "cpu": 2.5,
+      "ram": 23.4,
+      "temp": 37.5,
+      "in_schedule": true
+    },
+    {
+      "t": "2026-10-14T22:31:21",
+      "cpu": 1.5,
+      "ram": 23.4,
+      "temp": 37.5,
+      "in_schedule": true
+    },
+    {
+      "t": "2026-10-14T22:31:37",
+      "cpu": 1.5,
+      "ram": 23.4,
+      "temp": 37.0,
+      "in_schedule": true
+    },
+    {
+      "t": "2026-10-14T22:31:52",
+      "cpu": 1.5,
+      "ram": 23.4,
+      "temp": 37.0,
+      "in_schedule": true
+    },
+    {
+      "t": "2026-10-14T22:32:08",
+      "cpu": 3.0,
+      "ram": 23.4,
+      "temp": 37.5,
+      "in_schedule": true
+    },
+    {
+      "t": "2026-10-14T22:32:23",
+      "cpu": 3.0,
+      "ram": 23.5,
+      "temp": 37.5,
+      "in_schedule": true
+    },
+    {
+      "t": "2026-10-14T22:32:39",
+      "cpu": 3.0,
+      "ram": 23.5,
+      "temp": 37.5,
+      "in_schedule": true
+    },
+    {
+      "t": "2026-10-14T22:32:54",
+      "cpu": 1.5,
+      "ram": 23.4,
+      "temp": 37.0,
+      "in_schedule": true
+    },
+    {
+      "t": "2026-10-14T22:33:10",
+      "cpu": 2.0,
+      "ram": 23.4,
+      "temp": 37.5,
+      "in_schedule": true
+    },
+    {
+      "t": "2026-10-14T22:33:26",
+      "cpu": 1.5,
+      "ram": 23.4,
+      "temp": 37.5,
+      "in_schedule": true
+    },
+    {
+      "t": "2026-10-14T22:33:42",
+      "cpu": 3.4,
+      "ram": 23.4,
+      "temp": 37.0,
+      "in_schedule": true
+    },
+    {
+      "t": "2026-10-14T22:33:57",
+      "cpu": 2.0,
+      "ram": 23.5,
+      "temp": 38.0,
+      "in_schedule": true
+    },
+    {
+      "t": "2026-10-14T22:34:13",
+      "cpu": 2.5,
+      "ram": 23.4,
+      "temp": 37.5,
+      "in_schedule": true
+    },
+    {
+      "t": "2026-10-14T22:34:28",
+      "cpu": 1.0,
+      "ram": 23.4,
+      "temp": 37.0,
+      "in_schedule": true
+    },
+    {
+      "t": "2026-10-14T22:34:44",
+      "cpu": 1.0,
+      "ram": 23.4,
+      "temp": 38.0,
+      "in_schedule": true
+    },
+    {
+      "t": "2026-10-14T22:34:59",
+      "cpu": 0.5,
+      "ram": 23.4,
+      "temp": 37.5,
+      "in_schedule": true
+    },
+    {
+      "t": "2026-10-14T22:35:15",
+      "cpu": 2.5,
+      "ram": 23.4,
+      "temp": 37.5,
+      "in_schedule": true
+    },
+    {
+      "t": "2026-10-14T22:35:30",
+      "cpu": 1.5,
+      "ram": 23.4,
+      "temp": 37.5,
+      "in_schedule": true
+    },
+    {
+      "t": "2026-10-14T22:35:46",
+      "cpu": 1.5,
+      "ram": 23.4,
+      "temp": 37.0,
+      "in_schedule": true
+    },
+    {
+      "t": "2026-10-14T22:36:01",
+      "cpu": 26.5,
+      "ram": 24.3,
+      "temp": 37.5,
+      "in_schedule": true
+    },
+    {
+      "t": "2026-10-14T22:36:17",
+      "cpu": 2.0,
+      "ram": 23.4,
+      "temp": 37.0,
+      "in_schedule": true
+    },
+    {
+      "t": "2026-10-14T22:36:32",
+      "cpu": 1.0,
+      "ram": 23.4,
+      "temp": 37.0,
+      "in_schedule": true
+    },
+    {
+      "t": "2026-10-14T22:36:48",
+      "cpu": 1.0,
+      "ram": 23.4,
+      "temp": 37.0,
+      "in_schedule": true
+    },
+    {
+      "t": "2026-10-14T22:37:03",
+      "cpu": 1.0,
+      "ram": 23.4,
+      "temp": 37.0,
+      "in_schedule": true
+    },
+    {
+      "t": "2026-10-14T22:37:19",
+      "cpu": 1.0,
+      "ram": 23.4,
+      "temp": 37.0,
+      "in_schedule": true
+    },
+    {
+      "t": "2026-10-14T22:37:34",
+      "cpu": 0.5,
+      "ram": 23.4,
+      "temp": 36.5,
+      "in_schedule": true
+    },
+    {
+      "t": "2026-10-14T22:37:50",
+      "cpu": 2.0,
+      "ram": 23.4,
+      "temp": 36.5,
+      "in_schedule": true
+    },
+    {
+      "t": "2026-10-14T22:38:05",
+      "cpu": 0.5,
+      "ram": 23.4,
+      "temp": 36.5,
+      "in_schedule": true
+    },
+    {
+      "t": "2026-10-14T22:38:22",
+      "cpu": 2.0,
+      "ram": 23.4,
+      "temp": 37.0,
+      "in_schedule": true
+    },
+    {
+      "t": "2026-10-14T22:38:37",
+      "cpu": 0.5,
+      "ram": 23.4,
+      "temp": 36.5,
+      "in_schedule": true
+    },
+    {
+      "t": "2026-10-14T22:38:53",
+      "cpu": 1.5,
+      "ram": 23.4,
+      "temp": 37.0,
+      "in_schedule": true
+    },
+    {
+      "t": "2026-10-14T22:39:08",
+      "cpu": 1.5,
+      "ram": 23.4,
+      "temp": 36.5,
+      "in_schedule": true
+    },
+    {
+      "t": "2026-10-14T22:39:24",
+      "cpu": 2.0,
+      "ram": 23.5,
+      "temp": 37.0,
+      "in_schedule": true
+    },
+    {
+      "t": "2026-10-14T22:39:39",
+      "cpu": 1.5,
+      "ram": 23.5,
+      "temp": 36.5,
+      "in_schedule": true
+    },
+    {
+      "t": "2026-10-14T22:39:55",
+      "cpu": 1.5,
+      "ram": 23.5,
+      "temp": 36.5,
+      "in_schedule": true
+    },
+    {
+      "t": "2026-10-14T22:40:10",
+      "cpu": 1.5,
+      "ram": 23.4,
+      "temp": 36.5,
+      "in_schedule": true
+    },
+    {
+      "t": "2026-10-14T22:40:26",
+      "cpu": 0.5,
+      "ram": 23.4,
+      "temp": 36.5,
+      "in_schedule": true
+    },
+    {
+      "t": "2026-10-14T22:40:41",
+      "cpu": 1.0,
+      "ram": 23.5,
+      "temp": 36.0,
+      "in_schedule": true
+    },
+    {
+      "t": "2026-10-14T22:40:57",
+      "cpu": 0.5,
+      "ram": 23.4,
+      "temp": 36.0,
+      "in_schedule": true
+    },
+    {
+      "t": "2026-10-14T22:41:12",
+      "cpu": 1.5,
+      "ram": 23.4,
+      "temp": 36.0,
+      "in_schedule": true
+    },
+    {
+      "t": "2026-10-14T22:41:28",
+      "cpu": 2.0,
+      "ram": 23.4,
+      "temp": 35.5,
+      "in_schedule": true
+    },
+    {
+      "t": "2026-10-14T22:41:43",
+      "cpu": 0.5,
+      "ram": 23.4,
+      "temp": 36.0,
+      "in_schedule": true
+    },
+    {
+      "t": "2026-10-14T22:41:59",
+      "cpu": 2.0,
+      "ram": 23.4,
+      "temp": 36.0,
+      "in_schedule": true
+    },
+    {
+      "t": "2026-10-14T22:42:14",
+      "cpu": 2.0,
+      "ram": 23.4,
+      "temp": 36.0,
+      "in_schedule": true
+    },
+    {
+      "t": "2026-10-14T22:42:30",
+      "cpu": 1.0,
+      "ram": 23.4,
+      "temp": 36.0,
+      "in_schedule": true
+    },
+    {
+      "t": "2026-10-14T22:42:45",
+      "cpu": 1.5,
+      "ram": 23.4,
+      "temp": 36.0,
+      "in_schedule": true
+    },
+    {
+      "t": "2026-10-14T22:43:01",
+      "cpu": 27.4,
+      "ram": 24.2,
+      "temp": 37.0,
+      "in_schedule": true
+    },
+    {
+      "t": "2026-10-14T22:43:16",
+      "cpu": 1.0,
+      "ram": 23.4,
+      "temp": 37.0,
+      "in_schedule": true
+    },
+    {
+      "t": "2026-10-14T22:43:33",
+      "cpu": 1.5,
+      "ram": 23.4,
+      "temp": 36.0,
+      "in_schedule": true
+    },
+    {
+      "t": "2026-10-14T22:43:48",
+      "cpu": 1.5,
+      "ram": 23.4,
+      "temp": 36.0,
+      "in_schedule": true
+    },
+    {
+      "t": "2026-10-14T22:44:04",
+      "cpu": 19.8,
+      "ram": 23.5,
+      "temp": 36.5,
+      "in_schedule": true
+    },
+    {
+      "t": "2026-10-14T22:44:19",
+      "cpu": 2.0,
+      "ram": 23.4,
+      "temp": 36.0,
+      "in_schedule": true
+    },
+    {
+      "t": "2026-10-14T22:44:35",
+      "cpu": 1.0,
+      "ram": 23.4,
+      "temp": 36.0,
+      "in_schedule": true
+    },
+    {
+      "t": "2026-10-14T22:44:50",
+      "cpu": 2.0,
+      "ram": 23.4,
+      "temp": 36.5,
+      "in_schedule": true
+    },
+    {
+      "t": "2026-10-14T22:45:06",
+      "cpu": 1.5,
+      "ram": 23.5,
+      "temp": 36.5,
+      "in_schedule": true
+    },
+    {
+      "t": "2026-10-14T22:45:21",
+      "cpu": 0.5,
+      "ram": 23.4,
+      "temp": 36.0,
+      "in_schedule": true
+    },
+    {
+      "t": "2026-10-14T22:45:37",
+      "cpu": 3.0,
+      "ram": 23.4,
+      "temp": 36.0,
+      "in_schedule": true
+    },
+    {
+      "t": "2026-10-14T22:45:52",
+      "cpu": 0.5,
+      "ram": 23.4,
+      "temp": 36.5,
+      "in_schedule": true
+    },
+    {
+      "t": "2026-10-14T22:46:08",
+      "cpu": 0.5,
+      "ram": 23.4,
+      "temp": 36.0,
+      "in_schedule": true
+    },
+    {
+      "t": "2026-10-14T22:46:23",
+      "cpu": 1.0,
+      "ram": 23.4,
+      "temp": 36.0,
+      "in_schedule": true
+    },
+    {
+      "t": "2026-10-14T22:46:39",
+      "cpu": 2.0,
+      "ram": 23.4,
+      "temp": 36.0,
+      "in_schedule": true
+    },
+    {
+      "t": "2026-10-14T22:46:54",
+      "cpu": 2.0,
+      "ram": 23.4,
+      "temp": 36.0,
+      "in_schedule": true
+    },
+    {
+      "t": "2026-10-14T22:47:10",
+      "cpu": 2.0,
+      "ram": 23.4,
+      "temp": 36.5,
+      "in_schedule": true
+    },
+    {
+      "t": "2026-10-14T22:47:25",
+      "cpu": 0.5,
+      "ram": 23.4,
+      "temp": 36.0,
+      "in_schedule": true
+    },
+    {
+      "t": "2026-10-14T22:47:41",
+      "cpu": 1.5,
+      "ram": 23.4,
+      "temp": 36.5,
+      "in_schedule": true
+    },
+    {
+      "t": "2026-10-14T22:47:56",
+      "cpu": 1.0,
+      "ram": 23.5,
+      "temp": 36.5,
+      "in_schedule": true
+    },
+    {
+      "t": "2026-10-14T22:48:12",
+      "cpu": 2.5,
+      "ram": 23.4,
+      "temp": 36.5,
+      "in_schedule": true
+    },
+    {
+      "t": "2026-10-14T22:48:27",
+      "cpu": 0.5,
+      "ram": 23.4,
+      "temp": 36.5,
+      "in_schedule": true
+    },
+    {
+      "t": "2026-10-14T22:48:44",
+      "cpu": 2.5,
+      "ram": 23.4,
+      "temp": 36.5,
+      "in_schedule": true
+    },
+    {
+      "t": "2026-10-14T22:48:59",
+      "cpu": 1.0,
+      "ram": 23.4,
+      "temp": 36.5,
+      "in_schedule": true
+    },
+    {
+      "t": "2026-10-14T22:49:15",
+      "cpu": 3.5,
+      "ram": 23.4,
+      "temp": 36.5,
+      "in_schedule": true
+    },
+    {
+      "t": "2026-10-14T22:49:30",
+      "cpu": 1.0,
+      "ram": 23.4,
+      "temp": 36.5,
+      "in_schedule": true
+    },
+    {
+      "t": "2026-10-14T22:49:46",
+      "cpu": 1.0,
+      "ram": 23.5,
+      "temp": 36.5,
+      "in_schedule": true
+    },
+    {
+      "t": "2026-10-14T22:50:01",
+      "cpu": 24.6,
+      "ram": 24.0,
+      "temp": 36.5,
+      "in_schedule": true
+    },
+    {
+      "t": "2026-10-14T22:50:17",
+      "cpu": 2.0,
+      "ram": 23.5,
+      "temp": 36.5,
+      "in_schedule": true
+    },
+    {
+      "t": "2026-10-14T22:50:32",
+      "cpu": 1.0,
+      "ram": 23.4,
+      "temp": 36.5,
+      "in_schedule": true
+    },
+    {
+      "t": "2026-10-14T22:50:48",
+      "cpu": 1.5,
+      "ram": 23.4,
+      "temp": 36.5,
+      "in_schedule": true
+    },
+    {
+      "t": "2026-10-14T22:51:03",
+      "cpu": 22.8,
+      "ram": 23.5,
+      "temp": 37.5,
+      "in_schedule": true
+    },
+    {
+      "t": "2026-10-14T22:51:19",
+      "cpu": 1.0,
+      "ram": 23.5,
+      "temp": 36.5,
+      "in_schedule": true
+    },
+    {
+      "t": "2026-10-14T22:51:34",
+      "cpu": 0.5,
+      "ram": 23.5,
+      "temp": 37.0,
+      "in_schedule": true
+    },
+    {
+      "t": "2026-10-14T22:51:50",
+      "cpu": 0.5,
+      "ram": 23.4,
+      "temp": 37.0,
+      "in_schedule": true
+    },
+    {
+      "t": "2026-10-14T22:52:05",
+      "cpu": 1.5,
+      "ram": 23.5,
+      "temp": 37.0,
+      "in_schedule": true
+    },
+    {
+      "t": "2026-10-14T22:52:21",
+      "cpu": 0.5,
+      "ram": 23.4,
+      "temp": 37.0,
+      "in_schedule": true
+    },
+    {
+      "t": "2026-10-14T22:52:37",
+      "cpu": 0.5,
+      "ram": 23.4,
+      "temp": 37.0,
+      "in_schedule": true
+    },
+    {
+      "t": "2026-10-14T22:52:52",
+      "cpu": 1.0,
+      "ram": 23.4,
+      "temp": 37.0,
+      "in_schedule": true
+    },
+    {
+      "t": "2026-10-14T22:53:08",
+      "cpu": 1.0,
+      "ram": 23.4,
+      "temp": 36.5,
+      "in_schedule": true
+    },
+    {
+      "t": "2026-10-14T22:53:23",
+      "cpu": 0.5,
+      "ram": 23.4,
+      "temp": 36.5,
+      "in_schedule": true
+    },
+    {
+      "t": "2026-10-14T22:53:39",
+      "cpu": 2.0,
+      "ram": 23.4,
+      "temp": 37.0,
+      "in_schedule": true
+    },
+    {
+      "t": "2026-10-14T22:53:55",
+      "cpu": 1.5,
+      "ram": 23.4,
+      "temp": 37.0,
+      "in_schedule": true
+    },
+    {
+      "t": "2026-10-14T22:54:10",
+      "cpu": 1.0,
+      "ram": 23.4,
+      "temp": 37.0,
+      "in_schedule": true
+    },
+    {
+      "t": "2026-10-14T22:54:26",
+      "cpu": 0.5,
+      "ram": 23.4,
+      "temp": 37.5,
+      "in_schedule": true
+    },
+    {
+      "t": "2026-10-14T22:54:41",
+      "cpu": 1.5,
+      "ram": 23.4,
+      "temp": 37.0,
+      "in_schedule": true
+    },
+    {
+      "t": "2026-10-14T22:54:57",
+      "cpu": 0.5,
+      "ram": 23.4,
+      "temp": 37.5,
+      "in_schedule": true
+    },
+    {
+      "t": "2026-10-14T22:55:12",
+      "cpu": 0.5,
+      "ram": 23.5,
+      "temp": 37.0,
+      "in_schedule": true
+    },
+    {
+      "t": "2026-10-14T22:55:28",
+      "cpu": 2.5,
+      "ram": 23.5,
+      "temp": 37.5,
+      "in_schedule": true
+    },
+    {
+      "t": "2026-10-14T22:55:43",
+      "cpu": 1.5,
+      "ram": 23.4,
+      "temp": 37.0,
+      "in_schedule": true
+    },
+    {
+      "t": "2026-10-14T22:55:59",
+      "cpu": 1.0,
+      "ram": 23.5,
+      "temp": 37.0,
+      "in_schedule": true
+    },
+    {
+      "t": "2026-10-14T22:56:14",
+      "cpu": 1.5,
+      "ram": 23.4,
+      "temp": 37.5,
+      "in_schedule": true
+    },
+    {
+      "t": "2026-10-14T22:56:30",
+      "cpu": 0.5,
+      "ram": 23.4,
+      "temp": 37.5,
+      "in_schedule": true
+    },
+    {
+      "t": "2026-10-14T22:56:45",
+      "cpu": 2.0,
+      "ram": 23.5,
+      "temp": 37.5,
+      "in_schedule": true
+    },
+    {
+      "t": "2026-10-14T22:57:01",
+      "cpu": 9.0,
+      "ram": 23.6,
+      "temp": 37.5,
+      "in_schedule": true
+    },
+    {
+      "t": "2026-10-14T22:57:17",
+      "cpu": 1.5,
+      "ram": 23.4,
+      "temp": 37.5,
+      "in_schedule": true
+    },
+    {
+      "t": "2026-10-14T22:57:32",
+      "cpu": 2.5,
+      "ram": 23.4,
+      "temp": 37.5,
+      "in_schedule": true
+    },
+    {
+      "t": "2026-10-14T22:57:48",
+      "cpu": 1.5,
+      "ram": 23.4,
+      "temp": 38.0,
+      "in_schedule": true
+    },
+    {
+      "t": "2026-10-14T22:58:03",
+      "cpu": 26.1,
+      "ram": 24.5,
+      "temp": 38.0,
+      "in_schedule": true
+    },
+    {
+      "t": "2026-10-14T22:58:19",
+      "cpu": 2.5,
+      "ram": 23.5,
+      "temp": 38.0,
+      "in_schedule": true
+    },
+    {
+      "t": "2026-10-14T22:58:34",
+      "cpu": 1.0,
+      "ram": 23.4,
+      "temp": 37.5,
+      "in_schedule": true
+    },
+    {
+      "t": "2026-10-14T22:58:50",
+      "cpu": 1.5,
+      "ram": 23.4,
+      "temp": 37.5,
+      "in_schedule": true
+    },
+    {
+      "t": "2026-10-14T22:59:06",
+      "cpu": 1.5,
+      "ram": 23.5,
+      "temp": 38.0,
+      "in_schedule": true
+    },
+    {
+      "t": "2026-10-14T22:59:21",
+      "cpu": 1.5,
+      "ram": 23.4,
+      "temp": 37.5,
+      "in_schedule": true
+    },
+    {
+      "t": "2026-10-14T22:59:37",
+      "cpu": 1.0,
+      "ram": 23.4,
+      "temp": 37.5,
+      "in_schedule": true
+    },
+    {
+      "t": "2026-10-14T22:59:52",
+      "cpu": 1.5,
+      "ram": 23.4,
+      "temp": 37.5,
+      "in_schedule": true
+    },
+    {
+      "t": "2026-10-14T23:00:08",
+      "cpu": 1.0,
+      "ram": 23.5,
+      "temp": 37.5,
+      "in_schedule": true
+    },
+    {
+      "t": "2026-10-14T23:00:23",
+      "cpu": 1.5,
+      "ram": 23.5,
+      "temp": 37.0,
+      "in_schedule": true
+    },
+    {
+      "t": "2026-10-14T23:00:39",
+      "cpu": 1.5,
+      "ram": 23.4,
+      "temp": 37.5,
+      "in_schedule": true
+    },
+    {
+      "t": "2026-10-14T23:00:54",
+      "cpu": 1.0,
+      "ram": 23.4,
+      "temp": 37.0,
+      "in_schedule": true
+    },
+    {
+      "t": "2026-10-14T23:01:10",
+      "cpu": 1.5,
+      "ram": 23.4,
+      "temp": 37.0,
+      "in_schedule": true
+    },
+    {
+      "t": "2026-10-14T23:01:25",
+      "cpu": 1.0,
+      "ram": 23.4,
+      "temp": 37.0,
+      "in_schedule": true
+    },
+    {
+      "t": "2026-10-14T23:01:41",
+      "cpu": 1.0,
+      "ram": 23.4,
+      "temp": 37.0,
+      "in_schedule": true
+    },
+    {
+      "t": "2026-10-14T23:01:56",
+      "cpu": 1.5,
+      "ram": 23.4,
+      "temp": 37.0,
+      "in_schedule": true
+    },
+    {
+      "t": "2026-10-14T23:02:12",
+      "cpu": 1.0,
+      "ram": 23.4,
+      "temp": 37.0,
+      "in_schedule": true
+    },
+    {
+      "t": "2026-10-14T23:02:28",
+      "cpu": 0.5,
+      "ram": 23.4,
+      "temp": 36.5,
+      "in_schedule": true
+    },
+    {
+      "t": "2026-10-14T23:02:43",
+      "cpu": 1.0,
+      "ram": 23.4,
+      "temp": 36.5,
+      "in_schedule": true
+    },
+    {
+      "t": "2026-10-14T23:02:59",
+      "cpu": 2.0,
+      "ram": 23.4,
+      "temp": 36.5,
+      "in_schedule": true
+    },
+    {
+      "t": "2026-10-14T23:03:14",
+      "cpu": 0.5,
+      "ram": 23.5,
+      "temp": 36.0,
+      "in_schedule": true
+    },
+    {
+      "t": "2026-10-14T23:03:30",
+      "cpu": 1.0,
+      "ram": 23.4,
+      "temp": 36.0,
+      "in_schedule": true
+    },
+    {
+      "t": "2026-10-14T23:03:45",
+      "cpu": 1.0,
+      "ram": 23.5,
+      "temp": 36.0,
+      "in_schedule": true
+    },
+    {
+      "t": "2026-10-14T23:04:01",
+      "cpu": 2.0,
+      "ram": 23.5,
+      "temp": 36.0,
+      "in_schedule": true
+    },
+    {
+      "t": "2026-10-14T23:04:17",
+      "cpu": 2.0,
+      "ram": 23.5,
+      "temp": 36.5,
+      "in_schedule": true
+    },
+    {
+      "t": "2026-10-14T23:04:32",
+      "cpu": 1.0,
+      "ram": 23.4,
+      "temp": 36.0,
+      "in_schedule": true
+    },
+    {
+      "t": "2026-10-14T23:04:48",
+      "cpu": 2.5,
+      "ram": 23.5,
+      "temp": 36.0,
+      "in_schedule": true
+    },
+    {
+      "t": "2026-10-14T23:05:03",
+      "cpu": 4.0,
+      "ram": 23.5,
+      "temp": 36.5,
+      "in_schedule": true
+    },
+    {
+      "t": "2026-10-14T23:05:19",
+      "cpu": 1.0,
+      "ram": 23.5,
+      "temp": 36.0,
+      "in_schedule": true
+    },
+    {
+      "t": "2026-10-14T23:05:34",
+      "cpu": 2.0,
+      "ram": 23.5,
+      "temp": 35.5,
+      "in_schedule": true
+    },
+    {
+      "t": "2026-10-14T23:05:50",
+      "cpu": 0.5,
+      "ram": 23.5,
+      "temp": 36.0,
+      "in_schedule": true
+    },
+    {
+      "t": "2026-10-14T23:06:05",
+      "cpu": 1.0,
+      "ram": 23.5,
+      "temp": 36.0,
+      "in_schedule": true
+    },
+    {
+      "t": "2026-10-14T23:06:21",
+      "cpu": 1.5,
+      "ram": 23.4,
+      "temp": 35.5,
+      "in_schedule": true
+    },
+    {
+      "t": "2026-10-14T23:06:36",
+      "cpu": 0.5,
+      "ram": 23.4,
+      "temp": 36.0,
+      "in_schedule": true
+    }
+  ],
+  "limits": {
+    "messages": 100,
+    "alerts": 100,
+    "metrics": 200,
+    "photos": 20
+  },
+  "note": "Original dashboard's last 100 messages and alerts and last 200 metrics at sync time. Paths, credentials and report files are not published. Detected-photo links only exist for the latest 20 raw photos."
+}
