@@ -164,7 +164,7 @@
     $('btn-capture-preview').addEventListener('click', () => showPhoto(state.photos[0]?.original));
     $('btn-open-preview').addEventListener('click', () => showPhoto(state.photos[0]?.original));
     $('sel-interval').disabled = true; $('btn-toggle-poll').disabled = true;
-    set('js-poll-chip', '約每 30 分鐘同步');
+    set('js-poll-chip', '每分鐘檢查更新');
     $('sel-theme').addEventListener('change', event => {
       localStorage.setItem('bee_archive_theme', event.target.value); applyTheme(event.target.value);
     });
@@ -181,11 +181,11 @@
     const dark = value === 'dark' || (value === 'auto' && matchMedia('(prefers-color-scheme: dark)').matches);
     document.body.classList.toggle('theme-dark', dark);
   }
-  async function main() {
-    bindNavigation(); bindControls();
+  async function refreshSnapshot() {
     try {
+      const version = Date.now();
       const [photoResponse, historyResponse] = await Promise.all([
-        fetch('photos.json', {cache: 'no-store'}), fetch('history.json', {cache: 'no-store'})
+        fetch(`photos.json?v=${version}`, {cache: 'no-store'}), fetch(`history.json?v=${version}`, {cache: 'no-store'})
       ]);
       if (!photoResponse.ok || !historyResponse.ok) throw new Error('snapshot files unavailable');
       const photos = await photoResponse.json(), history = await historyResponse.json();
@@ -197,6 +197,12 @@
       set('capture-status', '歷史資料暫時無法載入，請稍後重整。');
       set('archive-sync-time', '快照讀取失敗');
     }
+  }
+  async function main() {
+    bindNavigation(); bindControls();
+    await refreshSnapshot();
+    setInterval(refreshSnapshot, 15000);
+    document.addEventListener('visibilitychange', () => { if (!document.hidden) refreshSnapshot(); });
   }
   document.addEventListener('DOMContentLoaded', main);
 })();
