@@ -1,0 +1,88 @@
+{
+  "generated_at": "2026-10-14T21:59:46+08:00",
+  "latest_capture_at": "2026-10-14 21:59:07",
+  "photo_count": 20,
+  "photos": [
+    {
+      "captured_at": "2026-10-14 21:59:07",
+      "original": "photos/capture_01_raw.jpg"
+    },
+    {
+      "captured_at": "2026-10-14 21:58:07",
+      "original": "photos/capture_02_raw.jpg"
+    },
+    {
+      "captured_at": "2026-10-14 21:57:07",
+      "original": "photos/capture_03_raw.jpg"
+    },
+    {
+      "captured_at": "2026-10-14 21:56:07",
+      "original": "photos/capture_04_raw.jpg"
+    },
+    {
+      "captured_at": "2026-10-14 21:55:06",
+      "original": "photos/capture_05_raw.jpg"
+    },
+    {
+      "captured_at": "2026-10-14 21:54:06",
+      "original": "photos/capture_06_raw.jpg"
+    },
+    {
+      "captured_at": "2026-10-14 21:53:06",
+      "original": "photos/capture_07_raw.jpg"
+    },
+    {
+      "captured_at": "2026-10-14 21:52:06",
+      "original": "photos/capture_08_raw.jpg"
+    },
+    {
+      "captured_at": "2026-10-14 21:51:06",
+      "original": "photos/capture_09_raw.jpg"
+    },
+    {
+      "captured_at": "2026-10-14 21:50:06",
+      "original": "photos/capture_10_raw.jpg"
+    },
+    {
+      "captured_at": "2026-10-14 21:49:05",
+      "original": "photos/capture_11_raw.jpg"
+    },
+    {
+      "captured_at": "2026-10-14 21:48:05",
+      "original": "photos/capture_12_raw.jpg"
+    },
+    {
+      "captured_at": "2026-10-14 21:47:05",
+      "original": "photos/capture_13_raw.jpg"
+    },
+    {
+      "captured_at": "2026-10-14 21:46:05",
+      "original": "photos/capture_14_raw.jpg"
+    },
+    {
+      "captured_at": "2026-10-14 21:45:05",
+      "original": "photos/capture_15_raw.jpg"
+    },
+    {
+      "captured_at": "2026-10-14 21:44:05",
+      "original": "photos/capture_16_raw.jpg"
+    },
+    {
+      "captured_at": "2026-10-14 21:43:05",
+      "original": "photos/capture_17_raw.jpg"
+    },
+    {
+      "captured_at": "2026-10-14 21:42:04",
+      "original": "photos/capture_18_raw.jpg"
+    },
+    {
+      "captured_at": "2026-10-14 21:41:04",
+      "original": "photos/capture_19_raw.jpg"
+    },
+    {
+      "captured_at": "2026-10-14 21:40:08",
+      "original": "photos/capture_20_raw.jpg"
+    }
+  ],
+  "note": "Windows 端已保存照片的最新 20 張靜態副本。Jetson 離線時不會自動增加照片。"
+}
