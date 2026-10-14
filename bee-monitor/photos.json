@@ -1,106 +1,106 @@
 {
-  "generated_at": "2026-10-14T23:20:03+08:00",
-  "latest_capture_at": "2026-10-14 23:19:20",
+  "generated_at": "2026-10-14T23:23:57+08:00",
+  "latest_capture_at": "2026-10-14 23:23:42",
   "photo_count": 20,
   "photos": [
     {
+      "captured_at": "2026-10-14 23:23:42",
+      "source_basename": "20261014_232342_599461_d8a0b8c0.jpg",
+      "original": "photos/capture_01_raw.jpg"
+    },
+    {
+      "captured_at": "2026-10-14 23:23:20",
+      "source_basename": "20261014_232320_998952_252c7a48.jpg",
+      "original": "photos/capture_02_raw.jpg"
+    },
+    {
+      "captured_at": "2026-10-14 23:22:20",
+      "source_basename": "20261014_232220_845926_d1de0552.jpg",
+      "original": "photos/capture_03_raw.jpg"
+    },
+    {
+      "captured_at": "2026-10-14 23:21:20",
+      "source_basename": "20261014_232120_691756_bd64960c.jpg",
+      "original": "photos/capture_04_raw.jpg"
+    },
+    {
+      "captured_at": "2026-10-14 23:20:20",
+      "source_basename": "20261014_232020_537697_ed429dcb.jpg",
+      "original": "photos/capture_05_raw.jpg"
+    },
+    {
       "captured_at": "2026-10-14 23:19:20",
       "source_basename": "20261014_231920_378936_6645d5a6.jpg",
-      "original": "photos/capture_01_raw.jpg"
+      "original": "photos/capture_06_raw.jpg"
     },
     {
       "captured_at": "2026-10-14 23:18:20",
       "source_basename": "20261014_231820_224770_6e0844e0.jpg",
-      "original": "photos/capture_02_raw.jpg"
+      "original": "photos/capture_07_raw.jpg"
     },
     {
       "captured_at": "2026-10-14 23:17:20",
       "source_basename": "20261014_231720_072422_3c768b42.jpg",
-      "original": "photos/capture_03_raw.jpg"
+      "original": "photos/capture_08_raw.jpg"
     },
     {
       "captured_at": "2026-10-14 23:16:19",
       "source_basename": "20261014_231619_920012_2ef8725c.jpg",
-      "original": "photos/capture_04_raw.jpg"
+      "original": "photos/capture_09_raw.jpg"
     },
     {
       "captured_at": "2026-10-14 23:15:19",
       "source_basename": "20261014_231519_763778_4b55e372.jpg",
-      "original": "photos/capture_05_raw.jpg"
+      "original": "photos/capture_10_raw.jpg"
     },
     {
       "captured_at": "2026-10-14 23:14:19",
       "source_basename": "20261014_231419_607406_624f1246.jpg",
-      "original": "photos/capture_06_raw.jpg"
+      "original": "photos/capture_11_raw.jpg"
     },
     {
       "captured_at": "2026-10-14 23:13:19",
       "source_basename": "20261014_231319_452656_056295cc.jpg",
-      "original": "photos/capture_07_raw.jpg"
+      "original": "photos/capture_12_raw.jpg"
     },
     {
       "captured_at": "2026-10-14 23:12:19",
       "source_basename": "20261014_231219_271366_62527078.jpg",
-      "original": "photos/capture_08_raw.jpg"
+      "original": "photos/capture_13_raw.jpg"
     },
     {
       "captured_at": "2026-10-14 23:11:19",
       "source_basename": "20261014_231119_086935_e07b68bd.jpg",
-      "original": "photos/capture_09_raw.jpg"
+      "original": "photos/capture_14_raw.jpg"
     },
     {
       "captured_at": "2026-10-14 23:10:18",
       "source_basename": "20261014_231018_882307_658ffb17.jpg",
-      "original": "photos/capture_10_raw.jpg"
+      "original": "photos/capture_15_raw.jpg"
     },
     {
       "captured_at": "2026-10-14 23:09:18",
       "source_basename": "20261014_230918_727539_20aaca6d.jpg",
-      "original": "photos/capture_11_raw.jpg"
+      "original": "photos/capture_16_raw.jpg"
     },
     {
       "captured_at": "2026-10-14 23:08:18",
       "source_basename": "20261014_230818_570840_d8f132ce.jpg",
-      "original": "photos/capture_12_raw.jpg"
+      "original": "photos/capture_17_raw.jpg"
     },
     {
       "captured_at": "2026-10-14 23:07:18",
       "source_basename": "20261014_230718_417231_b436a9f1.jpg",
-      "original": "photos/capture_13_raw.jpg"
+      "original": "photos/capture_18_raw.jpg"
     },
     {
       "captured_at": "2026-10-14 23:06:18",
       "source_basename": "20261014_230618_263902_14ccc855.jpg",
-      "original": "photos/capture_14_raw.jpg"
+      "original": "photos/capture_19_raw.jpg"
     },
     {
       "captured_at": "2026-10-14 23:05:18",
       "source_basename": "20261014_230518_111505_b09ebef9.jpg",
-      "original": "photos/capture_15_raw.jpg"
-    },
-    {
-      "captured_at": "2026-10-14 23:04:17",
-      "source_basename": "20261014_230417_954905_40fb83e0.jpg",
-      "original": "photos/capture_16_raw.jpg"
-    },
-    {
-      "captured_at": "2026-10-14 23:03:17",
-      "source_basename": "20261014_230317_799337_cbd6892f.jpg",
-      "original": "photos/capture_17_raw.jpg"
-    },
-    {
-      "captured_at": "2026-10-14 23:02:17",
-      "source_basename": "20261014_230217_627929_1678d30d.jpg",
-      "original": "photos/capture_18_raw.jpg"
-    },
-    {
-      "captured_at": "2026-10-14 23:01:17",
-      "source_basename": "20261014_230117_473644_e70d1580.jpg",
-      "original": "photos/capture_19_raw.jpg"
-    },
-    {
-      "captured_at": "2026-10-14 23:00:17",
-      "source_basename": "20261014_230017_319207_4afcac08.jpg",
       "original": "photos/capture_20_raw.jpg"
     }
   ],
