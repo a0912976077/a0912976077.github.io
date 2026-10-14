@@ -3,23 +3,22 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="蜜蜂監測系統的唯讀歷史照片與研究報告。">
+  <meta name="description" content="蜜蜂監測系統最近 20 張照片的唯讀歷史快照。">
   <title>蜜蜂監測歷史紀錄</title>
   <link rel="stylesheet" href="styles.css">
-  <link rel="stylesheet" href="report-links.css">
   <script defer src="app.js"></script>
 </head>
 <body>
   <header class="site-header">
     <div class="wrap header-row"><a class="brand" href="#top"><span class="brand-mark">⬡</span> 蜜蜂監測</a>
-      <nav aria-label="主選單"><a href="#photos">照片</a><a href="#reports">研究報告</a><a href="#about">說明</a></nav>
+      <nav aria-label="主選單"><a href="#photos">照片</a><a href="#about">說明</a></nav>
     </div>
   </header>
   <main id="top">
     <section class="hero wrap" aria-labelledby="hero-title">
       <p class="eyebrow">唯讀歷史網站 · GitHub Pages</p>
       <h1 id="hero-title">蜜蜂監測歷史紀錄</h1>
-      <p class="lead">查看 Windows 監測端已保存的最新 20 張照片與研究報告。此頁不依賴 Jetson 或家中電腦持續開機；新的資料會在下次同步後顯示。</p>
+      <p class="lead">查看 Windows 監測端已保存的最新 20 張照片。此頁不依賴 Jetson 或家中電腦持續開機；新的照片會在下次同步後顯示。</p>
       <div class="status-grid">
         <div class="status-item"><span>最近照片</span><strong id="latest-capture">讀取中</strong></div>
         <div class="status-item"><span>網站同步</span><strong id="sync-time">讀取中</strong></div>
@@ -35,21 +34,9 @@
       <div id="gallery" class="gallery" aria-live="polite"><p>正在載入照片清單…</p></div>
     </section>
 
-    <section id="reports" class="section section-soft" aria-labelledby="reports-title">
-      <div class="wrap"><p class="eyebrow">研究成果</p><h2 id="reports-title">報告下載</h2>
-        <p class="section-intro">報告區分已完成的探索性分析與仍待重切資料、重訓及正式驗證的工作。兩類標籤均為人工判讀表型，不能視為化學死因確認。</p>
-        <p class="section-intro">最新工作核對：<a href="reports/研究與網站處理驗收報告_20261014.pdf">線上閱讀處理驗收報告 PDF</a> · <a href="reports/研究與網站處理驗收報告_20261014.docx" download>下載 Word</a></p>
-        <div class="report-grid">
-          <article class="report-card"><span class="report-number">01</span><h3>YOLO 七版研究進度</h3><p>資料稽核、既有權重及 Jetson 初測，並列正式比較所需的後續驗收。</p><div class="report-links"><a href="reports/YOLO七版研究進度報告.pdf">線上閱讀 PDF</a><a href="reports/YOLO七版研究進度報告.docx" download>下載 Word</a></div></article>
-          <article class="report-card"><span class="report-number">02</span><h3>CNN 辨識報告</h3><p>MobileNetV3 裁切影像分類的訓練、測試與資料限制。</p><div class="report-links"><a href="reports/CNN辨識報告.pdf">線上閱讀 PDF</a><a href="reports/CNN辨識報告.docx" download>下載 Word</a></div></article>
-          <article class="report-card"><span class="report-number">03</span><h3>YOLO 與 CNN 比較及應用</h3><p>同一批預測框的配對比較，以及現場網站與模型改善方案。</p><div class="report-links"><a href="reports/YOLO與CNN比較及應用報告.pdf">線上閱讀 PDF</a><a href="reports/YOLO與CNN比較及應用報告.docx" download>下載 Word</a></div></article>
-        </div>
-      </div>
-    </section>
-
     <section id="about" class="section wrap" aria-labelledby="about-title">
       <p class="eyebrow">資料說明</p><h2 id="about-title">網站如何更新</h2>
-      <div class="about-grid"><p>監測程式仍在 Windows 端保存完整照片；本網站只放最近 20 張照片和三份報告。重新匯出並部署後，較舊的網站照片會從下一版清單移除，本機原始檔不受影響。</p>
+      <div class="about-grid"><p>監測程式仍在 Windows 端保存完整照片；本網站只放最近 20 張照片。重新匯出並部署後，較舊的網站照片會從下一版清單移除，本機原始檔不受影響。研究報告只保存在使用者電腦。</p>
         <p>GitHub Pages 是公開的靜態網站，不能執行原本的 Flask、MQTT、登入、即時影像或遠端控制。需要這些功能時，請使用另行運行的監測後端。</p></div>
     </section>
   </main>
