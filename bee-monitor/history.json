@@ -1,16 +1,8 @@
 {
-  "generated_at": "2026-10-20T23:49:39+08:00",
+  "generated_at": "2026-10-20T23:50:39+08:00",
   "original_site_url": "http://140.127.26.34:5000/",
   "camera_alignment_pending_at_sync": false,
   "messages": [
-    {
-      "timestamp": "20261020_221156_587420",
-      "topic": "bee/npust/1140627/getsnapshot",
-      "decoded": "影像紀錄",
-      "filename": "20261020_221156_587420_d78af230ec59_det.jpg",
-      "is_image": true,
-      "photo": ""
-    },
     {
       "timestamp": "20261020_221256_947134",
       "topic": "bee/npust/1140627/getsnapshot",
@@ -649,7 +641,7 @@
       "decoded": "影像紀錄",
       "filename": "20261020_233011_873161_99d838c196f7_det.jpg",
       "is_image": true,
-      "photo": "photos/capture_20_raw.jpg"
+      "photo": ""
     },
     {
       "timestamp": "20261020_233111_511414",
@@ -657,7 +649,7 @@
       "decoded": "影像紀錄",
       "filename": "20261020_233111_511414_aa9b786cd98d_det.jpg",
       "is_image": true,
-      "photo": "photos/capture_19_raw.jpg"
+      "photo": "photos/capture_20_raw.jpg"
     },
     {
       "timestamp": "20261020_233213_068157",
@@ -665,7 +657,7 @@
       "decoded": "影像紀錄",
       "filename": "20261020_233213_068157_a6060d93fdff_det.jpg",
       "is_image": true,
-      "photo": "photos/capture_18_raw.jpg"
+      "photo": "photos/capture_19_raw.jpg"
     },
     {
       "timestamp": "20261020_233312_782619",
@@ -673,7 +665,7 @@
       "decoded": "影像紀錄",
       "filename": "20261020_233312_782619_645b0c27b396_det.jpg",
       "is_image": true,
-      "photo": "photos/capture_17_raw.jpg"
+      "photo": "photos/capture_18_raw.jpg"
     },
     {
       "timestamp": "20261020_233412_426609",
@@ -681,7 +673,7 @@
       "decoded": "影像紀錄",
       "filename": "20261020_233412_426609_d2cc4169f3b5_det.jpg",
       "is_image": true,
-      "photo": "photos/capture_16_raw.jpg"
+      "photo": "photos/capture_17_raw.jpg"
     },
     {
       "timestamp": "20261020_233514_053251",
@@ -689,7 +681,7 @@
       "decoded": "影像紀錄",
       "filename": "20261020_233514_053251_67dff52ec28c_det.jpg",
       "is_image": true,
-      "photo": "photos/capture_15_raw.jpg"
+      "photo": "photos/capture_16_raw.jpg"
     },
     {
       "timestamp": "20261020_233613_699627",
@@ -697,7 +689,7 @@
       "decoded": "影像紀錄",
       "filename": "20261020_233613_699627_f3c40171ffa4_det.jpg",
       "is_image": true,
-      "photo": "photos/capture_14_raw.jpg"
+      "photo": "photos/capture_15_raw.jpg"
     },
     {
       "timestamp": "20261020_233713_440259",
@@ -705,7 +697,7 @@
       "decoded": "影像紀錄",
       "filename": "20261020_233713_440259_000c988dfdd5_det.jpg",
       "is_image": true,
-      "photo": "photos/capture_13_raw.jpg"
+      "photo": "photos/capture_14_raw.jpg"
     },
     {
       "timestamp": "20261020_233813_039486",
@@ -713,7 +705,7 @@
       "decoded": "影像紀錄",
       "filename": "20261020_233813_039486_242c2258dea6_det.jpg",
       "is_image": true,
-      "photo": "photos/capture_12_raw.jpg"
+      "photo": "photos/capture_13_raw.jpg"
     },
     {
       "timestamp": "20261020_233914_615467",
@@ -721,7 +713,7 @@
       "decoded": "影像紀錄",
       "filename": "20261020_233914_615467_17b376692532_det.jpg",
       "is_image": true,
-      "photo": "photos/capture_11_raw.jpg"
+      "photo": "photos/capture_12_raw.jpg"
     },
     {
       "timestamp": "20261020_234014_179256",
@@ -729,7 +721,7 @@
       "decoded": "影像紀錄",
       "filename": "20261020_234014_179256_2434547a6572_det.jpg",
       "is_image": true,
-      "photo": "photos/capture_10_raw.jpg"
+      "photo": "photos/capture_11_raw.jpg"
     },
     {
       "timestamp": "20261020_234113_943562",
@@ -737,7 +729,7 @@
       "decoded": "影像紀錄",
       "filename": "20261020_234113_943562_0091b5dade58_det.jpg",
       "is_image": true,
-      "photo": "photos/capture_09_raw.jpg"
+      "photo": "photos/capture_10_raw.jpg"
     },
     {
       "timestamp": "20261020_234215_544477",
@@ -745,7 +737,7 @@
       "decoded": "影像紀錄",
       "filename": "20261020_234215_544477_d77f37bbf225_det.jpg",
       "is_image": true,
-      "photo": "photos/capture_08_raw.jpg"
+      "photo": "photos/capture_09_raw.jpg"
     },
     {
       "timestamp": "20261020_234315_263038",
@@ -753,7 +745,7 @@
       "decoded": "影像紀錄",
       "filename": "20261020_234315_263038_aa55eb590e0b_det.jpg",
       "is_image": true,
-      "photo": "photos/capture_07_raw.jpg"
+      "photo": "photos/capture_08_raw.jpg"
     },
     {
       "timestamp": "20261020_234415_051865",
@@ -761,7 +753,7 @@
       "decoded": "影像紀錄",
       "filename": "20261020_234415_051865_461d4735aa56_det.jpg",
       "is_image": true,
-      "photo": "photos/capture_06_raw.jpg"
+      "photo": "photos/capture_07_raw.jpg"
     },
     {
       "timestamp": "20261020_234514_655292",
@@ -769,7 +761,7 @@
       "decoded": "影像紀錄",
       "filename": "20261020_234514_655292_1f0081da8d10_det.jpg",
       "is_image": true,
-      "photo": "photos/capture_05_raw.jpg"
+      "photo": "photos/capture_06_raw.jpg"
     },
     {
       "timestamp": "20261020_234616_210415",
@@ -777,7 +769,7 @@
       "decoded": "影像紀錄",
       "filename": "20261020_234616_210415_64f538be26b4_det.jpg",
       "is_image": true,
-      "photo": "photos/capture_04_raw.jpg"
+      "photo": "photos/capture_05_raw.jpg"
     },
     {
       "timestamp": "20261020_234715_892463",
@@ -785,7 +777,7 @@
       "decoded": "影像紀錄",
       "filename": "20261020_234715_892463_829f92910522_det.jpg",
       "is_image": true,
-      "photo": "photos/capture_03_raw.jpg"
+      "photo": "photos/capture_04_raw.jpg"
     },
     {
       "timestamp": "20261020_234815_481959",
@@ -793,7 +785,7 @@
       "decoded": "影像紀錄",
       "filename": "20261020_234815_481959_64dc27f6011d_det.jpg",
       "is_image": true,
-      "photo": "photos/capture_02_raw.jpg"
+      "photo": "photos/capture_03_raw.jpg"
     },
     {
       "timestamp": "20261020_234917_291262",
@@ -801,17 +793,18 @@
       "decoded": "影像紀錄",
       "filename": "20261020_234917_291262_19acff36d2a3_det.jpg",
       "is_image": true,
+      "photo": "photos/capture_02_raw.jpg"
+    },
+    {
+      "timestamp": "20261020_235017_010401",
+      "topic": "bee/npust/1140627/getsnapshot",
+      "decoded": "影像紀錄",
+      "filename": "20261020_235017_010401_818c886a37dc_det.jpg",
+      "is_image": true,
       "photo": "photos/capture_01_raw.jpg"
     }
   ],
   "alerts": [
-    {
-      "timestamp": "2026-10-15 00:47:56",
-      "level": "MEDIUM",
-      "message": "偵測到 1 隻死亡蜜蜂",
-      "filename": "20261015_004756_422390_ffe0c245327f_det.jpg",
-      "photo": ""
-    },
     {
       "timestamp": "2026-10-15 00:48:57",
       "level": "MEDIUM",
@@ -1384,157 +1377,136 @@
       "level": "MEDIUM",
       "message": "偵測到 1 隻死亡蜜蜂",
       "filename": "20261020_233011_873161_99d838c196f7_det.jpg",
-      "photo": "photos/capture_20_raw.jpg"
+      "photo": ""
     },
     {
       "timestamp": "2026-10-20 23:31:11",
       "level": "MEDIUM",
       "message": "偵測到 1 隻死亡蜜蜂",
       "filename": "20261020_233111_511414_aa9b786cd98d_det.jpg",
-      "photo": "photos/capture_19_raw.jpg"
+      "photo": "photos/capture_20_raw.jpg"
     },
     {
       "timestamp": "2026-10-20 23:32:13",
       "level": "MEDIUM",
       "message": "偵測到 1 隻死亡蜜蜂",
       "filename": "20261020_233213_068157_a6060d93fdff_det.jpg",
-      "photo": "photos/capture_18_raw.jpg"
+      "photo": "photos/capture_19_raw.jpg"
     },
     {
       "timestamp": "2026-10-20 23:33:12",
       "level": "MEDIUM",
       "message": "偵測到 1 隻死亡蜜蜂",
       "filename": "20261020_233312_782619_645b0c27b396_det.jpg",
-      "photo": "photos/capture_17_raw.jpg"
+      "photo": "photos/capture_18_raw.jpg"
     },
     {
       "timestamp": "2026-10-20 23:34:12",
       "level": "MEDIUM",
       "message": "偵測到 1 隻死亡蜜蜂",
       "filename": "20261020_233412_426609_d2cc4169f3b5_det.jpg",
-      "photo": "photos/capture_16_raw.jpg"
+      "photo": "photos/capture_17_raw.jpg"
     },
     {
       "timestamp": "2026-10-20 23:35:14",
       "level": "MEDIUM",
       "message": "偵測到 1 隻死亡蜜蜂",
       "filename": "20261020_233514_053251_67dff52ec28c_det.jpg",
-      "photo": "photos/capture_15_raw.jpg"
+      "photo": "photos/capture_16_raw.jpg"
     },
     {
       "timestamp": "2026-10-20 23:36:13",
       "level": "MEDIUM",
       "message": "偵測到 1 隻死亡蜜蜂",
       "filename": "20261020_233613_699627_f3c40171ffa4_det.jpg",
-      "photo": "photos/capture_14_raw.jpg"
+      "photo": "photos/capture_15_raw.jpg"
     },
     {
       "timestamp": "2026-10-20 23:37:13",
       "level": "MEDIUM",
       "message": "偵測到 1 隻死亡蜜蜂",
       "filename": "20261020_233713_440259_000c988dfdd5_det.jpg",
-      "photo": "photos/capture_13_raw.jpg"
+      "photo": "photos/capture_14_raw.jpg"
     },
     {
       "timestamp": "2026-10-20 23:39:14",
       "level": "MEDIUM",
       "message": "偵測到 1 隻死亡蜜蜂",
       "filename": "20261020_233914_615467_17b376692532_det.jpg",
-      "photo": "photos/capture_11_raw.jpg"
+      "photo": "photos/capture_12_raw.jpg"
     },
     {
       "timestamp": "2026-10-20 23:40:14",
       "level": "MEDIUM",
       "message": "偵測到 1 隻死亡蜜蜂",
       "filename": "20261020_234014_179256_2434547a6572_det.jpg",
-      "photo": "photos/capture_10_raw.jpg"
+      "photo": "photos/capture_11_raw.jpg"
     },
     {
       "timestamp": "2026-10-20 23:41:14",
       "level": "MEDIUM",
       "message": "偵測到 2 隻死亡蜜蜂",
       "filename": "20261020_234113_943562_0091b5dade58_det.jpg",
-      "photo": "photos/capture_09_raw.jpg"
+      "photo": "photos/capture_10_raw.jpg"
     },
     {
       "timestamp": "2026-10-20 23:42:15",
       "level": "MEDIUM",
       "message": "偵測到 1 隻死亡蜜蜂",
       "filename": "20261020_234215_544477_d77f37bbf225_det.jpg",
-      "photo": "photos/capture_08_raw.jpg"
+      "photo": "photos/capture_09_raw.jpg"
     },
     {
       "timestamp": "2026-10-20 23:43:15",
       "level": "MEDIUM",
       "message": "偵測到 1 隻死亡蜜蜂",
       "filename": "20261020_234315_263038_aa55eb590e0b_det.jpg",
-      "photo": "photos/capture_07_raw.jpg"
+      "photo": "photos/capture_08_raw.jpg"
     },
     {
       "timestamp": "2026-10-20 23:44:15",
       "level": "MEDIUM",
       "message": "偵測到 2 隻死亡蜜蜂",
       "filename": "20261020_234415_051865_461d4735aa56_det.jpg",
-      "photo": "photos/capture_06_raw.jpg"
+      "photo": "photos/capture_07_raw.jpg"
     },
     {
       "timestamp": "2026-10-20 23:46:16",
       "level": "MEDIUM",
       "message": "偵測到 1 隻死亡蜜蜂",
       "filename": "20261020_234616_210415_64f538be26b4_det.jpg",
-      "photo": "photos/capture_04_raw.jpg"
+      "photo": "photos/capture_05_raw.jpg"
     },
     {
       "timestamp": "2026-10-20 23:47:15",
       "level": "MEDIUM",
       "message": "偵測到 2 隻死亡蜜蜂",
       "filename": "20261020_234715_892463_829f92910522_det.jpg",
-      "photo": "photos/capture_03_raw.jpg"
+      "photo": "photos/capture_04_raw.jpg"
     },
     {
       "timestamp": "2026-10-20 23:48:15",
       "level": "MEDIUM",
       "message": "偵測到 1 隻死亡蜜蜂",
       "filename": "20261020_234815_481959_64dc27f6011d_det.jpg",
-      "photo": "photos/capture_02_raw.jpg"
+      "photo": "photos/capture_03_raw.jpg"
     },
     {
       "timestamp": "2026-10-20 23:49:17",
       "level": "MEDIUM",
       "message": "偵測到 1 隻死亡蜜蜂",
       "filename": "20261020_234917_291262_19acff36d2a3_det.jpg",
+      "photo": "photos/capture_02_raw.jpg"
+    },
+    {
+      "timestamp": "2026-10-20 23:50:17",
+      "level": "MEDIUM",
+      "message": "偵測到 2 隻死亡蜜蜂",
+      "filename": "20261020_235017_010401_818c886a37dc_det.jpg",
       "photo": "photos/capture_01_raw.jpg"
     }
   ],
   "metrics": [
-    {
-      "t": "2026-10-20T22:57:54",
-      "cpu": 0.5,
-      "ram": 22.0,
-      "temp": 40.0,
-      "in_schedule": true
-    },
-    {
-      "t": "2026-10-20T22:58:09",
-      "cpu": 0.0,
-      "ram": 22.0,
-      "temp": 40.0,
-      "in_schedule": true
-    },
-    {
-      "t": "2026-10-20T22:58:25",
-      "cpu": 0.5,
-      "ram": 22.1,
-      "temp": 40.5,
-      "in_schedule": true
-    },
-    {
-      "t": "2026-10-20T22:58:40",
-      "cpu": 0.0,
-      "ram": 22.0,
-      "temp": 40.5,
-      "in_schedule": true
-    },
     {
       "t": "2026-10-20T22:58:56",
       "cpu": 0.0,
@@ -2905,6 +2877,34 @@
       "cpu": 1.0,
       "ram": 22.2,
       "temp": 38.5,
+      "in_schedule": true
+    },
+    {
+      "t": "2026-10-20T23:49:48",
+      "cpu": 2.5,
+      "ram": 22.2,
+      "temp": 38.0,
+      "in_schedule": true
+    },
+    {
+      "t": "2026-10-20T23:50:03",
+      "cpu": 26.0,
+      "ram": 23.2,
+      "temp": 38.5,
+      "in_schedule": true
+    },
+    {
+      "t": "2026-10-20T23:50:19",
+      "cpu": 1.0,
+      "ram": 22.2,
+      "temp": 38.5,
+      "in_schedule": true
+    },
+    {
+      "t": "2026-10-20T23:50:34",
+      "cpu": 2.0,
+      "ram": 22.2,
+      "temp": 38.0,
       "in_schedule": true
     }
   ],
