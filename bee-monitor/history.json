@@ -1,16 +1,8 @@
 {
-  "generated_at": "2026-10-30T12:42:38+08:00",
+  "generated_at": "2026-10-30T12:43:38+08:00",
   "original_site_url": "http://140.127.26.34:5000/",
   "camera_alignment_pending_at_sync": false,
   "messages": [
-    {
-      "timestamp": "20261028_144211_657833",
-      "topic": "bee/npust/1140627/getsnapshot",
-      "decoded": "影像紀錄",
-      "filename": "20261028_144211_657833_e626275d697c_det.jpg",
-      "is_image": true,
-      "photo": "photos/capture_11_raw.jpg"
-    },
     {
       "timestamp": "20261028_144310_154636",
       "topic": "bee/npust/1140627/getsnapshot",
@@ -802,6 +794,14 @@
       "filename": "20261030_124216_092957.jpg",
       "is_image": true,
       "photo": ""
+    },
+    {
+      "timestamp": "20261030_124315_662502",
+      "topic": "bee/npust/1140627/getsnapshot",
+      "decoded": "影像紀錄",
+      "filename": "20261030_124316_160229.jpg",
+      "is_image": true,
+      "photo": ""
     }
   ],
   "alerts": [
@@ -1507,27 +1507,6 @@
     }
   ],
   "metrics": [
-    {
-      "t": "2026-10-30T11:45:43",
-      "cpu": 0.5,
-      "ram": 23.3,
-      "temp": 48.5,
-      "in_schedule": true
-    },
-    {
-      "t": "2026-10-30T11:45:59",
-      "cpu": 0.5,
-      "ram": 23.3,
-      "temp": 48.5,
-      "in_schedule": true
-    },
-    {
-      "t": "2026-10-30T11:46:14",
-      "cpu": 0.0,
-      "ram": 23.3,
-      "temp": 49.0,
-      "in_schedule": true
-    },
     {
       "t": "2026-10-30T11:46:30",
       "cpu": 0.0,
@@ -2904,6 +2883,27 @@
       "t": "2026-10-30T12:42:38",
       "cpu": 6.5,
       "ram": 21.8,
+      "temp": 54.0,
+      "in_schedule": true
+    },
+    {
+      "t": "2026-10-30T12:42:54",
+      "cpu": 4.5,
+      "ram": 21.7,
+      "temp": 54.0,
+      "in_schedule": true
+    },
+    {
+      "t": "2026-10-30T12:43:09",
+      "cpu": 6.4,
+      "ram": 21.7,
+      "temp": 54.0,
+      "in_schedule": true
+    },
+    {
+      "t": "2026-10-30T12:43:25",
+      "cpu": 6.5,
+      "ram": 21.7,
       "temp": 54.0,
       "in_schedule": true
     }
