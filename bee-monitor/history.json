@@ -1,16 +1,8 @@
 {
-  "generated_at": "2026-10-30T12:02:38+08:00",
+  "generated_at": "2026-10-30T12:03:38+08:00",
   "original_site_url": "http://140.127.26.34:5000/",
   "camera_alignment_pending_at_sync": false,
   "messages": [
-    {
-      "timestamp": "20261020_233111_511414",
-      "topic": "bee/npust/1140627/getsnapshot",
-      "decoded": "影像紀錄",
-      "filename": "20261020_233111_511414_aa9b786cd98d_det.jpg",
-      "is_image": true,
-      "photo": ""
-    },
     {
       "timestamp": "20261020_233213_068157",
       "topic": "bee/npust/1140627/getsnapshot",
@@ -802,16 +794,17 @@
       "filename": "20261030_120158_908141.jpg",
       "is_image": true,
       "photo": ""
+    },
+    {
+      "timestamp": "20261030_120254_936703",
+      "topic": "bee/npust/1140627/getsnapshot",
+      "decoded": "影像紀錄",
+      "filename": "20261030_120255_002089.jpg",
+      "is_image": true,
+      "photo": ""
     }
   ],
   "alerts": [
-    {
-      "timestamp": "2026-10-15 00:53:57",
-      "level": "MEDIUM",
-      "message": "偵測到 2 隻死亡蜜蜂",
-      "filename": "20261015_005357_246701_ae28492d65d1_det.jpg",
-      "photo": ""
-    },
     {
       "timestamp": "2026-10-15 00:54:58",
       "level": "MEDIUM",
@@ -1504,23 +1497,16 @@
       "message": "偵測到 1 隻死亡蜜蜂",
       "filename": "20261030_114753_149672.jpg",
       "photo": ""
+    },
+    {
+      "timestamp": "2026-10-30 12:02:55",
+      "level": "MEDIUM",
+      "message": "偵測到 2 隻死亡蜜蜂",
+      "filename": "20261030_120255_002089.jpg",
+      "photo": ""
     }
   ],
   "metrics": [
-    {
-      "t": "2026-10-28T15:01:09",
-      "cpu": 0.0,
-      "ram": 23.8,
-      "temp": 40.0,
-      "in_schedule": true
-    },
-    {
-      "t": "2026-10-28T15:01:25",
-      "cpu": 0.0,
-      "ram": 23.8,
-      "temp": 40.0,
-      "in_schedule": true
-    },
     {
       "t": "2026-10-28T15:01:40",
       "cpu": 1.0,
@@ -2905,6 +2891,20 @@
       "cpu": 1.5,
       "ram": 23.7,
       "temp": 50.5,
+      "in_schedule": true
+    },
+    {
+      "t": "2026-10-30T12:02:50",
+      "cpu": 0.0,
+      "ram": 23.5,
+      "temp": 51.0,
+      "in_schedule": true
+    },
+    {
+      "t": "2026-10-30T12:03:05",
+      "cpu": 0.0,
+      "ram": 23.6,
+      "temp": 51.0,
       "in_schedule": true
     }
   ],
