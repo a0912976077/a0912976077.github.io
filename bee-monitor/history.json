@@ -1,16 +1,8 @@
 {
-  "generated_at": "2026-10-30T12:54:38+08:00",
+  "generated_at": "2026-10-30T12:55:38+08:00",
   "original_site_url": "http://140.127.26.34:5000/",
   "camera_alignment_pending_at_sync": false,
   "messages": [
-    {
-      "timestamp": "20261028_151127_261014",
-      "topic": "bee/npust/1140627/getsnapshot",
-      "decoded": "影像紀錄",
-      "filename": "20261028_151127_261014_4af270c6001c_det.jpg",
-      "is_image": true,
-      "photo": ""
-    },
     {
       "timestamp": "20261028_151228_700545",
       "topic": "bee/npust/1140627/getsnapshot",
@@ -802,6 +794,14 @@
       "filename": "20261030_125418_316336.jpg",
       "is_image": true,
       "photo": ""
+    },
+    {
+      "timestamp": "20261030_125519_103132",
+      "topic": "bee/npust/1140627/getsnapshot",
+      "decoded": "影像紀錄",
+      "filename": "20261030_125518_498778.jpg",
+      "is_image": true,
+      "photo": ""
     }
   ],
   "alerts": [
@@ -1507,34 +1507,6 @@
     }
   ],
   "metrics": [
-    {
-      "t": "2026-10-30T11:57:39",
-      "cpu": 0.0,
-      "ram": 23.6,
-      "temp": 50.0,
-      "in_schedule": true
-    },
-    {
-      "t": "2026-10-30T11:57:55",
-      "cpu": 1.0,
-      "ram": 23.6,
-      "temp": 50.0,
-      "in_schedule": true
-    },
-    {
-      "t": "2026-10-30T11:58:10",
-      "cpu": 0.0,
-      "ram": 23.6,
-      "temp": 50.0,
-      "in_schedule": true
-    },
-    {
-      "t": "2026-10-30T11:58:26",
-      "cpu": 1.0,
-      "ram": 23.6,
-      "temp": 50.0,
-      "in_schedule": true
-    },
     {
       "t": "2026-10-30T11:58:41",
       "cpu": 0.5,
@@ -2903,6 +2875,34 @@
     {
       "t": "2026-10-30T12:54:34",
       "cpu": 2.0,
+      "ram": 21.7,
+      "temp": 54.0,
+      "in_schedule": true
+    },
+    {
+      "t": "2026-10-30T12:54:49",
+      "cpu": 0.0,
+      "ram": 21.7,
+      "temp": 54.0,
+      "in_schedule": true
+    },
+    {
+      "t": "2026-10-30T12:55:05",
+      "cpu": 0.5,
+      "ram": 21.7,
+      "temp": 54.0,
+      "in_schedule": true
+    },
+    {
+      "t": "2026-10-30T12:55:20",
+      "cpu": 0.5,
+      "ram": 21.7,
+      "temp": 54.5,
+      "in_schedule": true
+    },
+    {
+      "t": "2026-10-30T12:55:36",
+      "cpu": 0.0,
       "ram": 21.7,
       "temp": 54.0,
       "in_schedule": true
