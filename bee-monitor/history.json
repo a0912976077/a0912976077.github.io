@@ -1,24 +1,8 @@
 {
-  "generated_at": "2026-10-30T13:49:39+08:00",
+  "generated_at": "2026-10-30T13:50:39+08:00",
   "original_site_url": "http://140.127.26.34:5000/",
   "camera_alignment_pending_at_sync": false,
   "messages": [
-    {
-      "timestamp": "20261030_121734_945537",
-      "topic": "bee/npust/1140627/getsnapshot",
-      "decoded": "影像紀錄",
-      "filename": "20261030_121735_070814.jpg",
-      "is_image": true,
-      "photo": ""
-    },
-    {
-      "timestamp": "20261030_121826_406618",
-      "topic": "bee/npust/1140627/getsnapshot",
-      "decoded": "影像紀錄",
-      "filename": "20261030_121826_083775.jpg",
-      "is_image": true,
-      "photo": ""
-    },
     {
       "timestamp": "20261030_121926_032818",
       "topic": "bee/npust/1140627/getsnapshot",
@@ -802,23 +786,25 @@
       "filename": "20261030_134828_717939.jpg",
       "is_image": true,
       "photo": ""
+    },
+    {
+      "timestamp": "20261030_134939_412128",
+      "topic": "bee/npust/1140627/getsnapshot",
+      "decoded": "影像紀錄",
+      "filename": "20261030_134939_459196.jpg",
+      "is_image": true,
+      "photo": ""
+    },
+    {
+      "timestamp": "20261030_135036_332784",
+      "topic": "bee/npust/1140627/getsnapshot",
+      "decoded": "影像紀錄",
+      "filename": "20261030_135036_380501.jpg",
+      "is_image": true,
+      "photo": ""
     }
   ],
   "alerts": [
-    {
-      "timestamp": "2026-10-20 21:53:34",
-      "level": "MEDIUM",
-      "message": "偵測到 1 隻死亡蜜蜂",
-      "filename": "20261020_215334_206780_b09e84d7e745_det.jpg",
-      "photo": ""
-    },
-    {
-      "timestamp": "2026-10-20 21:53:42",
-      "level": "MEDIUM",
-      "message": "偵測到 1 隻死亡蜜蜂",
-      "filename": "20261020_215342_279712_e24c4a2581a6_det.jpg",
-      "photo": ""
-    },
     {
       "timestamp": "2026-10-20 21:55:27",
       "level": "MEDIUM",
@@ -1504,44 +1490,23 @@
       "message": "偵測到 1 隻死亡蜜蜂",
       "filename": "20261030_134735_997659.jpg",
       "photo": ""
+    },
+    {
+      "timestamp": "2026-10-30 13:49:39",
+      "level": "MEDIUM",
+      "message": "偵測到 1 隻死亡蜜蜂",
+      "filename": "20261030_134939_459196.jpg",
+      "photo": ""
+    },
+    {
+      "timestamp": "2026-10-30 13:50:36",
+      "level": "MEDIUM",
+      "message": "偵測到 1 隻死亡蜜蜂",
+      "filename": "20261030_135036_380501.jpg",
+      "photo": ""
     }
   ],
   "metrics": [
-    {
-      "t": "2026-10-30T12:57:40",
-      "cpu": 0.0,
-      "ram": 21.7,
-      "temp": 53.5,
-      "in_schedule": true
-    },
-    {
-      "t": "2026-10-30T12:57:56",
-      "cpu": 0.0,
-      "ram": 21.7,
-      "temp": 54.0,
-      "in_schedule": true
-    },
-    {
-      "t": "2026-10-30T12:58:11",
-      "cpu": 1.0,
-      "ram": 21.7,
-      "temp": 54.0,
-      "in_schedule": true
-    },
-    {
-      "t": "2026-10-30T12:58:27",
-      "cpu": 0.5,
-      "ram": 21.7,
-      "temp": 54.0,
-      "in_schedule": true
-    },
-    {
-      "t": "2026-10-30T12:58:42",
-      "cpu": 0.0,
-      "ram": 21.7,
-      "temp": 53.5,
-      "in_schedule": true
-    },
     {
       "t": "2026-10-30T12:58:58",
       "cpu": 1.5,
@@ -2905,6 +2870,41 @@
       "cpu": 0.5,
       "ram": 21.9,
       "temp": 56.0,
+      "in_schedule": true
+    },
+    {
+      "t": "2026-10-30T13:49:30",
+      "cpu": 25.5,
+      "ram": 23.8,
+      "temp": 56.0,
+      "in_schedule": true
+    },
+    {
+      "t": "2026-10-30T13:49:46",
+      "cpu": 1.0,
+      "ram": 21.9,
+      "temp": 56.0,
+      "in_schedule": true
+    },
+    {
+      "t": "2026-10-30T13:50:01",
+      "cpu": 26.2,
+      "ram": 22.8,
+      "temp": 56.5,
+      "in_schedule": true
+    },
+    {
+      "t": "2026-10-30T13:50:17",
+      "cpu": 0.5,
+      "ram": 21.9,
+      "temp": 56.0,
+      "in_schedule": true
+    },
+    {
+      "t": "2026-10-30T13:50:32",
+      "cpu": 3.0,
+      "ram": 21.9,
+      "temp": 56.5,
       "in_schedule": true
     }
   ],
