@@ -1,16 +1,8 @@
 {
-  "generated_at": "2026-11-02T10:07:39+08:00",
+  "generated_at": "2026-11-02T10:08:39+08:00",
   "original_site_url": "http://140.127.26.34:5000/",
   "camera_alignment_pending_at_sync": false,
   "messages": [
-    {
-      "timestamp": "20261101_144750_913722",
-      "topic": "bee/npust/1140627/getsnapshot",
-      "decoded": "影像紀錄",
-      "filename": "20261101_144754_290749.jpg",
-      "is_image": true,
-      "photo": ""
-    },
     {
       "timestamp": "20261101_144950_813699",
       "topic": "bee/npust/1140627/getsnapshot",
@@ -802,16 +794,17 @@
       "filename": "20261102_100613_880169.jpg",
       "is_image": true,
       "photo": ""
+    },
+    {
+      "timestamp": "20261102_100813_698315",
+      "topic": "bee/npust/1140627/getsnapshot",
+      "decoded": "影像紀錄",
+      "filename": "20261102_100813_766203.jpg",
+      "is_image": true,
+      "photo": ""
     }
   ],
   "alerts": [
-    {
-      "timestamp": "2026-10-30 16:32:02",
-      "level": "MEDIUM",
-      "message": "偵測到 1 隻死亡蜜蜂",
-      "filename": "20261030_163202_826241.jpg",
-      "photo": ""
-    },
     {
       "timestamp": "2026-10-30 16:33:02",
       "level": "MEDIUM",
@@ -1504,37 +1497,16 @@
       "message": "偵測到 2 隻死亡蜜蜂",
       "filename": "20261102_100613_880169.jpg",
       "photo": ""
+    },
+    {
+      "timestamp": "2026-11-02 10:08:13",
+      "level": "MEDIUM",
+      "message": "偵測到 1 隻死亡蜜蜂",
+      "filename": "20261102_100813_766203.jpg",
+      "photo": ""
     }
   ],
   "metrics": [
-    {
-      "t": "2026-11-02T09:15:59",
-      "cpu": 0.5,
-      "ram": 24.8,
-      "temp": 48.5,
-      "in_schedule": true
-    },
-    {
-      "t": "2026-11-02T09:16:15",
-      "cpu": 0.5,
-      "ram": 24.8,
-      "temp": 48.5,
-      "in_schedule": true
-    },
-    {
-      "t": "2026-11-02T09:16:30",
-      "cpu": 0.5,
-      "ram": 24.8,
-      "temp": 47.5,
-      "in_schedule": true
-    },
-    {
-      "t": "2026-11-02T09:16:46",
-      "cpu": 0.0,
-      "ram": 24.8,
-      "temp": 47.0,
-      "in_schedule": true
-    },
     {
       "t": "2026-11-02T09:17:01",
       "cpu": 26.5,
@@ -2902,6 +2874,34 @@
     },
     {
       "t": "2026-11-02T10:07:35",
+      "cpu": 1.0,
+      "ram": 24.8,
+      "temp": 46.5,
+      "in_schedule": true
+    },
+    {
+      "t": "2026-11-02T10:07:50",
+      "cpu": 1.0,
+      "ram": 24.8,
+      "temp": 46.5,
+      "in_schedule": true
+    },
+    {
+      "t": "2026-11-02T10:08:06",
+      "cpu": 0.0,
+      "ram": 24.8,
+      "temp": 46.5,
+      "in_schedule": true
+    },
+    {
+      "t": "2026-11-02T10:08:21",
+      "cpu": 1.0,
+      "ram": 24.8,
+      "temp": 46.5,
+      "in_schedule": true
+    },
+    {
+      "t": "2026-11-02T10:08:37",
       "cpu": 1.0,
       "ram": 24.8,
       "temp": 46.5,
