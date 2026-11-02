@@ -1,16 +1,8 @@
 {
-  "generated_at": "2026-11-02T09:15:39+08:00",
+  "generated_at": "2026-11-02T09:16:38+08:00",
   "original_site_url": "http://140.127.26.34:5000/",
   "camera_alignment_pending_at_sync": false,
   "messages": [
-    {
-      "timestamp": "20261101_135545_048114",
-      "topic": "bee/npust/1140627/getsnapshot",
-      "decoded": "影像紀錄",
-      "filename": "20261101_135547_161890.jpg",
-      "is_image": true,
-      "photo": ""
-    },
     {
       "timestamp": "20261101_135744_917600",
       "topic": "bee/npust/1140627/getsnapshot",
@@ -802,6 +794,14 @@
       "filename": "20261102_091405_918433.jpg",
       "is_image": true,
       "photo": ""
+    },
+    {
+      "timestamp": "20261102_091607_751498",
+      "topic": "bee/npust/1140627/getsnapshot",
+      "decoded": "影像紀錄",
+      "filename": "20261102_091611_170529.jpg",
+      "is_image": true,
+      "photo": ""
     }
   ],
   "alerts": [
@@ -1507,27 +1507,6 @@
     }
   ],
   "metrics": [
-    {
-      "t": "2026-11-02T08:24:06",
-      "cpu": 0.5,
-      "ram": 24.6,
-      "temp": 52.5,
-      "in_schedule": true
-    },
-    {
-      "t": "2026-11-02T08:24:21",
-      "cpu": 0.5,
-      "ram": 24.6,
-      "temp": 52.5,
-      "in_schedule": true
-    },
-    {
-      "t": "2026-11-02T08:24:37",
-      "cpu": 0.5,
-      "ram": 24.6,
-      "temp": 52.5,
-      "in_schedule": true
-    },
     {
       "t": "2026-11-02T08:24:52",
       "cpu": 1.0,
@@ -2905,6 +2884,27 @@
       "cpu": 0.5,
       "ram": 24.8,
       "temp": 48.5,
+      "in_schedule": true
+    },
+    {
+      "t": "2026-11-02T09:15:59",
+      "cpu": 0.5,
+      "ram": 24.8,
+      "temp": 48.5,
+      "in_schedule": true
+    },
+    {
+      "t": "2026-11-02T09:16:15",
+      "cpu": 0.5,
+      "ram": 24.8,
+      "temp": 48.5,
+      "in_schedule": true
+    },
+    {
+      "t": "2026-11-02T09:16:30",
+      "cpu": 0.5,
+      "ram": 24.8,
+      "temp": 47.5,
       "in_schedule": true
     }
   ],
