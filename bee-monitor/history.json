@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-02T14:11:39+08:00",
+  "generated_at": "2026-11-02T14:12:39+08:00",
   "original_site_url": "http://140.127.26.34:5000/",
   "camera_alignment_pending_at_sync": false,
   "messages": [
@@ -1508,27 +1508,6 @@
   ],
   "metrics": [
     {
-      "t": "2026-11-02T13:20:09",
-      "cpu": 1.0,
-      "ram": 24.9,
-      "temp": 49.5,
-      "in_schedule": true
-    },
-    {
-      "t": "2026-11-02T13:20:24",
-      "cpu": 0.5,
-      "ram": 24.9,
-      "temp": 49.5,
-      "in_schedule": true
-    },
-    {
-      "t": "2026-11-02T13:20:40",
-      "cpu": 1.0,
-      "ram": 24.9,
-      "temp": 50.0,
-      "in_schedule": true
-    },
-    {
       "t": "2026-11-02T13:20:55",
       "cpu": 2.0,
       "ram": 24.9,
@@ -2903,6 +2882,27 @@
     {
       "t": "2026-11-02T14:11:44",
       "cpu": 1.0,
+      "ram": 24.9,
+      "temp": 49.5,
+      "in_schedule": true
+    },
+    {
+      "t": "2026-11-02T14:11:59",
+      "cpu": 0.0,
+      "ram": 24.9,
+      "temp": 49.5,
+      "in_schedule": true
+    },
+    {
+      "t": "2026-11-02T14:12:15",
+      "cpu": 0.0,
+      "ram": 24.9,
+      "temp": 49.5,
+      "in_schedule": true
+    },
+    {
+      "t": "2026-11-02T14:12:30",
+      "cpu": 0.5,
       "ram": 24.9,
       "temp": 49.5,
       "in_schedule": true
